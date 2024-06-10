@@ -1,0 +1,1 @@
+const o="Lorem ipsum dolor sit",t=[{slug:"about",label:"About"},{slug:"code",label:"Code"},{slug:"contact",label:"Contact"}],s="https://github.com",a="email@example.com";export{a as E,s as G,t as S,o as T};
