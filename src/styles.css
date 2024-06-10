@@ -1,0 +1,126 @@
+* {
+	box-sizing: border-box;
+}
+html, body {
+	font-family: var(--font-body);
+	font-size: var(--text-base);
+	font-weight: 400;
+	line-height: 1.7em;
+	color: var(--color-primary);
+	background-color: var(--color-secondary);
+}
+body {
+	margin: 0;
+}
+a {
+	color: currentColor;
+	text-decoration-style: dotted;
+	text-decoration-thickness: 1px;
+}
+a:hover, a:focus {
+
+}
+:is(p, ul) {
+	margin: 2rem 0;
+}
+:is(p, ul):first-child {
+	margin-top: 0;
+}
+:is(p, ul):last-child {
+	margin-bottom: 0;
+}
+p {
+
+}
+ul {
+	padding-left: 1em;
+}
+li {
+	/* position: relative; */
+}
+/* li::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 1px;
+	height: 100%;
+	border-right-width: 1px;
+	border-right-style: dotted;
+	border-right-color: currentColor;
+} */
+:is(h1, h2, h3, h4) {
+	line-height: 1.2em;
+}
+:is(h2, h3, h4) {
+	font-family: var(--font-display);
+	font-weight: 500;
+	line-height: 1.1em;
+	margin: 0 0 0.5em 0;
+}
+:is(h2, h3, h4):first-child {
+	margin-top: 0;
+}
+h1 {
+	font-size: var(--text-6);
+}
+h2 {
+	font-size: var(--text-5);
+}
+h3 {
+	font-size: var(--text-4);
+}
+/* main {
+
+} */
+section {
+	display: flex;
+	position: relative;
+}
+section:nth-child(odd) {
+	background-color: var(--color-secondary);
+}
+section:nth-child(even) {
+	background-color: var(--color-secondary-dark);
+}
+.inner {
+	width: 100%;
+	max-width: var(--width-inner);
+	margin: auto;
+	padding: 6rem 2rem;
+}
+.cols {
+	display: flex;
+	flex-direction: row;
+}
+.col {
+	width: 50%;
+}
+button, a.button, p a {
+	color: currentColor;
+	text-decoration: none;
+	outline-color: currentColor;
+    outline-style: dotted;
+    outline-width: 1px;
+    outline-offset: 1px;
+	padding: 0 0.25em;
+	margin: 0 0.25em;
+}
+:is(button, a.button, p a):hover,
+:is(button, a.button, p a):focus {
+	outline-width: 2px;
+}
+.overline {
+	/* position: absolute; */
+	/* top: 1rem; */
+	/* left: 2rem; */
+	/* width: 100%; */
+	font-size: var(--text-1);
+	text-transform: uppercase;
+	/* text-align: center; */
+	letter-spacing: 0.5ch;
+	font-weight: bold;
+	font-family: var(--font-display);
+	color: var(--color-primary-light);
+	opacity: 0.5;
+}
