@@ -36,13 +36,14 @@
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
-		background-color: var(--color-primary);
+/*		background-color: var(--color-primary);*/
 		color: var(--color-secondary);
 	}
 	#title {
 		padding: 0;
 		outline: none;
 		text-decoration: none;
+		text-transform: lowercase;
 	}
 	nav {
 		position: relative;

@@ -1,5 +1,5 @@
 // import adapter from '@sveltejs/adapter-static'
-import adapter from '@sveltejs/adapter-auto'
+import adapter from '@sveltejs/adapter-static'
 import preprocess from 'svelte-preprocess'
 
 const config = {
@@ -10,11 +10,12 @@ const config = {
 			$lib: './src/lib',
 		},
 		adapter: adapter({
-			fallback: '404.html'
-		}),
-		paths: {
-			base: process.env.NODE_ENV === 'production' ? `/svelte-app` : '',
-		},
+			pages: 'build',
+			assets: 'build',
+			fallback: '404.html',
+			precompress: false,
+			strict: true
+		})
 	}
 };
 

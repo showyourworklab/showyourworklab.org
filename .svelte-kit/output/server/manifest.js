@@ -6,11 +6,11 @@ function __memo(fn) {
 
 return {
 	appDir: "_app",
-	appPath: "svelte-app/_app",
-	assets: new Set([".nojekyll","images/hero-1.avif"]),
-	mimeTypes: {".avif":"image/avif"},
+	appPath: "_app",
+	assets: new Set([".nojekyll","images/photos/hero1.jpg","images/photos/hero2.jpg","images/photos/hero3.jpg","images/photos/hero4.jpg","images/photos/hero5.jpg","images/photos/hero6.jpg","images/photos/hero7.jpg","images/photos/hero8.jpg","images/photos/syw.jpg","images/photos/syw_corey.jpg","images/photos/syw_nora.jpg"]),
+	mimeTypes: {".jpg":"image/jpeg"},
 	_: {
-		client: {"start":"_app/immutable/entry/start.CPn_z5PD.js","app":"_app/immutable/entry/app.lazxmzHX.js","imports":["_app/immutable/entry/start.CPn_z5PD.js","_app/immutable/chunks/entry.CxLOZMQ_.js","_app/immutable/chunks/scheduler.Ce_0Mfso.js","_app/immutable/entry/app.lazxmzHX.js","_app/immutable/chunks/scheduler.Ce_0Mfso.js","_app/immutable/chunks/index.C3aWS7UM.js"],"stylesheets":[],"fonts":[],"uses_env_dynamic_public":false},
+		client: {"start":"_app/immutable/entry/start.BC2X3wqJ.js","app":"_app/immutable/entry/app.CSu16hI7.js","imports":["_app/immutable/entry/start.BC2X3wqJ.js","_app/immutable/chunks/entry.B7heYPcH.js","_app/immutable/chunks/scheduler.Bu5GJ83t.js","_app/immutable/entry/app.CSu16hI7.js","_app/immutable/chunks/scheduler.Bu5GJ83t.js","_app/immutable/chunks/index.CXDde0gU.js"],"stylesheets":[],"fonts":[],"uses_env_dynamic_public":false},
 		nodes: [
 			__memo(() => import('./nodes/0.js')),
 			__memo(() => import('./nodes/1.js')),

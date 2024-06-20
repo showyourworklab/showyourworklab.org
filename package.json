@@ -1,5 +1,5 @@
 {
-	"name": "svelte-app",
+	"name": "showyourworklab.org",
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
@@ -24,6 +24,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"svelte-markdown": "^0.4.1",
 		"svelte-preprocess": "^5.1.4"
 	}
 }

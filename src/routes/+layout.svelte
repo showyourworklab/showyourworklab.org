@@ -1,9 +1,9 @@
 <script>
 	import '$src/globals.css'
 	import '$src/styles.css'
-	import Hero from '$lib/hero.svelte'
-	import Header from '$lib/header.svelte'
-	import Footer from '$lib/footer.svelte'
+	import Hero from '$lib/Hero.svelte'
+	import Header from '$lib/Header.svelte'
+	import Footer from '$lib/Footer.svelte'
 </script>
 
 <div id="home" />
