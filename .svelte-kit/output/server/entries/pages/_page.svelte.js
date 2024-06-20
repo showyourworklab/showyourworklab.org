@@ -1,21 +1,364 @@
-import { c as create_ssr_component, d as add_attribute, e as escape, v as validate_component } from "../../chunks/ssr.js";
-import { G as GITHUB, E as EMAIL } from "../../chunks/constants.js";
+import { c as create_ssr_component, v as validate_component, h as compute_rest_props, b as each, m as missing_component, e as escape, g as getContext, d as add_attribute, i as createEventDispatcher, a as setContext } from "../../chunks/ssr.js";
+import { P as PEOPLE, E as EMAIL } from "../../chunks/constants.js";
+import { Slugger, Lexer } from "marked";
+const Journalism = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  return `<section id="journalism" data-svelte-h="svelte-1yfykwl"><div class="cols"><div class="col image"><img src="images/photos/hero5.jpg" alt=""></div> <div class="col text"><div class="inner"> <h3>Journalism</h3> <p>Vivamus scelerisque arcu mi, non facilisis ex venenatis in. Morbi laoreet, risus sit amet elementum ultricies, odio enim dignissim arcu, ut pharetra tellus neque vel massa. Morbi ultricies eros ac enim mattis vehicula. Sed eu dolor quis tellus faucibus ullamcorper.</p> <p>Cras laoreet purus vel neque tempus tincidunt. Nulla eget eros in lectus sodales accumsan. Nulla scelerisque, dui ut pellentesque venenatis, est mi tempus nisl, sed gravida elit odio eu libero. Nam eu libero odio. In id elementum nisi. Nam et enim et leo finibus fermentum eget et augue. Curabitur semper volutpat magna in posuere. Etiam tincidunt ipsum vel erat placerat sodales eget eu velit.</p></div></div></div> </section>`;
+});
+const HumanRights = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  return `<section id="human-rights" data-svelte-h="svelte-h7awwy"><div class="cols cols-reverse"><div class="col image"><img src="images/photos/hero7.jpg" alt=""></div> <div class="col text"><div class="inner"> <h3>Human Rights</h3> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vitae odio et nibh viverra consectetur. Quisque sagittis sollicitudin erat, quis sagittis nulla sodales sit amet. Sed aliquet suscipit orci quis egestas. In aliquam tempus nisl nec ultrices. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed accumsan aliquam augue, eu sagittis sapien vulputate sit amet. Nulla eleifend elit vel quam aliquet sodales.</p> <p>Mauris ac viverra massa. Fusce vel magna nibh. Donec lorem ipsum, aliquam in ligula ut, facilisis pellentesque justo.</p> <p>Sed aliquet ornare ligula sed posuere. Nulla ut scelerisque augue, at sodales leo. Etiam eu arcu id purus sollicitudin facilisis vel at ex. Maecenas commodo placerat urna at viverra. Mauris tempus lectus elit, vel luctus lectus malesuada non.</p></div></div></div> </section>`;
+});
 const About = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  return `<section id="about" data-svelte-h="svelte-hu3y0"><div class="inner"><h2>What we do</h2> <p>We promote and produce trust-based image making for journalism and human rights.</p> <p>In a media landscape where the images we see online are becoming increasingly harder to trust and understand, our intiative promotes methods of building trust between journalists and organizations with the public.</p> <p>We support efforts to TKTK, including the technical standards developed by the <a href="https://c2pa.org/" target="_blank">Coalition for Content Provenance and Authenticty (C2PA)</a> for &quot;certifying the source and history (or provenance) of media content.&quot;</p></div></section>`;
+  return `<section id="about"><div class="inner" data-svelte-h="svelte-1yf22cw"><div class="overline">About</div> <h2>What we do</h2> <p>Show Your Work is an initiative that advocates for a new standard for how we publish and understand images online. Founded by visual journalist Nora Savosnick and creative technologist Corey Tegeler, Show Your Work focuses its work within journalism and advocacy relating to human rights. We help prove that an image is real, rather than identifying what’s fake.</p> <p>How do we achieve this? We use cameras equipped with C2PA technology to capture photos, specifically regarding critical topics, where it&#39;s needed most. These cameras embed secure, encrypted metadata into each digital image at the point of capture. This data acts as a digital signature, verifying where, when, and how each photo was taken, ensuring its integrity from the moment it&#39;s captured.</p></div> ${validate_component(Journalism, "Journalism").$$render($$result, {}, {}, {})} ${validate_component(HumanRights, "HumanRights").$$render($$result, {}, {}, {})}</section>`;
+});
+function supressWarnings() {
+  const origWarn = console.warn;
+  console.warn = (message) => {
+    if (message.includes("unknown prop"))
+      return;
+    if (message.includes("unexpected slot"))
+      return;
+    origWarn(message);
+  };
+}
+const Parser = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let $$restProps = compute_rest_props($$props, ["type", "tokens", "header", "rows", "ordered", "renderers"]);
+  let { type = void 0 } = $$props;
+  let { tokens = void 0 } = $$props;
+  let { header = void 0 } = $$props;
+  let { rows = void 0 } = $$props;
+  let { ordered = false } = $$props;
+  let { renderers } = $$props;
+  supressWarnings();
+  if ($$props.type === void 0 && $$bindings.type && type !== void 0)
+    $$bindings.type(type);
+  if ($$props.tokens === void 0 && $$bindings.tokens && tokens !== void 0)
+    $$bindings.tokens(tokens);
+  if ($$props.header === void 0 && $$bindings.header && header !== void 0)
+    $$bindings.header(header);
+  if ($$props.rows === void 0 && $$bindings.rows && rows !== void 0)
+    $$bindings.rows(rows);
+  if ($$props.ordered === void 0 && $$bindings.ordered && ordered !== void 0)
+    $$bindings.ordered(ordered);
+  if ($$props.renderers === void 0 && $$bindings.renderers && renderers !== void 0)
+    $$bindings.renderers(renderers);
+  return `${!type ? `${each(tokens, (token) => {
+    return `${validate_component(Parser, "svelte:self").$$render($$result, Object.assign({}, token, { renderers }), {}, {})}`;
+  })}` : `${renderers[type] ? `${type === "table" ? `${validate_component(renderers.table || missing_component, "svelte:component").$$render($$result, {}, {}, {
+    default: () => {
+      return `${validate_component(renderers.tablehead || missing_component, "svelte:component").$$render($$result, {}, {}, {
+        default: () => {
+          return `${validate_component(renderers.tablerow || missing_component, "svelte:component").$$render($$result, {}, {}, {
+            default: () => {
+              return `${each(header, (headerItem, i) => {
+                return `${validate_component(renderers.tablecell || missing_component, "svelte:component").$$render(
+                  $$result,
+                  {
+                    header: true,
+                    align: $$restProps.align[i] || "center"
+                  },
+                  {},
+                  {
+                    default: () => {
+                      return `${validate_component(Parser, "svelte:self").$$render($$result, { tokens: headerItem.tokens, renderers }, {}, {})} `;
+                    }
+                  }
+                )}`;
+              })}`;
+            }
+          })}`;
+        }
+      })} ${validate_component(renderers.tablebody || missing_component, "svelte:component").$$render($$result, {}, {}, {
+        default: () => {
+          return `${each(rows, (row) => {
+            return `${validate_component(renderers.tablerow || missing_component, "svelte:component").$$render($$result, {}, {}, {
+              default: () => {
+                return `${each(row, (cells, i) => {
+                  return `${validate_component(renderers.tablecell || missing_component, "svelte:component").$$render(
+                    $$result,
+                    {
+                      header: false,
+                      align: $$restProps.align[i] || "center"
+                    },
+                    {},
+                    {
+                      default: () => {
+                        return `${validate_component(Parser, "svelte:self").$$render($$result, { tokens: cells.tokens, renderers }, {}, {})} `;
+                      }
+                    }
+                  )}`;
+                })} `;
+              }
+            })}`;
+          })}`;
+        }
+      })}`;
+    }
+  })}` : `${type === "list" ? `${ordered ? `${validate_component(renderers.list || missing_component, "svelte:component").$$render($$result, Object.assign({}, { ordered }, $$restProps), {}, {
+    default: () => {
+      return `${each($$restProps.items, (item) => {
+        return `${validate_component(renderers.orderedlistitem || renderers.listitem || missing_component, "svelte:component").$$render($$result, Object.assign({}, item), {}, {
+          default: () => {
+            return `${validate_component(Parser, "svelte:self").$$render($$result, { tokens: item.tokens, renderers }, {}, {})} `;
+          }
+        })}`;
+      })}`;
+    }
+  })}` : `${validate_component(renderers.list || missing_component, "svelte:component").$$render($$result, Object.assign({}, { ordered }, $$restProps), {}, {
+    default: () => {
+      return `${each($$restProps.items, (item) => {
+        return `${validate_component(renderers.unorderedlistitem || renderers.listitem || missing_component, "svelte:component").$$render($$result, Object.assign({}, item), {}, {
+          default: () => {
+            return `${validate_component(Parser, "svelte:self").$$render($$result, { tokens: item.tokens, renderers }, {}, {})} `;
+          }
+        })}`;
+      })}`;
+    }
+  })}`}` : `${validate_component(renderers[type] || missing_component, "svelte:component").$$render($$result, Object.assign({}, $$restProps), {}, {
+    default: () => {
+      return `${tokens ? `${validate_component(Parser, "svelte:self").$$render($$result, { tokens, renderers }, {}, {})}` : `${escape($$restProps.raw)}`}`;
+    }
+  })}`}`}` : ``}`}`;
+});
+const key = {};
+const Heading = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let id;
+  let { depth } = $$props;
+  let { raw } = $$props;
+  let { text } = $$props;
+  const { slug, getOptions } = getContext(key);
+  const options = getOptions();
+  if ($$props.depth === void 0 && $$bindings.depth && depth !== void 0)
+    $$bindings.depth(depth);
+  if ($$props.raw === void 0 && $$bindings.raw && raw !== void 0)
+    $$bindings.raw(raw);
+  if ($$props.text === void 0 && $$bindings.text && text !== void 0)
+    $$bindings.text(text);
+  id = options.headerIds ? options.headerPrefix + slug(text) : void 0;
+  return `${depth === 1 ? `<h1${add_attribute("id", id, 0)}>${slots.default ? slots.default({}) : ``}</h1>` : `${depth === 2 ? `<h2${add_attribute("id", id, 0)}>${slots.default ? slots.default({}) : ``}</h2>` : `${depth === 3 ? `<h3${add_attribute("id", id, 0)}>${slots.default ? slots.default({}) : ``}</h3>` : `${depth === 4 ? `<h4${add_attribute("id", id, 0)}>${slots.default ? slots.default({}) : ``}</h4>` : `${depth === 5 ? `<h5${add_attribute("id", id, 0)}>${slots.default ? slots.default({}) : ``}</h5>` : `${depth === 6 ? `<h6${add_attribute("id", id, 0)}>${slots.default ? slots.default({}) : ``}</h6>` : `${escape(raw)}`}`}`}`}`}`}`;
+});
+const Paragraph = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  return `<p>${slots.default ? slots.default({}) : ``}</p>`;
+});
+const Text = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let { text } = $$props;
+  let { raw } = $$props;
+  if ($$props.text === void 0 && $$bindings.text && text !== void 0)
+    $$bindings.text(text);
+  if ($$props.raw === void 0 && $$bindings.raw && raw !== void 0)
+    $$bindings.raw(raw);
+  return `${slots.default ? slots.default({}) : ``}`;
+});
+const Image = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let { href = "" } = $$props;
+  let { title = void 0 } = $$props;
+  let { text = "" } = $$props;
+  if ($$props.href === void 0 && $$bindings.href && href !== void 0)
+    $$bindings.href(href);
+  if ($$props.title === void 0 && $$bindings.title && title !== void 0)
+    $$bindings.title(title);
+  if ($$props.text === void 0 && $$bindings.text && text !== void 0)
+    $$bindings.text(text);
+  return `<img${add_attribute("src", href, 0)}${add_attribute("title", title, 0)}${add_attribute("alt", text, 0)}>`;
+});
+const Link = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let { href = "" } = $$props;
+  let { title = void 0 } = $$props;
+  if ($$props.href === void 0 && $$bindings.href && href !== void 0)
+    $$bindings.href(href);
+  if ($$props.title === void 0 && $$bindings.title && title !== void 0)
+    $$bindings.title(title);
+  return `<a${add_attribute("href", href, 0)}${add_attribute("title", title, 0)}>${slots.default ? slots.default({}) : ``}</a>`;
+});
+const Em = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  return `<em>${slots.default ? slots.default({}) : ``}</em>`;
+});
+const Del = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  return `<del>${slots.default ? slots.default({}) : ``}</del>`;
+});
+const Codespan = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let { raw } = $$props;
+  if ($$props.raw === void 0 && $$bindings.raw && raw !== void 0)
+    $$bindings.raw(raw);
+  return `<code>${escape(raw.replace(/`/g, ""))}</code>`;
+});
+const Strong = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  return `<strong>${slots.default ? slots.default({}) : ``}</strong>`;
+});
+const Table = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  return `<table>${slots.default ? slots.default({}) : ``}</table>`;
+});
+const TableHead = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  return `<thead>${slots.default ? slots.default({}) : ``}</thead>`;
+});
+const TableBody = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  return `<tbody>${slots.default ? slots.default({}) : ``}</tbody>`;
+});
+const TableRow = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  return `<tr>${slots.default ? slots.default({}) : ``}</tr>`;
+});
+const TableCell = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let { header } = $$props;
+  let { align } = $$props;
+  if ($$props.header === void 0 && $$bindings.header && header !== void 0)
+    $$bindings.header(header);
+  if ($$props.align === void 0 && $$bindings.align && align !== void 0)
+    $$bindings.align(align);
+  return `${header ? `<th${add_attribute("align", align, 0)}>${slots.default ? slots.default({}) : ``}</th>` : `<td${add_attribute("align", align, 0)}>${slots.default ? slots.default({}) : ``}</td>`}`;
+});
+const List = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let { ordered } = $$props;
+  let { start } = $$props;
+  if ($$props.ordered === void 0 && $$bindings.ordered && ordered !== void 0)
+    $$bindings.ordered(ordered);
+  if ($$props.start === void 0 && $$bindings.start && start !== void 0)
+    $$bindings.start(start);
+  return `${ordered ? `<ol${add_attribute("start", start, 0)}>${slots.default ? slots.default({}) : ``}</ol>` : `<ul>${slots.default ? slots.default({}) : ``}</ul>`}`;
+});
+const ListItem = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  return `<li>${slots.default ? slots.default({}) : ``}</li>`;
+});
+const Hr = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  return `<hr>`;
+});
+const Html = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let { text } = $$props;
+  if ($$props.text === void 0 && $$bindings.text && text !== void 0)
+    $$bindings.text(text);
+  return `<!-- HTML_TAG_START -->${text}<!-- HTML_TAG_END -->`;
+});
+const Blockquote = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  return `<blockquote>${slots.default ? slots.default({}) : ``}</blockquote>`;
+});
+const Code = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let { lang } = $$props;
+  let { text } = $$props;
+  if ($$props.lang === void 0 && $$bindings.lang && lang !== void 0)
+    $$bindings.lang(lang);
+  if ($$props.text === void 0 && $$bindings.text && text !== void 0)
+    $$bindings.text(text);
+  return `<pre${add_attribute("class", lang, 0)}><code>${escape(text)}</code></pre>`;
+});
+const Br = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  return `<br>${slots.default ? slots.default({}) : ``}`;
+});
+const defaultRenderers = {
+  heading: Heading,
+  paragraph: Paragraph,
+  text: Text,
+  image: Image,
+  link: Link,
+  em: Em,
+  strong: Strong,
+  codespan: Codespan,
+  del: Del,
+  table: Table,
+  tablehead: TableHead,
+  tablebody: TableBody,
+  tablerow: TableRow,
+  tablecell: TableCell,
+  list: List,
+  orderedlistitem: null,
+  unorderedlistitem: null,
+  listitem: ListItem,
+  hr: Hr,
+  html: Html,
+  blockquote: Blockquote,
+  code: Code,
+  br: Br
+};
+const defaultOptions = {
+  baseUrl: null,
+  breaks: false,
+  gfm: true,
+  headerIds: true,
+  headerPrefix: "",
+  highlight: null,
+  langPrefix: "language-",
+  mangle: true,
+  pedantic: false,
+  renderer: null,
+  sanitize: false,
+  sanitizer: null,
+  silent: false,
+  smartLists: false,
+  smartypants: false,
+  tokenizer: null,
+  xhtml: false
+};
+const SvelteMarkdown = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let preprocessed;
+  let slugger;
+  let combinedOptions;
+  let combinedRenderers;
+  let { source = [] } = $$props;
+  let { renderers = {} } = $$props;
+  let { options = {} } = $$props;
+  let { isInline = false } = $$props;
+  const dispatch = createEventDispatcher();
+  let tokens;
+  let lexer;
+  setContext(key, {
+    slug: (val) => slugger ? slugger.slug(val) : "",
+    getOptions: () => combinedOptions
+  });
+  if ($$props.source === void 0 && $$bindings.source && source !== void 0)
+    $$bindings.source(source);
+  if ($$props.renderers === void 0 && $$bindings.renderers && renderers !== void 0)
+    $$bindings.renderers(renderers);
+  if ($$props.options === void 0 && $$bindings.options && options !== void 0)
+    $$bindings.options(options);
+  if ($$props.isInline === void 0 && $$bindings.isInline && isInline !== void 0)
+    $$bindings.isInline(isInline);
+  preprocessed = Array.isArray(source);
+  slugger = source ? new Slugger() : void 0;
+  combinedOptions = { ...defaultOptions, ...options };
+  {
+    if (preprocessed) {
+      tokens = source;
+    } else {
+      lexer = new Lexer(combinedOptions);
+      tokens = isInline ? lexer.inlineTokens(source) : lexer.lex(source);
+      dispatch("parsed", { tokens });
+    }
+  }
+  combinedRenderers = { ...defaultRenderers, ...renderers };
+  return `${validate_component(Parser, "Parser").$$render($$result, { tokens, renderers: combinedRenderers }, {}, {})}`;
+});
+const MarkdownLink = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let { href = "" } = $$props;
+  if ($$props.href === void 0 && $$bindings.href && href !== void 0)
+    $$bindings.href(href);
+  return `<a${add_attribute("href", href, 0)} target="_blank">${slots.default ? slots.default({}) : ``} </a>`;
+});
+const Markdown = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  let { content } = $$props;
+  if ($$props.content === void 0 && $$bindings.content && content !== void 0)
+    $$bindings.content(content);
+  return `${validate_component(SvelteMarkdown, "SvelteMarkdown").$$render(
+    $$result,
+    {
+      source: content,
+      renderers: { link: MarkdownLink }
+    },
+    {},
+    {}
+  )}`;
 });
 const css = {
-  code: "ul.svelte-t70rv5{padding:0;margin:0;display:flex;flex-direction:row;list-style-type:none}li.svelte-t70rv5{margin-right:0.25em}",
-  map: `{"version":3,"file":"Code.svelte","sources":["Code.svelte"],"sourcesContent":["<script>\\n\\timport { GITHUB } from '$src/constants'\\n<\/script>\\n\\n<section id=\\"code\\">\\n\\t<div class=\\"inner\\">\\n\\t\\t<h2>\\n\\t\\t\\tOpen source web tools\\n\\t\\t</h2>\\n\\t\\t<p>\\n\\t\\t\\tWe've created the open source JavaScript library Embed to easily embed C2PA-compliant images in a UI that exposes the image's provenance to its viewer.\\n\\t\\t</p>\\n\\t\\t<p>\\n\\t\\t\\tNeed assistance? We'll answer and questions you have, show you a demo, and help get Embed up and running on your website.\\n\\t\\t</p>\\n\\t\\t<h3>\\n\\t\\t\\tUse our tools\\n\\t\\t</h3>\\n\\t\\t<p>\\n\\t\\t\\tEmbed is available as both a Svelte and React component, to quickly add into your website without disrupting your newsroom's digital workflow.\\n\\t\\t</p>\\n\\t\\t<ul>\\n\\t\\t\\t<li>\\n\\t\\t\\t\\t<a href=\\"{GITHUB}\\" target=\\"_blank\\">Get Embed for Svelte</a>\\n\\t\\t\\t</li>\\n\\t\\t\\t<li>\\n\\t\\t\\t\\t<a href=\\"{GITHUB}\\" target=\\"_blank\\">Get Embed for React</a>\\n\\t\\t\\t</li>\\n\\t\\t</ul>\\n\\t\\t<h3>\\n\\t\\t\\tContribute\\n\\t\\t</h3>\\n\\t\\t<p>Our tools are built and shared to be used by all, for free. They are also open to be improved by your contributions. Get involved on our <a href=\\"{GITHUB}\\" target=\\"_blank\\">GitHub</a>.</p>\\n\\t</div>\\n</section>\\n\\n<style>\\n\\tul {\\n\\t\\tpadding: 0;\\n\\t\\tmargin: 0;\\n\\t\\tdisplay: flex;\\n\\t\\tflex-direction: row;\\n\\t\\tlist-style-type: none;\\n\\t}\\n\\tli {\\n\\t\\tmargin-right: 0.25em;\\n\\t}\\n</style>"],"names":[],"mappings":"AAqCC,gBAAG,CACF,OAAO,CAAE,CAAC,CACV,MAAM,CAAE,CAAC,CACT,OAAO,CAAE,IAAI,CACb,cAAc,CAAE,GAAG,CACnB,eAAe,CAAE,IAClB,CACA,gBAAG,CACF,YAAY,CAAE,MACf"}`
+  code: "ul.svelte-8zcw7c{list-style:none;padding-left:0;margin:0 calc(var(--space-2) * -1);max-width:unset}li.svelte-8zcw7c{padding:0 var(--space-2) var(--space-10) var(--space-2);line-height:1.3}img.svelte-8zcw7c{width:100%}.label.svelte-8zcw7c{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between}.name.svelte-8zcw7c{font-weight:var(--font-weight-bold);width:160px}.role.svelte-8zcw7c{font-size:var(--text-2);white-space:nowrap;opacity:0.5}.website.svelte-8zcw7c{font-size:var(--text-1)}.bio.svelte-8zcw7c{margin-top:var(--space-2);font-size:var(--text-2)}",
+  map: `{"version":3,"file":"Team.svelte","sources":["Team.svelte"],"sourcesContent":["<script>\\n\\timport { PEOPLE } from '$src/constants'\\n\\timport Markdown from '$lib/common/Markdown.svelte'\\n<\/script>\\n\\n<section id=\\"team\\">\\n\\t<div class=\\"inner\\">\\n\\t\\t<div class=\\"overline\\">Team</div>\\n\\t\\t<h2>\\n\\t\\t\\tWho we are\\n\\t\\t</h2>\\n\\n\\t\\t<p>\\n\\t\\t\\t\\n\\t\\t</p>\\n\\n\\t\\t<ul class=\\"cols\\">\\n\\t\\t\\t{#each PEOPLE as person}\\n\\t\\t\\t\\t<li class=\\"col\\">\\n\\t\\t\\t\\t\\t<img\\n\\t\\t\\t\\t\\t\\tsrc=\\"/images/photos/syw_{person.slug}.jpg\\"\\n\\t\\t\\t\\t\\t\\talt=\\"Portrait of {person.name}\\"\\n\\t\\t\\t\\t\\t/>\\n\\t\\t\\t\\t\\t<div class=\\"label\\">\\n\\t\\t\\t\\t\\t\\t<div class=\\"name\\">\\n\\t\\t\\t\\t\\t\\t\\t{person.name}\\n\\t\\t\\t\\t\\t\\t</div>\\n\\t\\t\\t\\t\\t\\t<div class=\\"website\\">\\n\\t\\t\\t\\t\\t\\t\\t<a\\n\\t\\t\\t\\t\\t\\t\\t\\thref=\\"{person.website}\\"\\n\\t\\t\\t\\t\\t\\t\\t\\ttarget=\\"_blank\\"\\n\\t\\t\\t\\t\\t\\t\\t\\tclass=\\"button\\"\\n\\t\\t\\t\\t\\t\\t\\t>\\n\\t\\t\\t\\t\\t\\t\\t\\t{person.website.replace('https://', '')}\\n\\t\\t\\t\\t\\t\\t\\t\\t<!-- Website -->\\n\\t\\t\\t\\t\\t\\t\\t</a>\\n\\t\\t\\t\\t\\t\\t</div>\\n\\t\\t\\t\\t\\t</div>\\n\\t\\t\\t\\t\\t<div class=\\"role\\">\\n\\t\\t\\t\\t\\t\\t{person.role}\\n\\t\\t\\t\\t\\t</div>\\n\\t\\t\\t\\t\\t<div class=\\"bio\\">\\n\\t\\t\\t\\t\\t\\t<Markdown\\n\\t\\t\\t\\t\\t\\t\\tcontent={person.bio}\\n\\t\\t\\t\\t\\t\\t/>\\n\\t\\t\\t\\t\\t</div>\\n\\t\\t\\t\\t</li>\\n\\t\\t\\t{/each}\\n\\t\\t</ul>\\n\\t</div>\\n</section>\\n\\n<style>\\n\\tul {\\n\\t\\tlist-style: none;\\n\\t\\tpadding-left: 0;\\n\\t\\tmargin: 0 calc(var(--space-2) * -1);\\n\\t\\tmax-width: unset;\\n\\t}\\n\\tli {\\n/*\\t\\tmax-width: 400px;*/\\n\\t\\tpadding: 0 var(--space-2) var(--space-10) var(--space-2);\\n\\t\\tline-height: 1.3;\\n\\t}\\n\\timg {\\n\\t\\twidth: 100%;\\n\\t}\\n\\t.label {\\n\\t\\tdisplay: flex;\\n\\t\\tflex-wrap: wrap;\\n\\t\\talign-items: center;\\n\\t\\tjustify-content: space-between;\\n\\t}\\n\\t.name {\\n\\t\\tfont-weight: var(--font-weight-bold);\\n\\t\\twidth: 160px;\\n\\t}\\n\\t.role {\\n\\t\\tfont-size: var(--text-2);\\n\\t\\twhite-space: nowrap;\\n\\t\\topacity: 0.5;\\n\\t}\\n\\t.website {\\n\\t\\tfont-size: var(--text-1);\\n\\t}\\n\\t.bio {\\n\\t\\tmargin-top: var(--space-2);\\n\\t\\tfont-size: var(--text-2);\\n\\t}\\n</style>"],"names":[],"mappings":"AAqDC,gBAAG,CACF,UAAU,CAAE,IAAI,CAChB,YAAY,CAAE,CAAC,CACf,MAAM,CAAE,CAAC,CAAC,KAAK,IAAI,SAAS,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CACnC,SAAS,CAAE,KACZ,CACA,gBAAG,CAEF,OAAO,CAAE,CAAC,CAAC,IAAI,SAAS,CAAC,CAAC,IAAI,UAAU,CAAC,CAAC,IAAI,SAAS,CAAC,CACxD,WAAW,CAAE,GACd,CACA,iBAAI,CACH,KAAK,CAAE,IACR,CACA,oBAAO,CACN,OAAO,CAAE,IAAI,CACb,SAAS,CAAE,IAAI,CACf,WAAW,CAAE,MAAM,CACnB,eAAe,CAAE,aAClB,CACA,mBAAM,CACL,WAAW,CAAE,IAAI,kBAAkB,CAAC,CACpC,KAAK,CAAE,KACR,CACA,mBAAM,CACL,SAAS,CAAE,IAAI,QAAQ,CAAC,CACxB,WAAW,CAAE,MAAM,CACnB,OAAO,CAAE,GACV,CACA,sBAAS,CACR,SAAS,CAAE,IAAI,QAAQ,CACxB,CACA,kBAAK,CACJ,UAAU,CAAE,IAAI,SAAS,CAAC,CAC1B,SAAS,CAAE,IAAI,QAAQ,CACxB"}`
 };
-const Code = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+const Team = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   $$result.css.add(css);
-  return `<section id="code" data-svelte-h="svelte-544l54"><div class="inner"><h2>Open source web tools</h2> <p>We&#39;ve created the open source JavaScript library Embed to easily embed C2PA-compliant images in a UI that exposes the image&#39;s provenance to its viewer.</p> <p>Need assistance? We&#39;ll answer and questions you have, show you a demo, and help get Embed up and running on your website.</p> <h3>Use our tools</h3> <p>Embed is available as both a Svelte and React component, to quickly add into your website without disrupting your newsroom&#39;s digital workflow.</p> <ul class="svelte-t70rv5"><li class="svelte-t70rv5"><a${add_attribute("href", GITHUB)} target="_blank">Get Embed for Svelte</a></li> <li class="svelte-t70rv5"><a${add_attribute("href", GITHUB)} target="_blank">Get Embed for React</a></li></ul> <h3>Contribute</h3> <p>Our tools are built and shared to be used by all, for free. They are also open to be improved by your contributions. Get involved on our <a${add_attribute("href", GITHUB)} target="_blank">GitHub</a>.</p></div> </section>`;
+  return `<section id="team"><div class="inner"><div class="overline" data-svelte-h="svelte-v8u946">Team</div> <h2 data-svelte-h="svelte-10hoc7z">Who we are</h2> <p data-svelte-h="svelte-ke771t"></p> <ul class="cols svelte-8zcw7c">${each(PEOPLE, (person) => {
+    return `<li class="col svelte-8zcw7c"><img src="${"/images/photos/syw_" + escape(person.slug, true) + ".jpg"}" alt="${"Portrait of " + escape(person.name, true)}" class="svelte-8zcw7c"> <div class="label svelte-8zcw7c"><div class="name svelte-8zcw7c">${escape(person.name)}</div> <div class="website svelte-8zcw7c"><a${add_attribute("href", person.website, 0)} target="_blank" class="button">${escape(person.website.replace("https://", ""))} </a> </div></div> <div class="role svelte-8zcw7c">${escape(person.role)}</div> <div class="bio svelte-8zcw7c">${validate_component(Markdown, "Markdown").$$render($$result, { content: person.bio }, {}, {})}</div> </li>`;
+  })}</ul></div> </section>`;
 });
 const Contact = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  return `<section id="about"><div class="inner"><h2 data-svelte-h="svelte-11x5sal">Get in touch</h2> <p>Write to us at <a href="${"mailto:" + escape(EMAIL, true)}">${escape(EMAIL)}</a> if you would like to:</p> <ul data-svelte-h="svelte-kzm7kc"><li>Collaborate or a story with us;</li> <li>Use our technology on your website;</li> <li>Learn more about our mission; or</li> <li>Anything else.</li></ul> <p data-svelte-h="svelte-1qoeo5h">We look forward to hearing from you.</p></div></section>`;
+  return `<section id="contact"><div class="inner"><div class="overline" data-svelte-h="svelte-xz0qzd">Contact</div> <h2 data-svelte-h="svelte-11x5sal">Get in touch</h2> <p>Write to us at <a href="${"mailto:" + escape(EMAIL, true)}" class="button">${escape(EMAIL)}</a> if you would like to:</p> <ul data-svelte-h="svelte-kzm7kc"><li>Collaborate or a story with us;</li> <li>Use our technology on your website;</li> <li>Learn more about our mission; or</li> <li>Anything else.</li></ul> <p data-svelte-h="svelte-1qoeo5h">We look forward to hearing from you.</p></div></section>`;
 });
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  return `${validate_component(About, "About").$$render($$result, {}, {}, {})} ${validate_component(Code, "Code").$$render($$result, {}, {}, {})} ${validate_component(Contact, "Contact").$$render($$result, {}, {}, {})}`;
+  return `${validate_component(About, "About").$$render($$result, {}, {}, {})} ${validate_component(Team, "Team").$$render($$result, {}, {}, {})} ${validate_component(Contact, "Contact").$$render($$result, {}, {}, {})}`;
 });
 export {
   Page as default
