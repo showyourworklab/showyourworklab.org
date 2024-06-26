@@ -6,7 +6,15 @@
 	<div class="inner">
 		<div>
 			<a href="#home">
-				{TITLE}
+				<span
+					class="sr"
+				>
+					{TITLE}
+				</span>
+				<img
+					src="/images/logo-light.svg"
+					alt="Logo for Show Your Work Lab"
+				/>
 			</a>
 		</div>
 		<div class="cols">
@@ -16,7 +24,7 @@
 						{#each SECTIONS as section}
 							<li>
 								<a href="#{section.slug}">
-									{section.label}
+									{section.title}
 								</a>
 							</li>
 						{/each}
@@ -42,9 +50,8 @@
 
 <style>
 	footer {
-		padding: 2rem;
 		display: flex;
-		background-color: var(--color-primary);
+		background-color: var(--color-primary-dark);
 		color: var(--color-secondary);
 	}
 	a {
@@ -56,6 +63,14 @@
 	a[href="#home"] {
 		text-decoration: none;
 	}
+	a[href="#home"] img {
+		width: 10rem;
+		height: auto;
+	}
+	.inner {
+		padding: 2rem;
+		max-width: unset;
+	}
 	.inner > div:first-child {
 		margin-bottom: 1rem;
 		padding-bottom: 1rem;
@@ -65,7 +80,11 @@
 		margin: 0;
 		padding: 0;
 		list-style: none;
+		max-width: unset;
 		font-size: var(--text-2);
+	}
+	li {
+		padding-left: 0;
 	}
 	:not(nav) > ul {
 		text-align: right;

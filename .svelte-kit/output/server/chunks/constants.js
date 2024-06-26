@@ -1,17 +1,29 @@
 const TITLE = "Show Your Work Lab";
+const ABOUT = {
+  slug: "about",
+  overline: "About",
+  title: "What We Do"
+};
+const VALUES = {
+  slug: "values",
+  overline: "Values",
+  title: "Our Values"
+};
+const TEAM = {
+  slug: "team",
+  overline: "Team",
+  title: "Who We Are"
+};
+const CONTACT = {
+  slug: "contact",
+  overline: "Contact",
+  title: "Get in Touch"
+};
 const SECTIONS = [
-  {
-    slug: "about",
-    label: "About"
-  },
-  {
-    slug: "code",
-    label: "Code"
-  },
-  {
-    slug: "contact",
-    label: "Contact"
-  }
+  ABOUT,
+  VALUES,
+  TEAM,
+  CONTACT
 ];
 const GITHUB = "https://github.com/showyourworklab";
 const EMAIL = "info@showyourworklab.org";
@@ -32,9 +44,13 @@ const PEOPLE = [
   }
 ];
 export {
+  ABOUT as A,
+  CONTACT as C,
   EMAIL as E,
   GITHUB as G,
   PEOPLE as P,
   SECTIONS as S,
-  TITLE as T
+  TITLE as T,
+  VALUES as V,
+  TEAM as a
 };

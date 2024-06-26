@@ -30,6 +30,9 @@ function compute_rest_props(props, keys) {
       rest[k] = props[k];
   return rest;
 }
+function null_to_empty(value) {
+  return value == null ? "" : value;
+}
 function custom_event(type, detail, { bubbles = false, cancelable = false } = {}) {
   return new CustomEvent(type, { detail, bubbles, cancelable });
 }
@@ -153,14 +156,15 @@ function add_attribute(name, value, boolean) {
 }
 export {
   setContext as a,
-  each as b,
+  null_to_empty as b,
   create_ssr_component as c,
   add_attribute as d,
   escape as e,
-  subscribe as f,
+  each as f,
   getContext as g,
-  compute_rest_props as h,
-  createEventDispatcher as i,
+  subscribe as h,
+  compute_rest_props as i,
+  createEventDispatcher as j,
   missing_component as m,
   noop as n,
   safe_not_equal as s,
