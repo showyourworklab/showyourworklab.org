@@ -1,12 +1,12 @@
 <script>
 	import { TITLE, SECTIONS } from '$src/constants'
 	export let header = ''
-	export let fill = ''
+	export let belowFold = false
 </script>
 
 <header
 	bind:this={header}
-	class="{fill ? "fill" : ""}"
+	class="{belowFold ? "below-fold" : ""}"
 >
 	<a
 		href="#home"
@@ -63,7 +63,7 @@
 		color: var(--color-secondary);
 		transition: background-color 50ms ease;
 	}
-	header.fill {
+	header.below-fold {
 		background-color: var(--color-primary-dark);
 	}
 	#title {
@@ -82,7 +82,7 @@
 		width: auto;
 		display: none;
 	}
-	header.fill img#logo-lg {
+	header.below-fold img#logo-lg {
 		display: block;
 	}
 	img#logo-sm {
@@ -90,7 +90,7 @@
 		width: auto;
 		display: block;
 	}
-	header.fill img#logo-sm {
+	header.below-fold img#logo-sm {
 		display: none;
 	}
 	nav {
