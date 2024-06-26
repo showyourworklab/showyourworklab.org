@@ -9,13 +9,13 @@
 	let main
 	let header
 	let y = 0
-	let fillHeader = false
-	$: onScroll(y);
+	let belowFold = false
+	$: onScroll(y)
 
 	const onScroll = () => {
 		const mainTop = main ? main?.getBoundingClientRect()?.top : null
 		const headerHeight = header ? header?.getBoundingClientRect()?.height : null
-		fillHeader = mainTop < headerHeight + 10
+		belowFold = mainTop && headerHeight && mainTop < headerHeight + 10
 	}
 </script>
 
@@ -23,7 +23,7 @@
 <div id="home" />
 <Header
 	bind:header
-	fill={fillHeader}
+	belowFold={belowFold}
 />
 <Hero />
 <main
