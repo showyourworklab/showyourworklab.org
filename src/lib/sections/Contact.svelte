@@ -1,12 +1,14 @@
 <script>
-	import { EMAIL } from '$src/constants'
+	import { CONTACT, EMAIL } from '$src/constants'
 </script>
 
 <section id="contact">
 	<div class="inner">
-		<div class="overline">Contact</div>
+		<!-- <div class="overline">
+			{CONTACT.overline}
+		</div> -->
 		<h2>
-			Get in touch
+			{CONTACT.title}
 		</h2>
 		<p>
 			Write to us at <a href="mailto:{EMAIL}" class="button">{EMAIL}</a> if you would like to:

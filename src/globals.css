@@ -1,20 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montagu+Slab:opsz,wght@16..144,100..700&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100..800&display=swap');*/
+/*@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');*/
+/*@import url('https://fonts.googleapis.com/css2?family=Montagu+Slab:opsz,wght@16..144,100..700&display=swap');*/
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap');*/
 @import url('https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&display=swap');*/
+/*@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');*/
 
 :root {
 	--font-body: "Instrument Sans", arial, sans-serif;
     /*--font-display: "Bricolage Grotesque", arial, sans-serif;*/
     --font-display: "Rethink Sans", arial, sans-serif;
-	--font-weight-normal: 400;
-	--font-weight-bold: 700;
+	--font-weight-body-normal: 400;
+	--font-weight-body-bold: 700;
+	--font-weight-display-normal: 500;
+	--font-weight-display-bold: 800;
 
-	--text-base: 18px;
+	--text-base: 16px;
 	--text-1: 10px;
 	--text-2: 14px;
 	--text-3: 18px;
@@ -22,9 +24,17 @@
 	--text-5: 55px;
 	--text-6: 70px;
 
-	--color-primary: #07003c;
+	/*--color-primary: #07003c;
 	--color-primary-light: #12009d;
 	--color-primary-dark: #000000;
+
+	--color-secondary: #EEf3F9;
+	--color-secondary-light: #ECEFFD;
+	--color-secondary-dark: #E1EAF4;*/
+
+	--color-primary: #183377;
+	--color-primary-light: #808A9D;
+	--color-primary-dark: #0F2143;
 
 	--color-secondary: #EEf3F9;
 	--color-secondary-light: #ECEFFD;
@@ -46,5 +56,5 @@
 	--space-10: 40px;
 
 	--width-inner: 750px;
-	--width-paragraph: 32em;
+	--width-paragraph: 52ch;
 }

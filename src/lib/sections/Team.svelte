@@ -1,13 +1,16 @@
 <script>
-	import { PEOPLE } from '$src/constants'
+	import { TEAM, PEOPLE } from '$src/constants'
+	import Figure from '$lib/common/Figure.svelte'
 	import Markdown from '$lib/common/Markdown.svelte'
 </script>
 
 <section id="team">
 	<div class="inner">
-		<div class="overline">Team</div>
+		<!-- <div class="overline">
+			{TEAM.overline}
+		</div> -->
 		<h2>
-			Who we are
+			{TEAM.title}
 		</h2>
 
 		<p>
@@ -17,9 +20,10 @@
 		<ul class="cols">
 			{#each PEOPLE as person}
 				<li class="col">
-					<img
+					<Figure
 						src="/images/photos/syw_{person.slug}.jpg"
 						alt="Portrait of {person.name}"
+						caption="Photo by Roshni Khatri"
 					/>
 					<div class="label">
 						<div class="name">
@@ -72,7 +76,7 @@
 		justify-content: space-between;
 	}
 	.name {
-		font-weight: var(--font-weight-bold);
+		font-weight: var(--font-weight-body-bold);
 		width: 160px;
 	}
 	.role {
