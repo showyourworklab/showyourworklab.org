@@ -74,7 +74,7 @@
 	.inner > div:first-child {
 		margin-bottom: 1rem;
 		padding-bottom: 1rem;
-		border-bottom: 1px currentColor dotted;
+		/*border-bottom: 1px currentColor dotted;*/
 	}
 	ul {
 		margin: 0;

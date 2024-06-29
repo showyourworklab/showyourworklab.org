@@ -1,60 +1,26 @@
 <script>
-	import { GITHUB } from '$src/constants'
+	import { CODE } from '$src/constants'
 </script>
 
 <section id="code">
 	<div class="inner">
-		<div class="overline">Code</div>
+		<!-- <div class="overline">
+			{CODE.overline}
+		</div> -->
 		<h2>
-			Open source web tools
+			{CODE.title}
 		</h2>
+		<p class="subtitle">
+			We’re developing an interactive image embedding module to publish your C2PA-compliant images along with an interface that lets users explore the image’s provenance.
+		</p>
+		<!-- <p>
+
+		</p> -->
 		<p>
-			We've created the open source JavaScript library Embed to easily embed C2PA-compliant images in a UI that exposes the image's provenance to its viewer.
+			The tool is being developed to easily integrate into your newsrooms workflow. Currently in development for <code>React</code> and <code>Svelte</code>.
 		</p>
 		<p>
-			Need assistance? We'll answer and questions you have, show you a demo, and help get Embed up and running on your website.
+			Contact us at <a href="mailto:info@showyourworklab.org">info@showyourworklab.org</a> to learn more and view a demo.
 		</p>
-		<h3>
-			Use our tools
-		</h3>
-		<p>
-			Embed is available as both a Svelte and React component, to quickly add into your website without disrupting your newsroom's digital workflow.
-		</p>
-		<ul>
-			<li>
-				<a
-					href="{GITHUB}"
-					target="_blank"
-					class="button"
-				>
-					Get Embed for Svelte
-				</a>
-			</li>
-			<li>
-				<a
-					href="{GITHUB}"
-					target="_blank"
-					class="button"
-				>
-					Get Embed for React
-				</a>
-			</li>
-		</ul>
-		<h3>
-			Contribute
-		</h3>
-		<p>Our tools are built and shared to be used by all, for free. They are also open to be improved by your contributions. Get involved on our <a href="{GITHUB}" target="_blank" class="button">GitHub</a>.</p>
 	</div>
 </section>
-
-<style>
-	ul {
-		display: flex;
-		flex-direction: row;
-		list-style-type: none;
-		padding-left: 0;
-	}
-	li {
-		margin-right: 0.25em;
-	}
-</style>

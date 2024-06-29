@@ -5,6 +5,11 @@ export const ABOUT = {
 	overline: 'About',
 	title: 'What We Do'
 }
+export const CODE = {
+	slug: 'code',
+	overline: 'Code',
+	title: 'Web Tool'
+}
 export const VALUES = {
 	slug: 'values',
 	overline: 'Values',
@@ -22,6 +27,7 @@ export const CONTACT = {
 }
 export const SECTIONS = [
 	ABOUT,
+	CODE,
 	VALUES,
 	TEAM,
 	CONTACT
