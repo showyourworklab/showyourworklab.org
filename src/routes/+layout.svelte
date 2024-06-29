@@ -15,7 +15,11 @@
 	const onScroll = () => {
 		const mainTop = main ? main?.getBoundingClientRect()?.top : null
 		const headerHeight = header ? header?.getBoundingClientRect()?.height : null
-		belowFold = mainTop && headerHeight && mainTop < headerHeight + 10
+		belowFold = Boolean(
+			mainTop !== null
+			&& headerHeight !== null
+			&& (mainTop < headerHeight + 10)
+		)
 	}
 </script>
 

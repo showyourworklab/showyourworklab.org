@@ -51,7 +51,7 @@
 <style>
 	footer {
 		display: flex;
-		background-color: var(--color-primary-dark);
+		background-color: var(--color-primary);
 		color: var(--color-secondary);
 	}
 	a {
@@ -85,6 +85,9 @@
 	}
 	li {
 		padding-left: 0;
+	}
+	li a {
+		text-transform: lowercase;
 	}
 	:not(nav) > ul {
 		text-align: right;

@@ -6,7 +6,7 @@
 	<div class="cols cols-reverse">
 		<div class="col image">
 			<Figure
-				src="images/photos/photo_9.jpg"
+				src="photos/photo_9.jpg"
 				alt=""
 				caption="Photo by Nora Savosnick"
 			/>
