@@ -12,6 +12,9 @@
 		<h2>
 			{ABOUT.title}
 		</h2>
+		<p class="subtitle">
+			We create impactful <u>photojournalism</u>, image-driven <u>human rights campaigns</u>, and innovating <u>digital publishing tools</u>.
+		</p>
 		<p>
 			The images we see online are increasingly difficult to trust and understand. Information about where, when, and how an image is made is often minimal, unverified, nonexistent, or intentionally misleading. The rise of synthetic AI images further amplifies this issue, sowing distrust and confusion in what we see online.
 		</p>
@@ -25,3 +28,7 @@
 	<Journalism />
 	<HumanRights />
 </section>
+
+<style>
+	
+</style>

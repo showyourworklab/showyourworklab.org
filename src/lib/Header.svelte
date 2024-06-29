@@ -109,9 +109,19 @@
 		margin-right: 0.25em;
 		white-space: nowrap;
 	}
-	li a {
+	li a.button {
+		color: var(--color-secondary);
 		text-transform: lowercase;
 		font-family: var(--font-display);
 		font-weight: var(--font-weight-display-normal);
+		text-decoration-color: var(--color-primary-light);
+	}
+	li a.button:is(:hover, :focus) {
+		background-color: var(--color-secondary-dark);
+		color: var(--color-primary);
+		/*text-decoration-color: var(--color-secondary);*/
+	}
+	header.below-fold li a.button {
+		
 	}
 </style>
