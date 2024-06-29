@@ -26,7 +26,7 @@
 		padding-top: 6rem;
 		padding-bottom: 6rem;
 		background-color: var(--color-primary);
-		background-image: url(/images/photos/photo_7.jpg);
+		background-image: url(/photos/photo_7.jpg);
 /*		background-image: url(images/photos/hero6.jpg);*/
 		background-position: center center;
 		background-size: cover;

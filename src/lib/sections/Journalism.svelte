@@ -6,7 +6,7 @@
 	<div class="cols">
 		<div class="col image">
 			<Figure
-				src="images/photos/photo_5.jpg"
+				src="photos/photo_5.jpg"
 				alt=""
 				caption="Photo by Nora Savosnick"
 			/>

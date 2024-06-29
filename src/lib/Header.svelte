@@ -54,7 +54,7 @@
 		top: 0;
 		left: 0;
 		z-index: 2;
-		padding: 0.5rem;
+		padding: 0.5rem 1rem;
 		display: flex;
 		flex-wrap: wrap;
 		flex-direction: row;
@@ -62,9 +62,12 @@
 		justify-content: space-between;
 		color: var(--color-secondary);
 		transition: background-color 50ms ease;
+		@media (min-width: 768px) {
+			padding: 0.5rem 2rem;
+		}
 	}
 	header.below-fold {
-		background-color: var(--color-primary-dark);
+		background-color: var(--color-primary);
 	}
 	#title {
 		padding: 0;
@@ -95,6 +98,10 @@
 	}
 	nav {
 		position: relative;
+		display: none;
+		@media (min-width: 768px) {
+			display: block;
+		}
 	}
 	ul {
 		padding: 0;
