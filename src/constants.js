@@ -28,7 +28,7 @@ export const CONTACT = {
 export const SECTIONS = [
 	ABOUT,
 	CODE,
-	VALUES,
+	// VALUES,
 	TEAM,
 	CONTACT
 ]

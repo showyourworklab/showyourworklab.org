@@ -14,10 +14,10 @@
 			Write to us at <a href="mailto:{EMAIL}" class="button">{EMAIL}</a> if you would like to:
 		</p>
 		<ul>
-			<li>Collaborate or a story with us;</li>
+			<li>Collaborate on a story with us;</li>
 			<li>Use our technology on your website;</li>
-			<li>Learn more about our mission; or</li>
-			<li>Anything else.</li>
+			<li>Support us financially; or</li>
+			<li>Learn more about our work and mission.</li>
 		</ul>
 		<p>
 			We look forward to hearing from you.

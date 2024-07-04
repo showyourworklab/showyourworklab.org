@@ -23,7 +23,7 @@
 					<ul>
 						{#each SECTIONS as section}
 							<li>
-								<a href="#{section.slug}">
+								<a href="#{section.slug}" class="button">
 									{section.title}
 								</a>
 							</li>
@@ -34,10 +34,10 @@
 			<div class="col">
 				<ul>
 					<li>
-						<a href="{GITHUB}">Find us on GitHub</a>
+						<a href="{GITHUB}" target="_blank" class="button">Find us on GitHub</a>
 					</li>
 					<li>
-						<a href="mailto:{EMAIL}">{EMAIL}</a>
+						<a href="mailto:{EMAIL}" class="button">{EMAIL}</a>
 					</li>
 					<!-- <li>
 						<a href="#contact">Contact</a>
