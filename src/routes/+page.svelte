@@ -10,6 +10,5 @@
 
 <About />
 <Code />
-<Values />
 <Team />
 <Contact />

@@ -82,12 +82,11 @@ button, a.button, p a {
 	color: currentColor;
 	text-decoration: none;
 	outline-color: var(--color-primary-light);
-    outline-style: dotted;
-    outline-width: 1px;
-    outline-offset: 1px;
+	outline-style: dotted;
+	outline-width: 1px;
+	outline-offset: 1px;
 	padding: 0 0.25em;
 	margin: 0 0.25em;
-	border-radius: 1em;
 }
 :is(button, a.button, p a):hover,
 :is(button, a.button, p a):focus {
@@ -129,7 +128,7 @@ section > section {
 	width: 100%;
 	max-width: var(--width-inner);
 	margin: auto;
-	padding: 2rem 1rem;
+	padding: 1rem 1rem;
 	@media (min-width: 768px) {
 		padding: 6rem 2rem;
 	}

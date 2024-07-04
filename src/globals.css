@@ -8,9 +8,16 @@
 /*@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');*/
 
 :root {
+	--color-primary: #183377;
+	--color-primary-light: #808A9D;
+	--color-primary-dark: #0F2143;
+
+	--color-secondary: #EEf3F9;
+	--color-secondary-light: #ECEFFD;
+	--color-secondary-dark: #E1EAF4;
+	
 	--font-body: "Instrument Sans", arial, sans-serif;
-    /*--font-display: "Bricolage Grotesque", arial, sans-serif;*/
-    --font-display: "Rethink Sans", arial, sans-serif;
+  --font-display: "Rethink Sans", arial, sans-serif;
 	--font-weight-body-normal: 400;
 	--font-weight-body-bold: 700;
 	--font-weight-display-normal: 500;
@@ -41,34 +48,4 @@
 
 	--width-inner: 750px;
 	--width-paragraph: 52ch;
-}
-
-.theme-blue {
-	--color-primary: #183377;
-	--color-primary-light: #808A9D;
-	--color-primary-dark: #0F2143;
-
-	--color-secondary: #EEf3F9;
-	--color-secondary-light: #ECEFFD;
-	--color-secondary-dark: #E1EAF4;
-}
-
-.theme-green {
-	--color-primary: #00464B;
-	--color-primary-light: #85ABAD;
-	--color-primary-dark: #00464B;
-
-	--color-secondary: #EEf3F9;
-	--color-secondary-light: #ECEFFD;
-	--color-secondary-dark: #E1EAF4;
-}
-
-.theme-green-vibrant {
-	--color-primary: #1ad21a;
-	--color-primary-light: #85ABAD;
-	--color-primary-dark: #0F2143;
-
-	--color-secondary: #EEf3F9;
-	--color-secondary-light: #ECEFFD;
-	--color-secondary-dark: #E1EAF4;
 }
