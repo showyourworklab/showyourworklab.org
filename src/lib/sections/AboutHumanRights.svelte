@@ -26,4 +26,7 @@
 </section>
 
 <style>
+	.inner {
+
+	}
 </style>

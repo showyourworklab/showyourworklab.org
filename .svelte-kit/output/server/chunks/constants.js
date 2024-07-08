@@ -4,10 +4,10 @@ const ABOUT = {
   overline: "About",
   title: "What We Do"
 };
-const VALUES = {
-  slug: "values",
-  overline: "Values",
-  title: "Our Values"
+const CODE = {
+  slug: "code",
+  overline: "Code",
+  title: "Web Tool"
 };
 const TEAM = {
   slug: "team",
@@ -21,7 +21,8 @@ const CONTACT = {
 };
 const SECTIONS = [
   ABOUT,
-  VALUES,
+  CODE,
+  // VALUES,
   TEAM,
   CONTACT
 ];
@@ -45,12 +46,12 @@ const PEOPLE = [
 ];
 export {
   ABOUT as A,
-  CONTACT as C,
+  CODE as C,
   EMAIL as E,
   GITHUB as G,
   PEOPLE as P,
   SECTIONS as S,
   TITLE as T,
-  VALUES as V,
-  TEAM as a
+  TEAM as a,
+  CONTACT as b
 };
