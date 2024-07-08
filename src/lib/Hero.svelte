@@ -12,7 +12,7 @@
 		<div
 			id="tagline"
 		>
-			we don't identify what's fake; we prove what's real
+			We prove what's real rather than identify what's fake
 		</div>
 		<!-- <img
 			src="/images/logo-light.svg"
