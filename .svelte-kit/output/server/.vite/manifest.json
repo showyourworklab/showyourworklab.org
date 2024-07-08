@@ -27,20 +27,20 @@
     "file": "chunks/ssr.js",
     "name": "ssr"
   },
-  "node_modules/.pnpm/@sveltejs+kit@2.5.10_@sveltejs+vite-plugin-svelte@3.1.1_svelte@4.2.18_vite@5.2.13/node_modules/@sveltejs/kit/src/runtime/components/error.svelte": {
+  "node_modules/@sveltejs/kit/src/runtime/components/error.svelte": {
     "file": "entries/fallbacks/error.svelte.js",
     "name": "entries/fallbacks/error.svelte",
-    "src": "node_modules/.pnpm/@sveltejs+kit@2.5.10_@sveltejs+vite-plugin-svelte@3.1.1_svelte@4.2.18_vite@5.2.13/node_modules/@sveltejs/kit/src/runtime/components/error.svelte",
+    "src": "node_modules/@sveltejs/kit/src/runtime/components/error.svelte",
     "isEntry": true,
     "imports": [
       "_ssr.js",
       "_exports.js"
     ]
   },
-  "node_modules/.pnpm/@sveltejs+kit@2.5.10_@sveltejs+vite-plugin-svelte@3.1.1_svelte@4.2.18_vite@5.2.13/node_modules/@sveltejs/kit/src/runtime/server/index.js": {
+  "node_modules/@sveltejs/kit/src/runtime/server/index.js": {
     "file": "index.js",
     "name": "index",
-    "src": "node_modules/.pnpm/@sveltejs+kit@2.5.10_@sveltejs+vite-plugin-svelte@3.1.1_svelte@4.2.18_vite@5.2.13/node_modules/@sveltejs/kit/src/runtime/server/index.js",
+    "src": "node_modules/@sveltejs/kit/src/runtime/server/index.js",
     "isEntry": true,
     "imports": [
       "_internal.js",
@@ -58,7 +58,7 @@
       "_constants.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout.DINzGIVs.css"
+      "_app/immutable/assets/_layout.BQErFVcE.css"
     ]
   },
   "src/routes/+page.svelte": {
@@ -71,7 +71,7 @@
       "_constants.js"
     ],
     "css": [
-      "_app/immutable/assets/_page.DLHK4M0F.css"
+      "_app/immutable/assets/_page.5IaoHzJn.css"
     ]
   }
 }

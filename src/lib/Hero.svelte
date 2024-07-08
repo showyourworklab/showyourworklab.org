@@ -53,7 +53,7 @@
 	}
 	#tagline {
 		color: var(--color-secondary);
-		font-size: var(--text-3);
+		font-size: 23px;
 		font-family: var(--font-display);
 		font-weight: var(--font-weight-display-normal);
 		text-align: center;

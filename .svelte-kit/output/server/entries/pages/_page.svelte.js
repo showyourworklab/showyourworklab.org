@@ -1,5 +1,5 @@
 import { c as create_ssr_component, i as compute_rest_props, f as each, v as validate_component, m as missing_component, e as escape, g as getContext, d as add_attribute, j as createEventDispatcher, a as setContext } from "../../chunks/ssr.js";
-import { A as ABOUT, V as VALUES, a as TEAM, P as PEOPLE, C as CONTACT, E as EMAIL } from "../../chunks/constants.js";
+import { A as ABOUT, C as CODE, a as TEAM, P as PEOPLE, b as CONTACT, E as EMAIL } from "../../chunks/constants.js";
 import { Slugger, Lexer } from "marked";
 function supressWarnings() {
   const origWarn = console.warn;
@@ -220,7 +220,7 @@ const Html = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 const Blockquote = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   return `<blockquote>${slots.default ? slots.default({}) : ``}</blockquote>`;
 });
-const Code = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+const Code$1 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let { lang } = $$props;
   let { text } = $$props;
   if ($$props.lang === void 0 && $$bindings.lang && lang !== void 0)
@@ -254,7 +254,7 @@ const defaultRenderers = {
   hr: Hr,
   html: Html,
   blockquote: Blockquote,
-  code: Code,
+  code: Code$1,
   br: Br
 };
 const defaultOptions = {
@@ -338,35 +338,35 @@ const Figure = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   $$result.css.add(css$1);
   return `<figure class="svelte-5e1xjl"><img${add_attribute("src", src, 0)}${add_attribute("alt", alt, 0)} class="svelte-5e1xjl"> ${caption ? `<figcaption class="svelte-5e1xjl">${escape(caption)}</figcaption>` : ``} </figure>`;
 });
-const Journalism = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+const AboutJournalism = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   return `<section id="journalism"><div class="cols"><div class="col image">${validate_component(Figure, "Figure").$$render(
     $$result,
     {
-      src: "images/photos/photo_5.jpg",
+      src: "photos/photo_5.jpg",
       alt: "",
       caption: "Photo by Nora Savosnick"
     },
     {},
     {}
-  )}</div> <div class="col text" data-svelte-h="svelte-ft0ngm"><div class="inner"> <h3>Journalism</h3> <p>Vivamus scelerisque arcu mi, non facilisis ex venenatis in. Morbi laoreet, risus sit amet elementum ultricies, odio enim dignissim arcu, ut pharetra tellus neque vel massa. Morbi ultricies eros ac enim mattis vehicula.</p> <ul><li>Cras laoreet purus vel neque tempus tincidunt.</li> <li>Nulla eget eros in lectus sodales accumsan. Nulla scelerisque, dui ut pellentesque venenatis, est mi tempus nisl.</li> <li>Nam eu libero odio. In id elementum nisi.</li></ul></div></div></div> </section>`;
+  )}</div> <div class="col text" data-svelte-h="svelte-g0iy3c"><div class="inner"> <h3>Journalism</h3> <p>We collaborate with newsrooms, engaging with both technical and editorial teams, in the entire storytelling process, from pitching stories and going on assignments with C2PA-compliant cameras to publication. We also assist in integrating our tool into a website’s frontend and CMS and onboarding staff to the workflow.</p></div></div></div> </section>`;
 });
-const HumanRights = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+const AboutHumanRights = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   return `<section id="human-rights"><div class="cols cols-reverse"><div class="col image">${validate_component(Figure, "Figure").$$render(
     $$result,
     {
-      src: "images/photos/photo_9.jpg",
+      src: "photos/photo_9.jpg",
       alt: "",
       caption: "Photo by Nora Savosnick"
     },
     {},
     {}
-  )}</div> <div class="col text" data-svelte-h="svelte-2fi444"><div class="inner"> <h3>Human Rights</h3> <p>In aliquam tempus nisl nec ultrices. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed accumsan aliquam augue, eu sagittis sapien vulputate sit amet. Nulla eleifend elit vel quam aliquet sodales.</p> <ul><li>Mauris ac viverra massa. Fusce vel magna nibh. Donec lorem ipsum, aliquam in ligula ut.</li> <li>Sed aliquet ornare ligula sed posuere. Nulla ut scelerisque augue, at sodales leo.</li> <li>Etiam eu arcu id purus sollicitudin facilisis vel at ex.</li></ul></div></div></div> </section>`;
+  )}</div> <div class="col text" data-svelte-h="svelte-af831b"><div class="inner svelte-1bao9d9"> <h3>Human Rights</h3> <p>Advocacy organizations, NGOs, and lawyers often rely on photographs as evidence of violations and abuses to be shared with the wider public and in the courts to hold perpetrators accountable. However, the growing distrust in photography threatens its effectiveness. To address this, we plan to collaborate with these groups on projects that verify the authenticity of their images.</p></div></div></div> </section>`;
 });
 const About = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  return `<section id="about"><div class="inner"> <h2>${escape(ABOUT.title)}</h2> <p data-svelte-h="svelte-nbbwbl">The images we see online are increasingly difficult to trust and understand. Information about where, when, and how an image is made is often minimal, unverified, nonexistent, or intentionally misleading. The rise of synthetic AI images further amplifies this issue, sowing distrust and confusion in what we see online.</p> <p data-svelte-h="svelte-1vxghd5">We see a void in how the industry addresses this issue and believe a new standard for verifiable images online are urgently needed.</p> <p data-svelte-h="svelte-c9snex">The Show Your Work Lab helps fill this void. We partner with news organizations and human rights groups to define a new standard for verifiable images to foster increased trust with their audiences. We use verify-at-capture technology to produce original visual journalism covering critical stories and create innovative methods to ensure images are engaging, context-rich, and trustworthy. We don&#39;t just identify what&#39;s fake; we prove what&#39;s real.</p></div> ${validate_component(Journalism, "Journalism").$$render($$result, {}, {}, {})} ${validate_component(HumanRights, "HumanRights").$$render($$result, {}, {}, {})}</section>`;
+  return `<section id="about"><div class="inner"> <h2>${escape(ABOUT.title)}</h2> <p class="subtitle" data-svelte-h="svelte-1pxtjb1">We create impactful <u>photojournalism</u>, image-driven <u>human rights campaigns</u>, and innovative <u>digital publishing tools</u>.</p> <p data-svelte-h="svelte-nbbwbl">The images we see online are increasingly difficult to trust and understand. Information about where, when, and how an image is made is often minimal, unverified, nonexistent, or intentionally misleading. The rise of synthetic AI images further amplifies this issue, sowing distrust and confusion in what we see online.</p> <p data-svelte-h="svelte-1vxghd5">We see a void in how the industry addresses this issue and believe a new standard for verifiable images online are urgently needed.</p> <p data-svelte-h="svelte-7g741i">The Show Your Work Lab helps fill this void. We partner with news organizations and human rights groups to define a new standard for verifiable images to increase transparency and foster trust with their audiences. We use verify-at-capture technology to produce original visual journalism covering critical stories and create innovative methods to ensure images are engaging, context-rich, and trustworthy. We prove what&#39;s real rather than identify what&#39;s fake.</p></div> ${validate_component(AboutJournalism, "AboutJournalism").$$render($$result, {}, {}, {})} ${validate_component(AboutHumanRights, "AboutHumanRights").$$render($$result, {}, {}, {})} </section>`;
 });
-const Values = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  return `<section id="values"><div class="inner"> <h2>${escape(VALUES.title)}</h2> <ul data-svelte-h="svelte-16i9d81"><li>Cras laoreet purus vel neque tempus tincidunt. Mauris ac viverra massa. Fusce vel magna nibh. Donec lorem ipsum, aliquam in ligula ut.</li> <li>Nulla eget eros in lectus sodales accumsan. Nulla scelerisque, dui ut pellentesque venenatis, est mi tempus nisl. Sed aliquet ornare ligula sed posuere. Nulla ut scelerisque augue, at sodales leo.</li> <li>Nam eu libero odio. In id elementum nisi. Etiam eu arcu id purus sollicitudin facilisis vel at ex.</li></ul></div></section>`;
+const Code = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+  return `<section id="code"><div class="inner"> <h2>${escape(CODE.title)}</h2> <p class="subtitle" data-svelte-h="svelte-x4pl57">Build trust with your audience by displaying C2PA-compliant images within an interactive frame that exposes verifiable data about how an image was made.</p> <p data-svelte-h="svelte-r4hs3k">We’re creating a tool that lets you augment your site&#39;s images with optional C2PA provenance data. The tool wraps your images within a frame allowing users to explore multiple layers of verifiable data about how an image is made, including whether it was captured with a camera or generated with AI.</p> <p data-svelte-h="svelte-3ytp0y">The tool is being developed to easily integrate into your newsroom or orgaization&#39;s workflow. We&#39;re developing the tool for <code>React</code>, <code>Svelte</code>, and as a <code>WordPress</code> block.</p> <p data-svelte-h="svelte-1vjdjwj">Contact us at <a href="mailto:info@showyourworklab.org">info@showyourworklab.org</a> to learn more and view a demo.</p></div></section>`;
 });
 const Markdown = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let { content } = $$props;
@@ -383,29 +383,29 @@ const Markdown = create_ssr_component(($$result, $$props, $$bindings, slots) => 
   )}`;
 });
 const css = {
-  code: "ul.svelte-6fdwqf{list-style:none;padding-left:0;margin:0 calc(var(--space-2) * -1);max-width:unset}li.svelte-6fdwqf{padding:0 var(--space-2) var(--space-10) var(--space-2);line-height:1.3}.label.svelte-6fdwqf{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between}.name.svelte-6fdwqf{font-weight:var(--font-weight-body-bold);width:160px}.role.svelte-6fdwqf{font-size:var(--text-2);white-space:nowrap;opacity:0.5}.website.svelte-6fdwqf{font-size:var(--text-1)}.bio.svelte-6fdwqf{margin-top:var(--space-2);font-size:var(--text-2)}",
-  map: `{"version":3,"file":"Team.svelte","sources":["Team.svelte"],"sourcesContent":["<script>\\n\\timport { TEAM, PEOPLE } from '$src/constants'\\n\\timport Figure from '$lib/common/Figure.svelte'\\n\\timport Markdown from '$lib/common/Markdown.svelte'\\n<\/script>\\n\\n<section id=\\"team\\">\\n\\t<div class=\\"inner\\">\\n\\t\\t<!-- <div class=\\"overline\\">\\n\\t\\t\\t{TEAM.overline}\\n\\t\\t</div> -->\\n\\t\\t<h2>\\n\\t\\t\\t{TEAM.title}\\n\\t\\t</h2>\\n\\n\\t\\t<p>\\n\\t\\t\\t\\n\\t\\t</p>\\n\\n\\t\\t<ul class=\\"cols\\">\\n\\t\\t\\t{#each PEOPLE as person}\\n\\t\\t\\t\\t<li class=\\"col\\">\\n\\t\\t\\t\\t\\t<Figure\\n\\t\\t\\t\\t\\t\\tsrc=\\"/images/photos/syw_{person.slug}.jpg\\"\\n\\t\\t\\t\\t\\t\\talt=\\"Portrait of {person.name}\\"\\n\\t\\t\\t\\t\\t\\tcaption=\\"Photo by Roshni Khatri\\"\\n\\t\\t\\t\\t\\t/>\\n\\t\\t\\t\\t\\t<div class=\\"label\\">\\n\\t\\t\\t\\t\\t\\t<div class=\\"name\\">\\n\\t\\t\\t\\t\\t\\t\\t{person.name}\\n\\t\\t\\t\\t\\t\\t</div>\\n\\t\\t\\t\\t\\t\\t<div class=\\"website\\">\\n\\t\\t\\t\\t\\t\\t\\t<a\\n\\t\\t\\t\\t\\t\\t\\t\\thref=\\"{person.website}\\"\\n\\t\\t\\t\\t\\t\\t\\t\\ttarget=\\"_blank\\"\\n\\t\\t\\t\\t\\t\\t\\t\\tclass=\\"button\\"\\n\\t\\t\\t\\t\\t\\t\\t>\\n\\t\\t\\t\\t\\t\\t\\t\\t{person.website.replace('https://', '')}\\n\\t\\t\\t\\t\\t\\t\\t\\t<!-- Website -->\\n\\t\\t\\t\\t\\t\\t\\t</a>\\n\\t\\t\\t\\t\\t\\t</div>\\n\\t\\t\\t\\t\\t</div>\\n\\t\\t\\t\\t\\t<div class=\\"role\\">\\n\\t\\t\\t\\t\\t\\t{person.role}\\n\\t\\t\\t\\t\\t</div>\\n\\t\\t\\t\\t\\t<div class=\\"bio\\">\\n\\t\\t\\t\\t\\t\\t<Markdown\\n\\t\\t\\t\\t\\t\\t\\tcontent={person.bio}\\n\\t\\t\\t\\t\\t\\t/>\\n\\t\\t\\t\\t\\t</div>\\n\\t\\t\\t\\t</li>\\n\\t\\t\\t{/each}\\n\\t\\t</ul>\\n\\t</div>\\n</section>\\n\\n<style>\\n\\tul {\\n\\t\\tlist-style: none;\\n\\t\\tpadding-left: 0;\\n\\t\\tmargin: 0 calc(var(--space-2) * -1);\\n\\t\\tmax-width: unset;\\n\\t}\\n\\tli {\\n/*\\t\\tmax-width: 400px;*/\\n\\t\\tpadding: 0 var(--space-2) var(--space-10) var(--space-2);\\n\\t\\tline-height: 1.3;\\n\\t}\\n\\timg {\\n\\t\\twidth: 100%;\\n\\t}\\n\\t.label {\\n\\t\\tdisplay: flex;\\n\\t\\tflex-wrap: wrap;\\n\\t\\talign-items: center;\\n\\t\\tjustify-content: space-between;\\n\\t}\\n\\t.name {\\n\\t\\tfont-weight: var(--font-weight-body-bold);\\n\\t\\twidth: 160px;\\n\\t}\\n\\t.role {\\n\\t\\tfont-size: var(--text-2);\\n\\t\\twhite-space: nowrap;\\n\\t\\topacity: 0.5;\\n\\t}\\n\\t.website {\\n\\t\\tfont-size: var(--text-1);\\n\\t}\\n\\t.bio {\\n\\t\\tmargin-top: var(--space-2);\\n\\t\\tfont-size: var(--text-2);\\n\\t}\\n</style>"],"names":[],"mappings":"AAyDC,gBAAG,CACF,UAAU,CAAE,IAAI,CAChB,YAAY,CAAE,CAAC,CACf,MAAM,CAAE,CAAC,CAAC,KAAK,IAAI,SAAS,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CACnC,SAAS,CAAE,KACZ,CACA,gBAAG,CAEF,OAAO,CAAE,CAAC,CAAC,IAAI,SAAS,CAAC,CAAC,IAAI,UAAU,CAAC,CAAC,IAAI,SAAS,CAAC,CACxD,WAAW,CAAE,GACd,CAIA,oBAAO,CACN,OAAO,CAAE,IAAI,CACb,SAAS,CAAE,IAAI,CACf,WAAW,CAAE,MAAM,CACnB,eAAe,CAAE,aAClB,CACA,mBAAM,CACL,WAAW,CAAE,IAAI,uBAAuB,CAAC,CACzC,KAAK,CAAE,KACR,CACA,mBAAM,CACL,SAAS,CAAE,IAAI,QAAQ,CAAC,CACxB,WAAW,CAAE,MAAM,CACnB,OAAO,CAAE,GACV,CACA,sBAAS,CACR,SAAS,CAAE,IAAI,QAAQ,CACxB,CACA,kBAAK,CACJ,UAAU,CAAE,IAAI,SAAS,CAAC,CAC1B,SAAS,CAAE,IAAI,QAAQ,CACxB"}`
+  code: "ul.svelte-5v2jks{list-style:none;padding-left:0;margin:0 calc(var(--space-2) * -1);max-width:unset}li.svelte-5v2jks{max-width:var(--width-paragraph);padding:0 var(--space-2) var(--space-10) var(--space-2);line-height:1.3}h3.svelte-5v2jks{color:inherit;font-size:inherit;text-transform:none}.label.svelte-5v2jks{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between}.name.svelte-5v2jks{font-weight:var(--font-weight-body-bold);width:160px}.role.svelte-5v2jks{font-size:var(--text-2);white-space:nowrap;color:var(--color-primary-light)}.website.svelte-5v2jks{font-size:var(--text-1)}.bio.svelte-5v2jks{margin-top:var(--space-2);font-size:var(--text-2)}",
+  map: `{"version":3,"file":"Team.svelte","sources":["Team.svelte"],"sourcesContent":["<script>\\n\\timport { TEAM, PEOPLE } from '$src/constants'\\n\\timport Figure from '$lib/common/Figure.svelte'\\n\\timport Markdown from '$lib/common/Markdown.svelte'\\n<\/script>\\n\\n<section id=\\"team\\">\\n\\t<div class=\\"inner\\">\\n\\t\\t<!-- <div class=\\"overline\\">\\n\\t\\t\\t{TEAM.overline}\\n\\t\\t</div> -->\\n\\t\\t<h2>\\n\\t\\t\\t{TEAM.title}\\n\\t\\t</h2>\\n\\n\\t\\t<p>\\n\\t\\t\\t\\n\\t\\t</p>\\n\\n\\t\\t<ul class=\\"cols\\">\\n\\t\\t\\t{#each PEOPLE as person}\\n\\t\\t\\t\\t<li class=\\"col\\">\\n\\t\\t\\t\\t\\t<Figure\\n\\t\\t\\t\\t\\t\\tsrc=\\"/photos/syw_{person.slug}.jpg\\"\\n\\t\\t\\t\\t\\t\\talt=\\"Portrait of {person.name}\\"\\n\\t\\t\\t\\t\\t\\tcaption=\\"Photo by Roshni Khatri\\"\\n\\t\\t\\t\\t\\t/>\\n\\t\\t\\t\\t\\t<div class=\\"label\\">\\n\\t\\t\\t\\t\\t\\t<h3 class=\\"name\\">\\n\\t\\t\\t\\t\\t\\t\\t{person.name}\\n\\t\\t\\t\\t\\t\\t</h3>\\n\\t\\t\\t\\t\\t\\t<div class=\\"website\\">\\n\\t\\t\\t\\t\\t\\t\\t<a\\n\\t\\t\\t\\t\\t\\t\\t\\thref=\\"{person.website}\\"\\n\\t\\t\\t\\t\\t\\t\\t\\ttarget=\\"_blank\\"\\n\\t\\t\\t\\t\\t\\t\\t\\tclass=\\"button\\"\\n\\t\\t\\t\\t\\t\\t\\t>\\n\\t\\t\\t\\t\\t\\t\\t\\t{person.website.replace('https://', '')}\\n\\t\\t\\t\\t\\t\\t\\t\\t<!-- Website -->\\n\\t\\t\\t\\t\\t\\t\\t</a>\\n\\t\\t\\t\\t\\t\\t</div>\\n\\t\\t\\t\\t\\t</div>\\n\\t\\t\\t\\t\\t<div class=\\"role\\">\\n\\t\\t\\t\\t\\t\\t{person.role}\\n\\t\\t\\t\\t\\t</div>\\n\\t\\t\\t\\t\\t<div class=\\"bio\\">\\n\\t\\t\\t\\t\\t\\t<Markdown\\n\\t\\t\\t\\t\\t\\t\\tcontent={person.bio}\\n\\t\\t\\t\\t\\t\\t/>\\n\\t\\t\\t\\t\\t</div>\\n\\t\\t\\t\\t</li>\\n\\t\\t\\t{/each}\\n\\t\\t</ul>\\n\\t</div>\\n</section>\\n\\n<style>\\n\\tul {\\n\\t\\tlist-style: none;\\n\\t\\tpadding-left: 0;\\n\\t\\tmargin: 0 calc(var(--space-2) * -1);\\n\\t\\tmax-width: unset;\\n\\t}\\n\\tli {\\n\\t\\tmax-width: var(--width-paragraph);\\n\\t\\tpadding: 0 var(--space-2) var(--space-10) var(--space-2);\\n\\t\\tline-height: 1.3;\\n\\t}\\n\\th3 {\\n\\t\\tcolor: inherit;\\n\\t\\tfont-size: inherit;\\n\\t\\ttext-transform: none;\\n\\t}\\n\\t.label {\\n\\t\\tdisplay: flex;\\n\\t\\tflex-wrap: wrap;\\n\\t\\talign-items: center;\\n\\t\\tjustify-content: space-between;\\n\\t}\\n\\t.name {\\n\\t\\tfont-weight: var(--font-weight-body-bold);\\n\\t\\twidth: 160px;\\n\\t}\\n\\t.role {\\n\\t\\tfont-size: var(--text-2);\\n\\t\\twhite-space: nowrap;\\n\\t\\tcolor: var(--color-primary-light);\\n\\t}\\n\\t.website {\\n\\t\\tfont-size: var(--text-1);\\n\\t}\\n\\t.bio {\\n\\t\\tmargin-top: var(--space-2);\\n\\t\\tfont-size: var(--text-2);\\n\\t}\\n</style>"],"names":[],"mappings":"AAyDC,gBAAG,CACF,UAAU,CAAE,IAAI,CAChB,YAAY,CAAE,CAAC,CACf,MAAM,CAAE,CAAC,CAAC,KAAK,IAAI,SAAS,CAAC,CAAC,CAAC,CAAC,EAAE,CAAC,CACnC,SAAS,CAAE,KACZ,CACA,gBAAG,CACF,SAAS,CAAE,IAAI,iBAAiB,CAAC,CACjC,OAAO,CAAE,CAAC,CAAC,IAAI,SAAS,CAAC,CAAC,IAAI,UAAU,CAAC,CAAC,IAAI,SAAS,CAAC,CACxD,WAAW,CAAE,GACd,CACA,gBAAG,CACF,KAAK,CAAE,OAAO,CACd,SAAS,CAAE,OAAO,CAClB,cAAc,CAAE,IACjB,CACA,oBAAO,CACN,OAAO,CAAE,IAAI,CACb,SAAS,CAAE,IAAI,CACf,WAAW,CAAE,MAAM,CACnB,eAAe,CAAE,aAClB,CACA,mBAAM,CACL,WAAW,CAAE,IAAI,uBAAuB,CAAC,CACzC,KAAK,CAAE,KACR,CACA,mBAAM,CACL,SAAS,CAAE,IAAI,QAAQ,CAAC,CACxB,WAAW,CAAE,MAAM,CACnB,KAAK,CAAE,IAAI,qBAAqB,CACjC,CACA,sBAAS,CACR,SAAS,CAAE,IAAI,QAAQ,CACxB,CACA,kBAAK,CACJ,UAAU,CAAE,IAAI,SAAS,CAAC,CAC1B,SAAS,CAAE,IAAI,QAAQ,CACxB"}`
 };
 const Team = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   $$result.css.add(css);
-  return `<section id="team"><div class="inner"> <h2>${escape(TEAM.title)}</h2> <p data-svelte-h="svelte-ke771t"></p> <ul class="cols svelte-6fdwqf">${each(PEOPLE, (person) => {
-    return `<li class="col svelte-6fdwqf">${validate_component(Figure, "Figure").$$render(
+  return `<section id="team"><div class="inner"> <h2>${escape(TEAM.title)}</h2> <p data-svelte-h="svelte-ke771t"></p> <ul class="cols svelte-5v2jks">${each(PEOPLE, (person) => {
+    return `<li class="col svelte-5v2jks">${validate_component(Figure, "Figure").$$render(
       $$result,
       {
-        src: "/images/photos/syw_" + person.slug + ".jpg",
+        src: "/photos/syw_" + person.slug + ".jpg",
         alt: "Portrait of " + person.name,
         caption: "Photo by Roshni Khatri"
       },
       {},
       {}
-    )} <div class="label svelte-6fdwqf"><div class="name svelte-6fdwqf">${escape(person.name)}</div> <div class="website svelte-6fdwqf"><a${add_attribute("href", person.website, 0)} target="_blank" class="button">${escape(person.website.replace("https://", ""))} </a> </div></div> <div class="role svelte-6fdwqf">${escape(person.role)}</div> <div class="bio svelte-6fdwqf">${validate_component(Markdown, "Markdown").$$render($$result, { content: person.bio }, {}, {})}</div> </li>`;
+    )} <div class="label svelte-5v2jks"><h3 class="name svelte-5v2jks">${escape(person.name)}</h3> <div class="website svelte-5v2jks"><a${add_attribute("href", person.website, 0)} target="_blank" class="button">${escape(person.website.replace("https://", ""))} </a> </div></div> <div class="role svelte-5v2jks">${escape(person.role)}</div> <div class="bio svelte-5v2jks">${validate_component(Markdown, "Markdown").$$render($$result, { content: person.bio }, {}, {})}</div> </li>`;
   })}</ul></div> </section>`;
 });
 const Contact = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  return `<section id="contact"><div class="inner"> <h2>${escape(CONTACT.title)}</h2> <p>Write to us at <a href="${"mailto:" + escape(EMAIL, true)}" class="button">${escape(EMAIL)}</a> if you would like to:</p> <ul data-svelte-h="svelte-kzm7kc"><li>Collaborate or a story with us;</li> <li>Use our technology on your website;</li> <li>Learn more about our mission; or</li> <li>Anything else.</li></ul> <p data-svelte-h="svelte-1qoeo5h">We look forward to hearing from you.</p></div></section>`;
+  return `<section id="contact"><div class="inner"> <h2>${escape(CONTACT.title)}</h2> <p>Write to us at <a href="${"mailto:" + escape(EMAIL, true)}" class="button">${escape(EMAIL)}</a> if you would like to:</p> <ul data-svelte-h="svelte-ge8noi"><li>Collaborate on a story with us;</li> <li>Use our technology on your website;</li> <li>Support us financially; or</li> <li>Learn more about our work and mission.</li></ul> <p data-svelte-h="svelte-1qoeo5h">We look forward to hearing from you.</p></div></section>`;
 });
 const Page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-  return `${validate_component(About, "About").$$render($$result, {}, {}, {})} ${validate_component(Values, "Values").$$render($$result, {}, {}, {})} ${validate_component(Team, "Team").$$render($$result, {}, {}, {})} ${validate_component(Contact, "Contact").$$render($$result, {}, {}, {})}`;
+  return `${validate_component(About, "About").$$render($$result, {}, {}, {})} ${validate_component(Code, "Code").$$render($$result, {}, {}, {})} ${validate_component(Team, "Team").$$render($$result, {}, {}, {})} ${validate_component(Contact, "Contact").$$render($$result, {}, {}, {})}`;
 });
 export {
   Page as default

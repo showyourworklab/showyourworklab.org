@@ -122,7 +122,7 @@ const options = {
   root: Root,
   service_worker: false,
   templates: {
-    app: ({ head, body, assets: assets2, nonce, env }) => '<!doctype html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<!-- <link rel="icon" href="' + assets2 + '/favicon.png" /> -->\n		<meta name="viewport" content="width=device-width, initial-scale=1" />\n		' + head + '\n	</head>\n	<body data-sveltekit-preload-data="hover">\n		<div style="display: contents">' + body + "</div>\n	</body>\n</html>\n",
+    app: ({ head, body, assets: assets2, nonce, env }) => '<!doctype html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<!-- HTML Meta Tags -->\n		<title>Show Your Work Lab</title>\n		<meta name="description" content="We create impactful photojournalism, image-driven human rights campaigns, and innovative digital publishing tools">\n		<!-- Facebook Meta Tags -->\n		<meta property="og:url" content="https://showyourworklab.org/">\n		<meta property="og:type" content="website">\n		<meta property="og:title" content="Show Your Work Lab">\n		<meta property="og:description" content="We create impactful photojournalism, image-driven human rights campaigns, and innovative digital publishing tools">\n		<meta property="og:image" content="/images/social.png">\n\n		<!-- Twitter Meta Tags -->\n		<meta name="twitter:card" content="summary_large_image">\n		<meta property="twitter:domain" content="showyourworklab.org">\n		<meta property="twitter:url" content="https://showyourworklab.org/">\n		<meta name="twitter:title" content="Show Your Work Lab">\n		<meta name="twitter:description" content="We create impactful photojournalism, image-driven human rights campaigns, and innovative digital publishing tools">\n		<meta name="twitter:image" content="/images/social.png">\n\n		<!-- Meta Tags Generated via https://www.opengraph.xyz -->\n		<!-- <link rel="icon" href="' + assets2 + '/favicon.png" /> -->\n		<meta name="viewport" content="width=device-width, initial-scale=1" />\n		<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">\n		<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">\n		<link rel="shortcut icon" href="/images/favicon.ico">\n		' + head + '\n	</head>\n	<body data-sveltekit-preload-data="hover">\n		<div style="display: contents">' + body + "</div>\n	</body>\n</html>\n",
     error: ({ status, message }) => '<!doctype html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<title>' + message + `</title>
 
 		<style>
@@ -194,7 +194,7 @@ const options = {
 		<div class="error">
 			<span class="status">` + status + '</span>\n			<div class="message">\n				<h1>' + message + "</h1>\n			</div>\n		</div>\n	</body>\n</html>\n"
   },
-  version_hash: "1emqg7n"
+  version_hash: "124xzx4"
 };
 async function get_hooks() {
   return {};

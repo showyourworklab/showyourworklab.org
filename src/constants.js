@@ -1,4 +1,5 @@
 export const TITLE = 'Show Your Work Lab'
+export const DESCRIPTION = 'We create impactful photojournalism, image-driven human rights campaigns, and innovative digital publishing tools.'
 
 export const ABOUT = {
 	slug: 'about',
