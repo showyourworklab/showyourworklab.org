@@ -9,7 +9,7 @@ export const ABOUT = {
 export const CODE = {
 	slug: 'code',
 	overline: 'Code',
-	title: 'Web Tool'
+	title: 'Our Web Tool'
 }
 export const VALUES = {
 	slug: 'values',
