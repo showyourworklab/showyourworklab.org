@@ -26,4 +26,7 @@
 </section>
 
 <style>
+	:global #journalism figure img {
+		object-position: center right;
+	}
 </style>
