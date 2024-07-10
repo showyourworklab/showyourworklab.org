@@ -1,5 +1,6 @@
 .DS_Store
 .svelte-kit
 .svelte-kit/*
+.svelte-kit/generated/server/internal.js
 node_modules
 build
