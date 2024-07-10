@@ -26,4 +26,7 @@
 </section>
 
 <style>
+	:global #human-rights figure img {
+		object-position: center left;
+	}
 </style>
