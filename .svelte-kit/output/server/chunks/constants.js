@@ -7,7 +7,7 @@ const ABOUT = {
 const CODE = {
   slug: "code",
   overline: "Code",
-  title: "Web Tool"
+  title: "Our Web Tool"
 };
 const TEAM = {
   slug: "team",

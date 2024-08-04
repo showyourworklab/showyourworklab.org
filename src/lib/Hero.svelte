@@ -39,9 +39,7 @@
 		font-size: 65px;
 		font-weight: var(--font-weight-display-bold);
 		text-align: center;
-
-		text-shadow: 0px 0px 25px rgba(0,0,0,0.45);
-
+		text-shadow: 0px 0px 1px rgba(0,0,0,0.75), 0px 0px 25px rgba(0,0,0,0.5), 0px 0px 50px rgba(0,0,0,0.75);
 		/*background: var(--color-primary);
 		padding: 0.125em 0.25em;*/
 	}
@@ -58,13 +56,9 @@
 		font-weight: var(--font-weight-display-normal);
 		text-align: center;
 		margin: var(--space-4) 0 0 0;
-
-		text-shadow: 0px 0px 25px rgba(0,0,0,0.45);
-
-		/*background: var(--color-primary);
-		padding: 0.125em 0.25em;*/
+		text-shadow: 0px 0px 1px rgba(0,0,0,1), 0px 0px 25px rgba(0,0,0,0.5), 0px 0px 50px rgba(0,0,0,0.75);
 	}
-	img {
+/*	img {
 		width: 100%;
-	}
+	}*/
 </style>
