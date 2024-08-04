@@ -58,7 +58,7 @@
       "_constants.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout.BQErFVcE.css"
+      "_app/immutable/assets/_layout.DYSkCnyN.css"
     ]
   },
   "src/routes/+page.svelte": {
@@ -71,7 +71,7 @@
       "_constants.js"
     ],
     "css": [
-      "_app/immutable/assets/_page.5IaoHzJn.css"
+      "_app/immutable/assets/_page.lg8CM9xD.css"
     ]
   }
 }
