@@ -115,10 +115,10 @@ section:nth-child(odd) {
 section:nth-child(even) {
 	background-color: var(--color-secondary-dark);
 }
-section:nth-child(odd) a:is(:hover, :focus) {
+section:nth-child(odd) .button:is(:hover, :focus) {
 	background-color: var(--color-secondary-dark);
 }
-section:nth-child(even) a:is(:hover, :focus) {
+section:nth-child(even) .button:is(:hover, :focus) {
 	background-color: var(--color-secondary);
 }
 section > section {

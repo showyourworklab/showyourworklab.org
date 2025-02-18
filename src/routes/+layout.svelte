@@ -2,10 +2,6 @@
 	import '$src/globals.css'
 	import '$src/styles.css'
 	import Hero from '$lib/Hero.svelte'
-<<<<<<< HEAD
-</script>
-
-=======
 	import Header from '$lib/Header.svelte'
 	import Footer from '$lib/Footer.svelte'
 
@@ -32,6 +28,10 @@
 	bind:header
 	belowFold={belowFold}
 />
->>>>>>> 8930d919615d9555715455fd33e7dd7adbf502b6
 <Hero />
-<slot />
+<main
+	bind:this={main}
+>
+	<slot />
+</main>
+<Footer />
