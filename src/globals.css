@@ -8,9 +8,16 @@
 /*@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');*/
 
 :root {
+	--color-primary: #183377;
+	--color-primary-light: #808A9D;
+	--color-primary-dark: #0F2143;
+
+	--color-secondary: #EEf3F9;
+	--color-secondary-light: #ECEFFD;
+	--color-secondary-dark: #E1EAF4;
+	
 	--font-body: "Instrument Sans", arial, sans-serif;
-    /*--font-display: "Bricolage Grotesque", arial, sans-serif;*/
-    --font-display: "Rethink Sans", arial, sans-serif;
+  --font-display: "Rethink Sans", arial, sans-serif;
 	--font-weight-body-normal: 400;
 	--font-weight-body-bold: 700;
 	--font-weight-display-normal: 500;
@@ -19,26 +26,10 @@
 	--text-base: 16px;
 	--text-1: 10px;
 	--text-2: 14px;
-	--text-3: 18px;
+	--text-3: 24px;
 	--text-4: 40px;
 	--text-5: 55px;
 	--text-6: 70px;
-
-	/*--color-primary: #07003c;
-	--color-primary-light: #12009d;
-	--color-primary-dark: #000000;
-
-	--color-secondary: #EEf3F9;
-	--color-secondary-light: #ECEFFD;
-	--color-secondary-dark: #E1EAF4;*/
-
-	--color-primary: #183377;
-	--color-primary-light: #808A9D;
-	--color-primary-dark: #0F2143;
-
-	--color-secondary: #EEf3F9;
-	--color-secondary-light: #ECEFFD;
-	--color-secondary-dark: #E1EAF4;
 
 	--radius-sm: 2px;
 	--radius-md: 4px;

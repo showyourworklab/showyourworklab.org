@@ -21,14 +21,14 @@
 			{#each PEOPLE as person}
 				<li class="col">
 					<Figure
-						src="/images/photos/syw_{person.slug}.jpg"
+						src="/photos/syw_{person.slug}.jpg"
 						alt="Portrait of {person.name}"
 						caption="Photo by Roshni Khatri"
 					/>
 					<div class="label">
-						<div class="name">
+						<h3 class="name">
 							{person.name}
-						</div>
+						</h3>
 						<div class="website">
 							<a
 								href="{person.website}"
@@ -62,12 +62,14 @@
 		max-width: unset;
 	}
 	li {
-/*		max-width: 400px;*/
+		max-width: var(--width-paragraph);
 		padding: 0 var(--space-2) var(--space-10) var(--space-2);
 		line-height: 1.3;
 	}
-	img {
-		width: 100%;
+	h3 {
+		color: inherit;
+		font-size: inherit;
+		text-transform: none;
 	}
 	.label {
 		display: flex;
@@ -82,7 +84,7 @@
 	.role {
 		font-size: var(--text-2);
 		white-space: nowrap;
-		opacity: 0.5;
+		color: var(--color-primary-light);
 	}
 	.website {
 		font-size: var(--text-1);

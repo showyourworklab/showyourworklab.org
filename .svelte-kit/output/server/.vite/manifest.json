@@ -8,6 +8,10 @@
       "_internal.js"
     ]
   },
+  "_constants.js": {
+    "file": "chunks/constants.js",
+    "name": "constants"
+  },
   "_exports.js": {
     "file": "chunks/exports.js",
     "name": "exports"
@@ -50,10 +54,11 @@
     "src": "src/routes/+layout.svelte",
     "isEntry": true,
     "imports": [
-      "_ssr.js"
+      "_ssr.js",
+      "_constants.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout.BnUkmbCw.css"
+      "_app/immutable/assets/_layout.DYSkCnyN.css"
     ]
   },
   "src/routes/+page.svelte": {
@@ -62,7 +67,11 @@
     "src": "src/routes/+page.svelte",
     "isEntry": true,
     "imports": [
-      "_ssr.js"
+      "_ssr.js",
+      "_constants.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.lg8CM9xD.css"
     ]
   }
 }

@@ -1,9 +1,15 @@
 export const TITLE = 'Show Your Work Lab'
+export const DESCRIPTION = 'We create impactful photojournalism, image-driven human rights campaigns, and innovative digital publishing tools.'
 
 export const ABOUT = {
 	slug: 'about',
 	overline: 'About',
 	title: 'What We Do'
+}
+export const CODE = {
+	slug: 'code',
+	overline: 'Code',
+	title: 'Our Web Tool'
 }
 export const VALUES = {
 	slug: 'values',
@@ -22,7 +28,8 @@ export const CONTACT = {
 }
 export const SECTIONS = [
 	ABOUT,
-	VALUES,
+	CODE,
+	// VALUES,
 	TEAM,
 	CONTACT
 ]

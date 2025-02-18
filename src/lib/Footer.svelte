@@ -23,7 +23,7 @@
 					<ul>
 						{#each SECTIONS as section}
 							<li>
-								<a href="#{section.slug}">
+								<a href="#{section.slug}" class="button">
 									{section.title}
 								</a>
 							</li>
@@ -34,10 +34,10 @@
 			<div class="col">
 				<ul>
 					<li>
-						<a href="{GITHUB}">Find us on GitHub</a>
+						<a href="{GITHUB}" target="_blank" class="button">Find us on GitHub</a>
 					</li>
 					<li>
-						<a href="mailto:{EMAIL}">{EMAIL}</a>
+						<a href="mailto:{EMAIL}" class="button">{EMAIL}</a>
 					</li>
 					<!-- <li>
 						<a href="#contact">Contact</a>
@@ -51,7 +51,7 @@
 <style>
 	footer {
 		display: flex;
-		background-color: var(--color-primary-dark);
+		background-color: var(--color-primary);
 		color: var(--color-secondary);
 	}
 	a {
@@ -74,7 +74,7 @@
 	.inner > div:first-child {
 		margin-bottom: 1rem;
 		padding-bottom: 1rem;
-		border-bottom: 1px currentColor dotted;
+		/*border-bottom: 1px currentColor dotted;*/
 	}
 	ul {
 		margin: 0;
@@ -85,6 +85,9 @@
 	}
 	li {
 		padding-left: 0;
+	}
+	li a {
+		text-transform: lowercase;
 	}
 	:not(nav) > ul {
 		text-align: right;

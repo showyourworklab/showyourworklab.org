@@ -9,16 +9,11 @@ html, body {
 	color: var(--color-primary-dark);
 	background-color: var(--color-secondary);
 }
+html {
+	scroll-behavior: smooth;
+}
 body {
 	margin: 0;
-}
-a {
-	color: currentColor;
-	text-decoration-style: dotted;
-	text-decoration-thickness: 1px;
-}
-a:hover, a:focus {
-
 }
 :is(p, ul) {
 	margin: 1rem 0;
@@ -52,9 +47,10 @@ li {
 } */
 :is(h1, h2, h3, h4) {
 	line-height: 1.2em;
+	text-transform: lowercase;
 	font-family: var(--font-display);
 	font-weight: var(--font-weight-display-bold);
-	text-transform: lowercase;
+	color: var(--color-primary);
 }
 :is(h2, h3, h4) {
 	font-family: var(--font-display);
@@ -73,9 +69,41 @@ h2 {
 h3 {
 	font-size: var(--text-4);
 }
-/* main {
+a {
+	color: currentColor;
+	text-decoration-style: solid;
+	text-decoration-thickness: 2px;
+	text-decoration-color: var(--color-primary-light);
+}
+a:hover, a:focus {
 
-} */
+}
+button, a.button, p a {
+	color: currentColor;
+	text-decoration: none;
+	outline-color: var(--color-primary-light);
+	outline-style: dotted;
+	outline-width: 1px;
+	outline-offset: 1px;
+	padding: 0 0.25em;
+	margin: 0 0.25em;
+}
+:is(button, a.button, p a):hover,
+:is(button, a.button, p a):focus {
+	/*outline-color: currentColor;*/
+}
+code {
+	font-size: 0.9em;
+	line-height: 1;
+	display: inline-block;
+	padding: var(--space-1);
+	background-color: rgba(0,0,0,0.1);
+	border-radius: 0.5em;
+}
+a code {
+	padding-left: 0;
+	padding-right: 0;
+}
 section {
 	display: flex;
 	flex-direction: column;
@@ -87,6 +115,12 @@ section:nth-child(odd) {
 section:nth-child(even) {
 	background-color: var(--color-secondary-dark);
 }
+section:nth-child(odd) a:is(:hover, :focus) {
+	background-color: var(--color-secondary-dark);
+}
+section:nth-child(even) a:is(:hover, :focus) {
+	background-color: var(--color-secondary);
+}
 section > section {
 	/*background-color: var(--color-secondary-dark) !important;*/
 }
@@ -94,7 +128,10 @@ section > section {
 	width: 100%;
 	max-width: var(--width-inner);
 	margin: auto;
-	padding: 6rem 2rem;
+	padding: 1rem 1rem;
+	@media (min-width: 768px) {
+		padding: 6rem 2rem;
+	}
 }
 .inner p, .inner ul {
 	max-width: var(--width-paragraph);
@@ -134,37 +171,23 @@ section > section {
 	padding: var(--space-10) var(--space-6);
 	/*max-width: var(--width-paragraph);*/
 }
-/*.col:first-child .inner {*/
-/*	margin-right: 0;*/
-/*}*/
-/*.col:last-child .inner {*/
-/*	margin-left: 0;*/
-/*}*/
-button, a.button, p a {
-	color: currentColor;
-	text-decoration: none;
-	outline-color: currentColor;
-    outline-style: dotted;
-    outline-width: 1px;
-    outline-offset: 1px;
-	padding: 0 0.25em;
-	margin: 0 0.25em;
-}
-:is(button, a.button, p a):hover,
-:is(button, a.button, p a):focus {
-	outline-width: 2px;
-}
 .overline {
-	/* position: absolute; */
-	/* top: 1rem; */
-	/* left: 2rem; */
-	/* width: 100%; */
 	font-size: var(--text-1);
 	font-family: var(--font-display);
 	font-weight: 800;
 	letter-spacing: 0.5ch;
 	text-transform: uppercase;
 	color: var(--color-primary);
+}
+.subtitle {
+	color: var(--color-primary-light);
+	font-family: var(--font-display);
+	font-size: var(--text-3);
+	line-height: 1.5;
+}
+.subtitle u {
+	color: var(--color-primary);
+	text-decoration: none;
 }
 .sr {
 	position: absolute;
