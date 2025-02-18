@@ -12,16 +12,6 @@ function run_all(fns) {
 function safe_not_equal(a, b) {
   return a != a ? b == b : a !== b || a && typeof a === "object" || typeof a === "function";
 }
-function subscribe(store, ...callbacks) {
-  if (store == null) {
-    for (const callback of callbacks) {
-      callback(void 0);
-    }
-    return noop;
-  }
-  const unsub = store.subscribe(...callbacks);
-  return unsub.unsubscribe ? () => unsub.unsubscribe() : unsub;
-}
 function compute_rest_props(props, keys) {
   const rest = {};
   keys = new Set(keys);
@@ -156,15 +146,14 @@ function add_attribute(name, value, boolean) {
 }
 export {
   setContext as a,
-  null_to_empty as b,
+  add_attribute as b,
   create_ssr_component as c,
-  add_attribute as d,
+  each as d,
   escape as e,
-  each as f,
-  getContext as g,
-  subscribe as h,
-  compute_rest_props as i,
-  createEventDispatcher as j,
+  null_to_empty as f,
+  compute_rest_props as g,
+  getContext as h,
+  createEventDispatcher as i,
   missing_component as m,
   noop as n,
   safe_not_equal as s,

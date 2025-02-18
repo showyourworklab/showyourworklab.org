@@ -12,10 +12,6 @@
     "file": "chunks/constants.js",
     "name": "constants"
   },
-  "_exports.js": {
-    "file": "chunks/exports.js",
-    "name": "exports"
-  },
   "_internal.js": {
     "file": "chunks/internal.js",
     "name": "internal",
@@ -27,25 +23,26 @@
     "file": "chunks/ssr.js",
     "name": "ssr"
   },
-  "node_modules/.pnpm/@sveltejs+kit@2.5.10_@sveltejs+vite-plugin-svelte@3.1.1_svelte@4.2.18_vite@5.2.13/node_modules/@sveltejs/kit/src/runtime/components/error.svelte": {
-    "file": "entries/fallbacks/error.svelte.js",
-    "name": "entries/fallbacks/error.svelte",
-    "src": "node_modules/.pnpm/@sveltejs+kit@2.5.10_@sveltejs+vite-plugin-svelte@3.1.1_svelte@4.2.18_vite@5.2.13/node_modules/@sveltejs/kit/src/runtime/components/error.svelte",
-    "isEntry": true,
-    "imports": [
-      "_ssr.js",
-      "_exports.js"
-    ]
-  },
-  "node_modules/.pnpm/@sveltejs+kit@2.5.10_@sveltejs+vite-plugin-svelte@3.1.1_svelte@4.2.18_vite@5.2.13/node_modules/@sveltejs/kit/src/runtime/server/index.js": {
+  "node_modules/@sveltejs/kit/src/runtime/server/index.js": {
     "file": "index.js",
     "name": "index",
-    "src": "node_modules/.pnpm/@sveltejs+kit@2.5.10_@sveltejs+vite-plugin-svelte@3.1.1_svelte@4.2.18_vite@5.2.13/node_modules/@sveltejs/kit/src/runtime/server/index.js",
+    "src": "node_modules/@sveltejs/kit/src/runtime/server/index.js",
     "isEntry": true,
     "imports": [
       "_internal.js",
-      "_exports.js",
       "_ssr.js"
+    ]
+  },
+  "src/routes/+error.svelte": {
+    "file": "entries/pages/_error.svelte.js",
+    "name": "entries/pages/_error.svelte",
+    "src": "src/routes/+error.svelte",
+    "isEntry": true,
+    "imports": [
+      "_ssr.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_error.Bu2weBB0.css"
     ]
   },
   "src/routes/+layout.svelte": {
@@ -58,7 +55,7 @@
       "_constants.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout.DINzGIVs.css"
+      "_app/immutable/assets/_layout.dwbmhzIu.css"
     ]
   },
   "src/routes/+page.svelte": {
@@ -71,7 +68,7 @@
       "_constants.js"
     ],
     "css": [
-      "_app/immutable/assets/_page.DLHK4M0F.css"
+      "_app/immutable/assets/_page.CDzjoF8S.css"
     ]
   }
 }
