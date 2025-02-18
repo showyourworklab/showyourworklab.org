@@ -1,6 +1,4 @@
 <script>
-	import SvelteMarkdown from 'svelte-markdown'
-	import MarkdownLink from './MarkdownLink.svelte'
 	export let src = null
 	export let alt = ""
 	export let caption = null
