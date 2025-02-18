@@ -20,7 +20,7 @@
 			The tool is being developed to easily integrate into your newsrooms workflow. We're developing the tool for <code>React</code>, <code>Svelte</code>, and as a <code>WordPress</code> components.
 		</p>
 		<p>
-			Contact us at <a href="mailto:info@showyourworklab.org">info@showyourworklab.org</a> to learn more and view a demo.
+			Contact us at <a href="mailto:info@showyourworklab.org" class="button">info@showyourworklab.org</a> to learn more and view a demo.
 		</p>
 	</div>
 </section>
