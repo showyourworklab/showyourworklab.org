@@ -9,16 +9,11 @@
 		<h1>
 			<span>Show Your Work</span> <span>Lab</span>
 		</h1>
-		<!-- <div
+		<div
 			id="tagline"
 		>
-<<<<<<< Updated upstream
-			We don't just identify what's fake; we prove what's real.
-		</div> -->
-=======
 			We prove what's real rather than identify what's fake
 		</div>
->>>>>>> Stashed changes
 		<!-- <img
 			src="/images/logo-light.svg"
 		/> -->
