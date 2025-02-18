@@ -1,12 +1,12 @@
 <script>
 	import { TITLE, SECTIONS } from '$src/constants'
 	export let header = ''
-	export let fill = ''
+	export let belowFold = false
 </script>
 
 <header
 	bind:this={header}
-	class="{fill ? "fill" : ""}"
+	class="{belowFold ? "below-fold" : ""}"
 >
 	<a
 		href="#home"
@@ -54,7 +54,7 @@
 		top: 0;
 		left: 0;
 		z-index: 2;
-		padding: 0.5rem;
+		padding: 0.5rem 1rem;
 		display: flex;
 		flex-wrap: wrap;
 		flex-direction: row;
@@ -62,9 +62,12 @@
 		justify-content: space-between;
 		color: var(--color-secondary);
 		transition: background-color 50ms ease;
+		@media (min-width: 768px) {
+			padding: 0.5rem 2rem;
+		}
 	}
-	header.fill {
-		background-color: var(--color-primary-dark);
+	header.below-fold {
+		background-color: var(--color-primary);
 	}
 	#title {
 		padding: 0;
@@ -82,7 +85,7 @@
 		width: auto;
 		display: none;
 	}
-	header.fill img#logo-lg {
+	header.below-fold img#logo-lg {
 		display: block;
 	}
 	img#logo-sm {
@@ -90,11 +93,15 @@
 		width: auto;
 		display: block;
 	}
-	header.fill img#logo-sm {
+	header.below-fold img#logo-sm {
 		display: none;
 	}
 	nav {
 		position: relative;
+		display: none;
+		@media (min-width: 768px) {
+			display: block;
+		}
 	}
 	ul {
 		padding: 0;
@@ -109,9 +116,19 @@
 		margin-right: 0.25em;
 		white-space: nowrap;
 	}
-	li a {
+	li a.button {
+		color: var(--color-secondary);
 		text-transform: lowercase;
 		font-family: var(--font-display);
 		font-weight: var(--font-weight-display-normal);
+		text-decoration-color: var(--color-primary-light);
+	}
+	li a.button:is(:hover, :focus) {
+		background-color: var(--color-secondary-dark);
+		color: var(--color-primary);
+		/*text-decoration-color: var(--color-secondary);*/
+	}
+	header.below-fold li a.button {
+		
 	}
 </style>
