@@ -12,15 +12,12 @@
 	},
 	"dependencies": {
 		"svelte-markdown": "^0.4.1",
-		"svelte-meta-tags": "^3.1.2",
 		"svelte-preprocess": "^5.1.4"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "^3.0.0",
-		"@sveltejs/adapter-static": "^3.0.1",
-		"@sveltejs/kit": "^2.0.0",
+		"@sveltejs/adapter-static": "^3.0.8",
+		"@sveltejs/kit": "^2.20.2",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
-		"@types/eslint": "^8.56.7",
 		"eslint": "^9.0.0",
 		"eslint-plugin-svelte": "^2.36.0",
 		"gh-pages": "^6.1.1",
