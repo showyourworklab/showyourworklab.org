@@ -33,7 +33,11 @@
 						{item.source}
 					</div>
 					<h3 class="name">
-						<a href={item.url} target="_blank">
+						<a
+							href={item.url}
+							target="_blank"
+							rel="noreferrer nofollow"
+						>
 							{item.title}
 						</a>
 					</h3>

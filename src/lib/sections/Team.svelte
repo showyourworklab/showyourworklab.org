@@ -50,6 +50,7 @@
 							<a
 								href="{item.website}"
 								target="_blank"
+								rel="noreferrer nofollow"
 								class="button"
 							>
 								{item.website.replace('https://', '')}
