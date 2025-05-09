@@ -1,4 +1,5 @@
 <script>
+	import {SywSvelte} from 'syw-svelte-test'
 	import { CODE } from '$src/constants'
 </script>
 
@@ -10,6 +11,8 @@
 		<h2>
 			{CODE.title}
 		</h2>
+		<!-- <SywSvelte
+		/> -->
 		<p class="subtitle">
 			Build trust with your audience by displaying C2PA-compliant images within an interactive frame that exposes verifiable data about how an image was made.
 		</p>
