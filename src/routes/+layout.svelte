@@ -23,7 +23,8 @@
 </script>
 
 <svelte:window bind:scrollY={y} />
-<div id="home" />
+<div id="home">
+</div>
 <Header
 	bind:header
 	belowFold={belowFold}

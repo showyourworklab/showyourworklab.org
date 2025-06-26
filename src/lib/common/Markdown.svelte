@@ -1,15 +1,9 @@
 <script>
-	import SvelteMarkdown from 'svelte-markdown'
-	import MarkdownLink from './MarkdownLink.svelte'
+	import { marked } from 'marked'
 	export let content
 </script>
 
-<SvelteMarkdown
-	source={content}
-	renderers={{
-		link: MarkdownLink
-	}}
-/>
+{@html marked(content)}
 
 <style>
 </style>

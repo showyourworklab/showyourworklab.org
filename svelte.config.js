@@ -1,6 +1,7 @@
-import adapter from '@sveltejs/adapter-static'
-import { sveltePreprocess } from 'svelte-preprocess'
+import adapter from '@sveltejs/adapter-static';
+import sveltePreprocess from 'svelte-preprocess';
 
+/** @type {import('@sveltejs/kit').Config} */
 const config = {
 	preprocess: sveltePreprocess(),
 	kit: {
@@ -11,9 +12,10 @@ const config = {
 		adapter: adapter({
 			pages: 'build',
 			assets: 'build',
-			fallback: 'index.html',
+			fallback: undefined,
 			precompress: false,
-			strict: true
+			strict: true,
+			fallback: 'index.html'
 		})
 	}
 };
