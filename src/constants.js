@@ -4,10 +4,10 @@ export const ABOUT = {
 	overline: 'About',
 	title: 'What We Do'
 };
-export const CODE = {
-	slug: 'code',
-	overline: 'Code',
-	title: 'Our Web Tool'
+export const SOFTWARE = {
+	slug: 'software',
+	overline: 'Software',
+	title: 'our web tool'
 }
 export const VALUES = {
 	slug: 'values',
@@ -31,7 +31,7 @@ export const CONTACT = {
 };
 export const SECTIONS = [
 	ABOUT,
-	CODE,
+	SOFTWARE,
 	// VALUES,
 	TEAM,
 	CONTACT

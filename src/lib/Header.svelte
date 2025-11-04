@@ -11,6 +11,7 @@
 	<a
 		href="#home"
 		id="title"
+		class="button"
 	>
 		<span
 			class="sr"
@@ -47,6 +48,7 @@
 </header>
 
 <style>
+	/* Header */
 	header {
 		width: 100%;
 		height: 3.5rem;
@@ -54,81 +56,91 @@
 		top: 0;
 		left: 0;
 		z-index: 2;
-		padding: 0.5rem 1rem;
+		/* padding: 0.5rem 1rem; */
 		display: flex;
 		flex-wrap: wrap;
 		flex-direction: row;
 		align-items: center;
 		justify-content: space-between;
 		color: var(--color-secondary);
+		background-color: var(--color-primary);
 		transition: background-color 50ms ease;
 		@media (min-width: 768px) {
-			padding: 0.5rem 2rem;
+			/* padding: 0.5rem 2rem; */
 		}
 	}
 	header.below-fold {
-		background-color: var(--color-primary);
+		/* background-color: var(--color-primary); */
 	}
-	#title {
-		padding: 0;
+	/* Header > Title */
+	header #title {
+		/* padding: 0.5em 0.75em; */
+		margin-right: auto;
 		outline: none;
 		display: flex;
 		font-weight: var(--font-weight-display-bold);
 		text-decoration: none;
 		text-transform: lowercase;
 	}
-	img.logo {
+	header #title img.logo {
 
 	}
-	img#logo-lg {
+	header #title img#logo-lg {
 		height: 1.25rem;
 		width: auto;
 		display: none;
 	}
-	header.below-fold img#logo-lg {
+	header.below-fold #title img#logo-lg {
 		display: block;
 	}
-	img#logo-sm {
+	header #title img#logo-sm {
 		height: 1.75rem;
 		width: auto;
 		display: block;
 	}
-	header.below-fold img#logo-sm {
+	header.below-fold #title img#logo-sm {
 		display: none;
 	}
-	nav {
-		position: relative;
+	/* Header > Nav */
+	header nav {
 		display: none;
+		padding: 0;
+		position: relative;
+		color: var(--color-secondary);
+		background-color: var(--color-primary);
+		border-radius: 1em;
 		@media (min-width: 768px) {
-			display: block;
+			display: flex;
 		}
 	}
-	ul {
-		padding: 0;
+	header nav ul {
+		width: 100%;
+		max-width: unset;
+		padding: 0.25em;
 		margin: 0;
 		display: flex;
 		flex-wrap: wrap;
 		flex-direction: row;
 		list-style-type: none;
 	}
-	li {
+	header nav ul li {
 		padding: 0;
-		margin-right: 0.25em;
+		margin-left: 0.25em;
 		white-space: nowrap;
+		display: flex;
+		align-items: center;
 	}
-	li a.button {
-		color: var(--color-secondary);
+	header nav ul li a.button {
+		color: var(--color-primary);
+		background-color: var(--color-secondary);
 		text-transform: lowercase;
 		font-family: var(--font-display);
 		font-weight: var(--font-weight-display-normal);
 		text-decoration-color: var(--color-primary-light);
 	}
-	li a.button:is(:hover, :focus) {
+	header nav ul li a.button:is(:hover, :focus) {
 		background-color: var(--color-secondary-dark);
 		color: var(--color-primary);
 		/*text-decoration-color: var(--color-secondary);*/
-	}
-	header.below-fold li a.button {
-		
 	}
 </style>

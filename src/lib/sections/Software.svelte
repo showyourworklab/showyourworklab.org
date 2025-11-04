@@ -1,14 +1,14 @@
 <script>
-	import { CODE } from '$src/constants'
+	import { SOFTWARE } from '$src/constants'
 </script>
 
-<section id="code">
+<section id="software">
 	<div class="inner">
 		<!-- <div class="overline">
-			{CODE.overline}
+			{SOFTWARE.overline}
 		</div> -->
 		<h2>
-			{CODE.title}
+			{SOFTWARE.title}
 		</h2>
 		<p class="subtitle">
 			Build trust with your audience by displaying C2PA-compliant images within an interactive frame that exposes verifiable data about how an image was made.

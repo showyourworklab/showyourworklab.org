@@ -24,19 +24,21 @@
 	}
 	img {
 		width: 100%;
+		border-radius: 1rem;
 	}
 	figcaption {
 		width: 100%;
 		position: absolute;
 		bottom: 0;
 		left: 0;
-		padding: var(--space-2);
+		padding: var(--space-3);
 		color: var(--color-secondary);
 		font-size: var(--text-1);
 		text-align: right;
 		line-height: 1;
-		text-shadow: 0px 0px 5px rgba(0,0,0,1);
-		opacity: 0.75;
+		/* opacity: 0.75; */
+		text-shadow: 0px 0px 5px black;
+
 		/*transition: opacity 100ms ease;*/
 		/*opacity: 0;*/
 	}

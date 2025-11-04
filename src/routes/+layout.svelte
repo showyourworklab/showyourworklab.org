@@ -1,5 +1,4 @@
 <script>
-	import '$src/globals.css'
 	import '$src/styles.css'
 	import Hero from '$lib/Hero.svelte'
 	import Header from '$lib/Header.svelte'
