@@ -9,7 +9,7 @@
 			name: 'Nora Savosnick',
 			role: 'Visual Journalist',
 			website: 'https://norasavosnick.com',
-			bio: 'Nora Savosnick (b. 1996) is a visual journalist whose work focuses on humanitarian crises and conflict coverage. Growing up in Oslo as the granddaughter of a Jewish Holocaust survivor, Nora was deeply impacted by the realization that the Nazis had captured most images from Auschwitz during the war. This realization fueled her determination to ensure that perpetrators never control the visual narrative and to challenge the authenticity of journalists. Her work has taken her to report on conflicts in Ukraine, Haiti, Israel, and the Palestinian territories, while also covering politics across the United States.\n\nIn addition to her fieldwork, Nora gave a TEDx talk in 2023 and received the Reuters scholarship for visual journalism at the International Center of Photography in 2018.\n\nCurrently based in New York, her work has been published in publications such as The New York Times, Reuters, Aftenposten, Aftonbladet, among others.'
+			bio: 'Nora Savosnick (b. 1996) is a visual journalist whose work focuses on humanitarian crises and conflict coverage. Her work has taken her to report on conflicts in Ukraine, Haiti, Israel, and the Palestinian territories, while also covering politics across the United States.\n\nIn addition to her fieldwork, Nora gave a TEDx talk in 2023 and received the Reuters scholarship for visual journalism at the International Center of Photography in 2018.\n\nCurrently based in New York, her work has been published in publications such as The New York Times, Reuters, Aftenposten, Aftonbladet, among others.'
 		},
 		{
 			slug: 'corey',
