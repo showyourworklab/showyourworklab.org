@@ -94,10 +94,13 @@
 		flex-wrap: wrap;
 		align-items: center;
 		justify-content: space-between;
+		margin-top: 0.5rem;
+		margin-bottom: 0.25rem;
 	}
 	.name {
-		font-weight: var(--font-weight-body-bold);
 		width: 160px;
+		margin-bottom: 0;
+		font-weight: var(--font-weight-body-bold);
 	}
 	.role {
 		font-size: var(--text-2);

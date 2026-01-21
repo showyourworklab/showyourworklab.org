@@ -34,17 +34,7 @@ li {
 	padding-left: 0.5em;
 	padding-bottom: 0.5em;
 }
-/* li::before {
-	content: "";
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 1px;
-	height: 100%;
-	border-right-width: 1px;
-	border-right-style: dotted;
-	border-right-color: currentColor;
-} */
+/* Headings */
 :is(h1, h2, h3, h4) {
 	line-height: 1.2em;
 	text-transform: lowercase;
@@ -69,6 +59,7 @@ h2 {
 h3 {
 	font-size: var(--text-4);
 }
+/* Links / Buttons */
 a {
 	color: currentColor;
 	text-decoration-style: solid;
@@ -78,20 +69,34 @@ a {
 a:hover, a:focus {
 
 }
+button, a {
+	transition: all 300ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
 button, a.button, p a {
 	color: currentColor;
 	text-decoration: none;
-	outline-color: var(--color-primary-light);
-	outline-style: dotted;
-	outline-width: 1px;
-	outline-offset: 1px;
-	padding: 0 0.25em;
+	border-radius: 10px;
+	border-color: var(--color-primary-light);
+	border-style: solid;
+	border-width: 1px;
+	/* outline-offset: 1px; */
+	padding: 0.25em 0.5em;
 	margin: 0 0.25em;
 }
-:is(button, a.button, p a):hover,
-:is(button, a.button, p a):focus {
-	/*outline-color: currentColor;*/
+:is(button, a.button):hover,
+:is(button, a.button):focus {
+	border-color: transparent;
 }
+
+:is(button, a.button).invert {
+	/* color: var(--color-secondary); */
+	/* border-color: var(--color-primary-light); */
+}
+:is(button, a.button).invert:is(:hover, :focus) {
+	color: var(--color-primary);
+	background-color: var(--color-secondary-dark);
+}
+/* Code */
 code {
 	font-size: 0.9em;
 	line-height: 1;
@@ -104,6 +109,7 @@ a code {
 	padding-left: 0;
 	padding-right: 0;
 }
+/* Sections */
 section {
 	display: flex;
 	flex-direction: column;
@@ -124,6 +130,7 @@ section:nth-child(even) .button:is(:hover, :focus) {
 section > section {
 	/*background-color: var(--color-secondary-dark) !important;*/
 }
+/* Inners */
 .inner {
 	width: 100%;
 	max-width: var(--width-inner);
@@ -136,6 +143,7 @@ section > section {
 .inner p, .inner ul {
 	max-width: var(--width-paragraph);
 }
+/* Columns */
 .cols {
 	display: flex;
 	flex-wrap: wrap;
@@ -171,6 +179,7 @@ section > section {
 	padding: var(--space-10) var(--space-6);
 	/*max-width: var(--width-paragraph);*/
 }
+/* Overlines */
 .overline {
 	font-size: var(--text-1);
 	font-family: var(--font-display);
@@ -179,6 +188,7 @@ section > section {
 	text-transform: uppercase;
 	color: var(--color-primary);
 }
+/* Subtitles */
 .subtitle {
 	color: var(--color-primary-light);
 	font-family: var(--font-display);
@@ -189,6 +199,7 @@ section > section {
 	color: var(--color-primary);
 	text-decoration: none;
 }
+/* Screen-reader only */
 .sr {
 	position: absolute;
 	width: 1px;

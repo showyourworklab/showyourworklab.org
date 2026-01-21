@@ -21,6 +21,7 @@
 		margin: 0;
 		width: 100%;
 		position: relative;
+		display: flex;
 	}
 	img {
 		width: 100%;
@@ -37,10 +38,5 @@
 		line-height: 1;
 		text-shadow: 0px 0px 5px rgba(0,0,0,1);
 		opacity: 0.75;
-		/*transition: opacity 100ms ease;*/
-		/*opacity: 0;*/
 	}
-	/*figure:hover figcaption {
-		opacity: 0.75;
-	}*/
 </style>

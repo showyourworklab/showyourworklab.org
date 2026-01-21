@@ -25,7 +25,7 @@
 							<li>
 								<a
 									href="#{section.slug}"
-									class="button"
+									class="button invert"
 								>
 									{section.title}
 								</a>
@@ -41,13 +41,18 @@
 							href="{GITHUB}"
 							target="_blank"
 							rel="noreferrer nofollow"
-							class="button"
+							class="button invert"
 						>
 							Find us on GitHub
 						</a>
 					</li>
 					<li>
-						<a href="mailto:{EMAIL}" class="button">{EMAIL}</a>
+						<a
+							href="mailto:{EMAIL}"
+							class="button invert"
+						>
+							{EMAIL}
+						</a>
 					</li>
 					<!-- <li>
 						<a href="#contact">Contact</a>

@@ -71,7 +71,8 @@
     	color: var(--color-primary-light);
 	}
 	#press li a:hover {
-		text-decoration-color: var(--color-primary);
+		color: var(--color-primary-light);
+		/* text-decoration-color: var(--color-secondary-dark); */
 	}
 	#press li:not(:last-child) {
 		padding-bottom: 1rem;

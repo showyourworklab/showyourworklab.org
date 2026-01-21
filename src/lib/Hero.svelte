@@ -22,11 +22,13 @@
 
 <style>
 	section#hero {
-		height: 100vh;
+		/* height: 75vh; */
+		height: 40rem;
+		max-height: 60vh;
 		padding-top: 6rem;
 		padding-bottom: 6rem;
 		background-color: var(--color-primary);
-		background-image: url(/photos/photo_7.jpg);
+		background-image: url(/photos/photo_5.jpg);
 		background-position: center center;
 		background-size: cover;
 	}
