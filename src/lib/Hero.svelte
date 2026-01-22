@@ -22,29 +22,29 @@
 
 <style>
 	section#hero {
-		/* height: 75vh; */
-		height: 40rem;
-		max-height: 60vh;
-		padding-top: 6rem;
-		padding-bottom: 6rem;
+		height: 35rem;
+		max-height: 65vh;
+		/* padding-top: 6rem; */
+		/* padding-bottom: 6rem; */
 		background-color: var(--color-primary);
 		background-image: url(/photos/photo_5.jpg);
-		background-position: center center;
+		background-position: center 30%;
 		background-size: cover;
 	}
 	.inner {
-		width: unset;
-		max-width: unset;
+		/* width: unset; */
+		/* max-width: unset; */
 	}
 	h1 {
 		margin: 0;
-		font-size: 65px;
+		font-size: 80px;
 		font-weight: var(--font-weight-display-bold);
-		text-align: center;
+		line-height: 0.9em;
+		/* text-align: center; */
 		/* text-shadow: 0px 0px 25px rgba(0,0,0,0.25); */
 		cursor: default;
 		/* user-select: none; */
-		text-shadow: 0px 0px 1px rgba(0,0,0,0.75), 0px 0px 25px rgba(0,0,0,0.5), 0px 0px 50px rgba(0,0,0,0.75);
+		/* text-shadow: 0px 0px 1px rgba(0,0,0,0.75), 0px 0px 25px rgba(0,0,0,0.5), 0px 0px 50px rgba(0,0,0,0.75); */
 	}
 	h1 span:first-child {
 		color: var(--color-secondary);
@@ -54,10 +54,10 @@
 	}
 	#tagline {
 		color: var(--color-secondary);
-		font-size: 23px;
-		font-family: var(--font-display);
+		font-size: 28px;
+		font-family: var(--font-body);
 		font-weight: var(--font-weight-display-normal);
-		text-align: center;
+		/* text-align: center; */
 		margin: var(--space-4) 0 0 0;
 		text-shadow: 0px 0px 1px rgba(0,0,0,1), 0px 0px 25px rgba(0,0,0,0.5), 0px 0px 50px rgba(0,0,0,0.75);
 	}

@@ -61,7 +61,8 @@
 		align-items: center;
 		justify-content: space-between;
 		color: var(--color-secondary);
-		transition: background-color 50ms ease;
+		/* transition: background-color 50ms ease; */
+		transition: background-color 300ms var(--transition-function);
 		@media (min-width: 768px) {
 			padding: 0.5rem 2rem;
 		}
@@ -120,6 +121,10 @@
 		text-transform: lowercase;
 		font-family: var(--font-display);
 		font-weight: var(--font-weight-display-normal);
+	}
+	li a.button {
+		backdrop-filter: blur(0.5px);
+		background-color: rgba(0,0,0,0.2);
 	}
 	header.below-fold li a.button {
 		

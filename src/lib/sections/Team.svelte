@@ -89,6 +89,9 @@
 		font-size: inherit;
 		text-transform: none;
 	}
+	.col :global(img) {
+		border-radius: 1rem;
+	}
 	.label {
 		display: flex;
 		flex-wrap: wrap;

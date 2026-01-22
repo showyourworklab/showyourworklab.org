@@ -64,6 +64,7 @@
 		/* width: 25rem; */
 	}
 	#press li .source {
+		text-transform: lowercase;
 		font-weight: var(--font-weight-body-bold);
 	}
 	#press li .date {
