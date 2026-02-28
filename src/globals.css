@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap');
 
@@ -11,6 +12,7 @@
 	--color-secondary-dark: #E1EAF4;
 	
 	--font-body: "Instrument Sans", arial, sans-serif;
+	/* --font-body: "Inter", arial, sans-serif; */
 	--font-display: "Rethink Sans", arial, sans-serif;
 	--font-weight-body-light: 400;
 	--font-weight-body-normal: 500;
@@ -18,7 +20,7 @@
 	--font-weight-display-normal: 500;
 	--font-weight-display-bold: 800;
 
-	--text-base: 16px;
+	--text-base: 18px;
 	--text-1: 10px;
 	--text-2: 14px;
 	--text-3: 24px;

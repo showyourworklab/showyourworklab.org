@@ -11,13 +11,14 @@
 			{CODE.title}
 		</h2>
 		<p class="subtitle">
-			Build trust with your audience by displaying C2PA-compliant images within an interactive frame that exposes verifiable data about how an image was made.
+			Build audience trust by surfacing verifiable information about how your images were created.
 		</p>
 		<p>
-			We’re creating a tool that lets you augment your site's images with optional C2PA provenance data. The tool wraps your images within a frame allowing users to explore multiple layers of verifiable data about how an image is made, including whether it was captured with a camera or generated with AI.
+			We’re creating an open-source toolkit to present easy-to-read provenance data along each C2PA-compliant image on your website. The tool lets users explore an image’s origins from its original capture in a lens, or AI-driven creation, to any subsequent edits and publication history. This verified provenance can be gleaned at a glance, or explored in detail through further interactivity.
+
 		</p>
 		<p>
-			The tool is being developed to easily integrate into your newsroom or organization's workflow. We're developing the tool for <code>React</code>, <code>Svelte</code>, and as a <code>WordPress</code> block.
+			Designed for easy integration into editorial workflows, the tool is available for <code>React</code>, <code>Svelte</code>, and <code>WordPress</code>; visually customizable; meets strict accessibility standards; configurable to track user engagement; and supports global languages.
 		</p>
 		<p>
 			Contact us at <a href="mailto:info@showyourworklab.org" class="button">info@showyourworklab.org</a> to learn more and view a demo.
