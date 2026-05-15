@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+:root {
+}
+
+@theme {
+	/* Colors */
+	--color-primary: #000;
+	--color-secondary: #FFF;
+	/* Typography */
+	--font-sans: var(--font-geist-sans);
+	--font-mono: var(--font-geist-mono);
+	/* Spacing */
+	--spacing-header: 3.5rem;
+	--spacing-header-logo: 1.25rem;
+	/* Z-index */
+	--z-header: 10;
+	/*
+	--text-*
+	--font-weight-*
+	--tracking-*
+	--leading-*
+	--tab-size-*
+	--breakpoint-*
+	--container-*
+	--radius-*
+	--shadow-*
+	--inset-shadow-*
+	--drop-shadow-*
+	--blur-*
+	--perspective-*
+	--zoom-*
+	--aspect-*
+	--ease-*
+	--animate-*
+	*/
+}
+
+
+
+body {
+	@apply text-primary;
+	@apply bg-secondary;
+	@apply font-sans;
+}
+
+.Header {
+	@apply w-full;
+	@apply h-header;
+	@apply z-(--z-header);
+	@apply fixed;
+	@apply inset-0;
+	@apply py-1;
+	@apply px-4;
+	@apply flex;
+	@apply items-center;
+	@apply justify-between;
+	@apply text-secondary;
+	@apply bg-primary;
+	@apply transition-[background-color];
+	@apply duration-300;
+	@apply ease-in-out;
+}
+.Header img {
+	@apply w-auto;
+	@apply h-header-logo;
+}
