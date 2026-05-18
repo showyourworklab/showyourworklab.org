@@ -1,0 +1,18 @@
+.Verify {
+	@apply h-full;
+}
+.VerifyColumns {
+	@apply grid;
+    @apply grid-cols-1;
+    @apply md:grid-cols-[var(--spacing-upload-column)_minmax(0,1fr)];
+}
+.VerifyColumn {
+	@apply p-4;
+}
+.VerifyColumnUpload {
+	@apply w-full;
+}
+.VerifyColumnInfo {
+	@apply min-w-0;
+	@apply bg-tertiary;
+}

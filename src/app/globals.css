@@ -1,18 +1,44 @@
 @import "tailwindcss";
 
 :root {
+
 }
 
 @theme {
 	/* Colors */
-	--color-primary: #000;
-	--color-secondary: #FFF;
+	/* --color-primary: #000000; */
+	/* --color-secondary: #FFFFFF; */
+	--color-tertiary: #DBDBDB;
+	--color-primary: #183377;
+	--color-primary-light: #808A9D;
+	--color-primary-dark: #0F2143;
+	--color-secondary: #EEf3F9;
+	--color-secondary-light: #ECEFFD;
+	--color-secondary-dark: #E1EAF4;
+	/* Colors > Tree */
+	--color-tree-string: #c9453b;
+	--color-tree-number: #0550ae;
+	--color-tree-boolean: #b35900;
+	--color-tree-key: #116329;
+	--color-tree-accent: #6f42c1;
 	/* Typography */
-	--font-sans: var(--font-geist-sans);
-	--font-mono: var(--font-geist-mono);
+	/* Typography > Font */
+	--font-body: var(--font-instrument-sans);
+	--font-display: var(--font-rethink-sans);
+	/* Typography > Weight */
+	--font-weight-body-normal: 400;
+	--font-weight-body-bold: 700;
+	--font-weight-display-normal: 400;
+	--font-weight-display-bold: 800;
 	/* Spacing */
 	--spacing-header: 3.5rem;
 	--spacing-header-logo: 1.25rem;
+	--spacing-inner: 750px;
+	--spacing-paragraph: 52ch;
+	--spacing-upload-width: 40rem;
+	--spacing-upload-height: 20rem;
+	--spacing-upload-column: 30rem;
+	--spacing-preview-width: 40rem;
 	/* Z-index */
 	--z-header: 10;
 	/*
@@ -37,31 +63,102 @@
 }
 
 
-
-body {
+* {
+	box-sizing: border-box;
+}
+html, body {
+	@apply text-base;
+	@apply font-body;
+	@apply font-body-normal;
 	@apply text-primary;
 	@apply bg-secondary;
-	@apply font-sans;
 }
+html {
+	@apply h-full;
+	scroll-behavior: smooth;
+}
+body {
+	@apply m-0;
+	@apply h-full;
+	@apply text-primary;
+	@apply bg-secondary;
+	@apply font-body;
+	@apply font-body-normal;
+}
+main {
+	@apply pt-header;
+}
+:is(p, ul) {
+	margin: 1rem 0;
+}
+:is(p, ul):first-child {
+	margin-top: 0;
+}
+:is(p, ul):last-child {
+	margin-bottom: 0;
+}
+p {
 
-.Header {
-	@apply w-full;
-	@apply h-header;
-	@apply z-(--z-header);
-	@apply fixed;
-	@apply inset-0;
-	@apply py-1;
-	@apply px-4;
-	@apply flex;
-	@apply items-center;
-	@apply justify-between;
-	@apply text-secondary;
-	@apply bg-primary;
-	@apply transition-[background-color];
-	@apply duration-300;
-	@apply ease-in-out;
 }
-.Header img {
-	@apply w-auto;
-	@apply h-header-logo;
+ul {
+	padding-left: 1em;
 }
+li {
+	padding-left: 0.5em;
+	padding-bottom: 0.5em;
+}
+/* Headings */
+:is(h1, h2, h3, h4) {
+	line-height: 1.2em;
+	text-transform: lowercase;
+	@apply font-display;
+	@apply font-display-bold;
+	@apply text-primary;
+}
+:is(h2, h3, h4) {
+	@apply font-display;
+	margin: 0 0 0.5em 0;
+}
+:is(h2, h3, h4):first-child {
+	margin-top: 0;
+}
+h1 {
+	@apply text-6xl;
+}
+h2 {
+	@apply text-5xl;
+}
+h3 {
+	@apply text-4xl;
+}
+/* Code */
+code {
+	@apply p-2;
+	@apply text-xs;
+	/* @apply alpha bg-secondary-light; */
+	background-color: --alpha(var(--color-primary-light) / 25%);
+	@apply rounded-xl;
+	@apply inline-block;
+}
+a code {
+	@apply px-0;
+}
+/* Imports */
+/* Imports > Components */
+/* Imports > Components > Common */
+@import "../components/common/Button/Button.css";
+@import "../components/common/Field/Field.css";
+@import "../components/common/Markdown/Markdown.css";
+/* Imports > Components > Site */
+@import "../components/site/Header/Header.css";
+@import "../components/site/Hero/Hero.css";
+@import "../components/site/Footer/Footer.css";
+/* Imports > Components > Home */
+@import "../components/home/Press/Press.css";
+@import "../components/home/Team/Team.css";
+/* Imports > Components > Verify */
+@import "../components/verify/Upload/Upload.css";
+@import "../components/verify/Info/Info.css";
+/* Imports > App */
+@import "../app/(site)/(home)/styles.css";
+@import "../app/(site)/verify/styles.css";

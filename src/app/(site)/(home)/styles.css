@@ -1,0 +1,43 @@
+/* Sections */
+section.HomeSection {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+}
+section.HomeSection:nth-child(odd) {
+	@apply bg-secondary;
+}
+section.HomeSection:nth-child(even) {
+	@apply bg-secondary-dark;
+}
+section.HomeSection:nth-child(odd) .button:is(:hover, :focus) {
+	@apply bg-secondary-dark;
+}
+section.HomeSection:nth-child(even) .button:is(:hover, :focus) {
+	@apply bg-secondary;
+}
+section.HomeSection > section.HomeSection {
+	/*background-color: var(--color-secondary-dark) !important;*/
+}
+.HomeSectionInner {
+	@apply w-full;
+	@apply max-w-inner;
+	@apply m-auto;
+	@apply px-4;
+	@apply py-12;
+	@apply lg:px-8;
+	@apply lg:py-24; 
+}
+.HomeSectionSubitle {
+	@apply text-primary-light;
+    @apply font-body;
+    @apply text-2xl;
+	@apply font-body-normal;
+}
+.HomeSectionSubitle a,
+.HomeSectionSubitle u {
+	@apply text-primary;
+}
+.HomeSectionInner p, .HomeSectionInner ul {
+	@apply max-w-paragraph;
+}

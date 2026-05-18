@@ -1,0 +1,42 @@
+.Hero {
+	height: 35rem;
+	max-height: 65vh;
+	display: flex;
+    flex-direction: column;
+    position: relative;
+	@apply bg-primary;
+	background-color: var(--color-primary);
+	background-image: url(/images/photos/photo-5.jpg);
+	background-position: center 30%;
+	background-size: cover;
+}
+.HeroInner {
+	@apply w-full;
+	@apply max-w-inner;
+	@apply m-auto;
+	@apply px-8;
+	@apply py-20;
+}
+h1.HeroTitle {
+	@apply mt-0;
+	@apply text-7xl;
+	@apply font-display;
+	@apply font-display-bold;
+	@apply text-center;
+	cursor: default;
+}
+h1.HeroTitle span:first-child {
+	@apply text-secondary;
+}
+h1.HeroTitle span:last-child {
+	@apply text-secondary-dark;
+}
+.HeroTagline {
+	@apply text-secondary;
+	@apply text-2xl;
+	@apply font-body;
+	@apply font-body-bold;
+	@apply text-center;
+	@apply mt-8;
+	text-shadow: 0px 0px 1px rgba(0,0,0,1), 0px 0px 25px rgba(0,0,0,0.5), 0px 0px 50px rgba(0,0,0,0.75);
+}

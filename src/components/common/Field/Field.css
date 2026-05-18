@@ -1,0 +1,124 @@
+.FieldRoot {
+	color: var(--demo-neutral-fg);
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+	@apply w-full;
+}
+.FieldRoot[data-disabled] {
+	opacity: 0.5;
+	filter: grayscale(100%);
+}
+.FieldRoot[data-inline] {
+	width: auto;
+}
+.FieldLabel {
+	@apply mb-1;
+	@apply text-sm;
+	@apply font-bold;
+	@apply text-primary;
+}
+.FieldErrorText {
+	@apply text-sm;
+	@apply text-red-500;
+}
+.FieldHelperText {
+	@apply text-sm;
+	@apply text-tertiary;
+}
+.FieldInput {
+	width: 100%;
+	min-width: 0;
+	padding: 0.5rem 0.75rem;
+	@apply text-sm;
+	background: transparent;
+	@apply border;
+	@apply border-tertiary;
+	@apply rounded-md;
+	@apply text-primary;
+	outline: none;
+	transition:
+		border-color 0.15s ease,
+		box-shadow 0.15s ease;
+}
+.FieldInput::placeholder {
+	@apply text-tertiary;
+}
+.FieldInput:focus {
+	@apply border-primary;
+	box-shadow: 0 0 0 1px var(--color-tertiary);
+}
+.FieldInput[data-invalid] {
+	@apply border-red-500;
+}
+.FieldInput[data-invalid]:focus {
+	@apply border-red-500;
+	box-shadow: 0 0 0 1px var(--color-red-500);
+}
+.FieldTextarea {
+	width: 100%;
+	min-width: 0;
+	min-height: 5rem;
+	padding: 0.5rem 0.75rem;
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	font-family: inherit;
+	background: transparent;
+	@apply border;
+	@apply border-tertiary;
+	@apply rounded-md;
+	@apply text-primary;
+	outline: none;
+	resize: vertical;
+	scroll-padding-bottom: 0.5rem;
+	transition:
+		border-color 0.15s ease,
+		box-shadow 0.15s ease;
+}
+.FieldTextarea::placeholder {
+	@apply text-tertiary;
+}
+.FieldTextarea:focus {
+	@apply border-primary;
+	box-shadow: 0 0 0 1px var(--color-tertiary);
+}
+.FieldTextarea[data-invalid] {
+	@apply border-red-500;
+}
+.FieldTextarea[data-invalid]:focus {
+	@apply border-red-500;
+	box-shadow: 0 0 0 1px var(--color-tertiary);
+}
+.FieldSelect {
+	width: 100%;
+	min-width: 0;
+	padding: 0.5rem 0.75rem;
+	padding-right: 2rem;
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	background: transparent;
+	@apply border;
+	@apply border-tertiary;
+	@apply rounded-md;
+	@apply text-primary;
+	outline: none;
+	appearance: none;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236f6d66' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+	background-repeat: no-repeat;
+	background-position: right 0.5rem center;
+	background-size: 1rem;
+	transition:
+		border-color 0.15s ease,
+		box-shadow 0.15s ease;
+}
+.FieldSelect:focus {
+	@apply border-primary;
+	box-shadow: 0 0 0 1px var(--color-tertiary);
+}
+.FieldSelect[data-invalid] {
+	@apply border-red-500;
+}
+.FieldSelect[data-invalid]:focus {
+	@apply border-red-500;
+	box-shadow: 0 0 0 1px var(--color-tertiary);
+}

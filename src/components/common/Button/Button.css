@@ -1,0 +1,84 @@
+/* Button */
+.Button {
+	@apply text-sm;
+	@apply transition-all;
+	cursor: pointer;
+}
+/* Button > Default */
+.Button_default {
+	--button-primary: var(--color-primary);
+	--button-secondary: var(--color-secondary);
+	--button-tertiary: var(--color-tertiary);
+}
+.Button_outlined,
+.Button_filled {
+	@apply py-1.5;
+	@apply px-4;
+	@apply rounded-lg;
+}
+.Button_outlined.Button_small,
+.Button_filled.Button_small {
+	@apply pt-0.5;
+	@apply pb-1;
+	@apply px-2;
+	@apply rounded-xl;
+	@apply text-sm;
+	@apply leading-1.5;
+}
+/* Button > Outlined */
+.Button_outlined {
+	@apply border;
+	color: var(--button-primary);
+	border-color: var(--button-tertiary);
+	background-color: transparent;
+}
+.Button_outlined:hover {
+	border-color: var(--button-primary);
+}
+/* Button > Filled */
+.Button_filled {
+	color: var(--button-secondary);
+	background-color: var(--button-primary);
+}
+.Button_filled.Button_outlined {
+	color: var(--button-secondary);
+	background-color: var(--button-primary);
+	border-color: var(--button-secondary);
+}
+/* Button > Square */
+.Button_square {
+	width: 1em;
+	height: 1em;
+	aspect-ratio: 1 / 1;
+}
+.Button_square > span {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+.Button_square > span > svg {
+	width: 100%;
+	height: 100%;
+}
+/* Button > Before/After */
+.Button_before, .Button_after {
+	display: inline-flex;
+	align-items: center;
+}
+.Button_before .ButtonIcon_before svg,
+.Button_after .ButtonIcon_after svg {
+	width: 1em;
+	height: 1em;
+}
+.Button_before .ButtonIcon_before svg {
+	@apply mr-2;
+}
+.Button_after .ButtonIcon_after svg {
+	@apply ml-2;
+}
+/* Button > Disabled */
+.Button:disabled,
+.Button:disabled * {
+	/* @apply text-disabled; */
+	pointer-events: none;
+}

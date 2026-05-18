@@ -1,0 +1,25 @@
+/* Header */
+.Header {
+	@apply w-full;
+	@apply h-header;
+	@apply z-(--z-header);
+	@apply fixed;
+	@apply inset-0;
+	@apply text-secondary;
+	@apply bg-primary;
+	@apply transition-[background-color];
+	@apply duration-300;
+	@apply ease-in-out;
+}
+.HeaderInner {
+	@apply h-full;
+	@apply py-1;
+	@apply px-8;
+	@apply flex;
+	@apply items-center;
+	@apply justify-between;
+}
+.Header img {
+	@apply w-auto;
+	@apply h-header-logo;
+}

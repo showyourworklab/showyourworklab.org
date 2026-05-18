@@ -1,18 +1,24 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Instrument_Sans, Rethink_Sans } from "next/font/google";
 import { cn } from "@/utils/helpers";
 import { getLang } from "@/utils/selectors";
 import Header from "@/components/site/Header";
 import "./globals.css";
+import Footer from "@/components/site/Footer/Footer";
+import Hero from "@/components/site/Hero/Hero";
 
-const geistSans = Geist({
-	variable: "--font-geist-sans",
+const instrumentSans = Instrument_Sans({
+	variable: "--font-instrument-sans",
 	subsets: ["latin"],
+	style: ["normal", "italic"],
+	weight: ["400", "700"]
 });
 
-const geistMono = Geist_Mono({
-	variable: "--font-geist-mono",
+const rethinkSans = Rethink_Sans({
+	variable: "--font-rethink-sans",
 	subsets: ["latin"],
+	style: ["normal", "italic"],
+	weight: ["400", "800"]
 });
 
 export const metadata: Metadata = {
@@ -29,13 +35,17 @@ export default function RootLayout({
 		<html
 			lang="en"
 			className={cn(
-				geistSans.variable,
-				geistMono.variable
+				instrumentSans.variable,
+				rethinkSans.variable
 			)}
 		>
 			<body>
 				<Header />
-				{children}
+				<main>
+					<Hero />
+					{children}
+				</main>
+				<Footer />
 			</body>
 		</html>
 	);

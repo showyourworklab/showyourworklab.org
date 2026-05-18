@@ -1,0 +1,32 @@
+.Markdown p,
+.Markdown ul,
+.Markdown ol,
+.Markdown dl {
+	@apply mb-4;
+}
+.Markdown p:last-child,
+.Markdown ul:last-child,
+.Markdown ol:last-child,
+.Markdown dl:last-child {
+	@apply mb-0;
+}
+.Markdown a {
+	@apply underline;
+	@apply transition-colors;
+}
+.Markdown a:hover {
+	
+}
+.Markdown ul,
+.Markdown ol {
+	@apply pl-4;
+}
+.Markdown ul {
+	list-style: disc;
+}
+.Markdown ol {
+	list-style: decimal;
+}
+.Markdown li:not(:last-of-type) {
+	@apply mb-2;
+}

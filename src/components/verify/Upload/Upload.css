@@ -1,0 +1,205 @@
+/* Upload */
+.Upload {
+	display: flex;
+	@apply w-full;
+}
+.UploadInner {
+	@apply m-auto;
+	@apply w-full;
+	/* @apply w-upload-width; */
+}
+.UploadRoot {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: auto;
+}
+.UploadLabel {
+	@apply mb-1;
+	@apply text-sm;
+	@apply font-body-bold;
+	@apply text-left;
+	@apply w-full;
+}
+/* Upload > Dropzone */
+.UploadDropzone {
+	@apply w-full;
+	@apply min-h-[308px];
+	@apply p-4;
+	@apply mb-6;
+	@apply mx-auto;
+	@apply gap-2;
+	@apply flex;
+	@apply flex-col;
+	@apply items-center;
+	@apply justify-center;
+	@apply self-stretch;
+	@apply overflow-hidden;
+	@apply relative;
+	@apply border;
+	@apply border-tertiary;
+	@apply rounded-xl;
+	@apply text-center;
+	@apply transition-colors;
+}
+.UploadDropzoneContent {
+	@apply flex;
+	@apply flex-col;
+	@apply items-center;
+	@apply justify-center;
+	@apply gap-1;
+	@apply w-full;
+	@apply h-full;
+	@apply bg-secondary;
+	@apply transition-all;
+	position: absolute;
+}
+.UploadDropzone[data-dragging] .UploadDropzoneContent {
+	@apply bg-tertiary;
+}
+.UploadDropzoneIcon {
+	@apply size-10;
+}
+.UploadDropzoneTitle {
+	@apply text-sm;
+	@apply font-body-bold;
+}
+.UploadDropzoneDescription {
+	@apply mb-4;
+	@apply text-xs;
+}
+.UploadDropzoneTrigger {
+	@apply bg-secondary;
+}
+.UploadDropzoneImage {
+	@apply transition-opacity;
+	@apply pointer-events-none;
+}
+.UploadDropzone[data-uploaded] .UploadDropzoneContent {
+	@apply opacity-0;
+}
+.UploadDropzone[data-uploaded]:hover .UploadDropzoneContent,
+.UploadDropzone[data-uploaded][data-dragging] .UploadDropzoneContent {
+	@apply opacity-100;
+}
+/* Upload > URL */
+.UploadUrl {
+	@apply mb-6;
+}
+/* Upload > Examples */
+.UploadExamples {
+	@apply mb-6;
+}
+.UploadExamplesLabel {
+	@apply mb-1.5;
+	@apply text-sm;
+	@apply font-body-bold;
+}
+.UploadExamplesToggle {
+	@apply grid;
+	@apply grid-cols-4;
+	@apply gap-2;
+}
+.UploadExamplesToggleItem {
+	@apply rounded-xl;
+	@apply border;
+	@apply border-tertiary;
+	@apply overflow-hidden;
+	@apply cursor-pointer;
+	@apply transition-all;
+}
+.UploadExamplesToggleItem[data-state="on"] {
+	@apply border-primary;
+}
+.UploadExamplesToggleItem div {
+	@apply p-1;
+	@apply transition-all;
+}
+.UploadExamplesToggleItem img {
+	@apply w-full;
+	@apply h-full;
+	@apply rounded-lg;
+}
+.UploadExamplesToggleItem iframe {
+	@apply hidden;
+}
+/* Upload > Results */
+.UploadResults {
+	@apply w-full;
+	@apply flex;
+	@apply flex-col;
+	@apply self-stretch;
+	@apply gap-3;
+}
+.UploadResultsItemGroup {
+	@apply flex;
+	@apply flex-col;
+	@apply self-stretch;
+	@apply gap-3;
+	@apply p-0;
+	@apply m-0;
+	list-style: none;
+}
+.UploadResultsItem {
+	display: grid;
+	grid-template-columns: auto 1fr auto;
+	grid-template-areas: "preview name delete" "preview size delete";
+	align-items: center;
+	@apply p-2;
+	@apply gap-x-2;
+	@apply border;
+	@apply border-tertiary;
+	@apply rounded-lg;
+}
+.UploadResultsItemPreview {
+	grid-area: preview;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	@apply size-10;
+	@apply rounded-lg;
+}
+.UploadResultsItemPreview_image {
+	@apply bg-tertiary;
+}
+.UploadResultsItemPreview_image .UploadResultsItemPreview_icon {
+	@apply hidden;
+}
+.UploadResultsItemPreviewImage {
+	@apply size-full;
+	object-fit: cover;
+}
+.UploadResultsItemName {
+	grid-area: name;
+	flex: 1;
+	min-width: 0;
+	@apply text-xs;
+	@apply font-body-bold;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.UploadResultsItemSizeText {
+    grid-area: size;
+    @apply text-xs;
+}
+.UploadResultsErrorList {
+	grid-area: delete;
+}
+.UploadResultsErrorItem {
+
+}
+.UploadResultsItemDeleteTrigger {
+	grid-area: delete;
+	@apply shrink-0;
+	@apply flex;
+	@apply items-center;
+	@apply justify-center;
+	@apply size-4;
+	@apply p-0;
+	@apply bg-transparent;
+	@apply border-none;
+	@apply rounded-xl;
+	@apply cursor-pointer;
+}

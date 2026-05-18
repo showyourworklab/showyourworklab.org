@@ -1,0 +1,22 @@
+ul.PressItems {
+	@apply m-0;
+	@apply p-0;
+}
+li.PressItem {
+	@apply p-0;
+	@apply not-last:pb-4;
+	@apply not-last:mb-4;
+	@apply not-last:border-b-2;
+	@apply not-last:border-b-secondary-dark;
+}
+.PressItemSource {
+	@apply lowercase;
+    @apply font-body-bold;
+	@apply text-primary-dark;
+}
+.PressItemTitle {
+	
+}
+.PressItemDate {
+	@apply text-primary-light;
+}
