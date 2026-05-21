@@ -23,3 +23,23 @@
 	@apply w-auto;
 	@apply h-header-logo;
 }
+nav.HeaderNav {
+	@apply hidden;
+	@apply lg:block;
+}
+ul.HeaderNavItems {
+	@apply p-0;
+	@apply m-auto;
+	@apply flex;
+	@apply flex-row;
+	@apply flex-wrap;
+	@apply list-none;
+	@apply space-x-4;
+}
+li.HeaderNavItem {
+	@apply p-0;
+}
+a.HeaderNavItemButton {
+	@apply lowercase;
+	/* @apply text-secondary; */
+}

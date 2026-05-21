@@ -29,6 +29,7 @@
 	--font-weight-body-normal: 400;
 	--font-weight-body-bold: 700;
 	--font-weight-display-normal: 400;
+	--font-weight-display-medium: 700;
 	--font-weight-display-bold: 800;
 	/* Spacing */
 	--spacing-header: 3.5rem;
@@ -70,7 +71,7 @@ html, body {
 	@apply text-base;
 	@apply font-body;
 	@apply font-body-normal;
-	@apply text-primary;
+	@apply text-primary-dark;
 	@apply bg-secondary;
 }
 html {
@@ -80,10 +81,6 @@ html {
 body {
 	@apply m-0;
 	@apply h-full;
-	@apply text-primary;
-	@apply bg-secondary;
-	@apply font-body;
-	@apply font-body-normal;
 }
 main {
 	@apply pt-header;
@@ -97,8 +94,16 @@ main {
 :is(p, ul):last-child {
 	margin-bottom: 0;
 }
-p {
-
+a {
+	color: currentcolor;
+	text-decoration-style: solid;
+	text-decoration-line: underline;
+	text-decoration-thickness: 0.1em;
+	text-decoration-color: var(--color-primary-light);
+	@apply transition-all;
+}
+a:hover {
+	text-decoration-color: currentColor;
 }
 ul {
 	padding-left: 1em;
@@ -133,7 +138,8 @@ h3 {
 }
 /* Code */
 code {
-	@apply p-2;
+	@apply py-1;
+	@apply px-2;
 	@apply text-xs;
 	/* @apply alpha bg-secondary-light; */
 	background-color: --alpha(var(--color-primary-light) / 25%);
@@ -148,12 +154,15 @@ a code {
 /* Imports > Components > Common */
 @import "../components/common/Button/Button.css";
 @import "../components/common/Field/Field.css";
+@import "../components/common/Carousel/Carousel.css";
 @import "../components/common/Markdown/Markdown.css";
+@import "../components/common/RichText/RichText.css";
 /* Imports > Components > Site */
 @import "../components/site/Header/Header.css";
 @import "../components/site/Hero/Hero.css";
 @import "../components/site/Footer/Footer.css";
 /* Imports > Components > Home */
+@import "../components/home/Updates/Updates.css";
 @import "../components/home/Press/Press.css";
 @import "../components/home/Team/Team.css";
 /* Imports > Components > Verify */

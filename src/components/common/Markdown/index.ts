@@ -1,2 +1,2 @@
-import Field, { type FieldProps } from './Field';
-export { Field as default, Field, FieldProps };
+import Markdown, { type MarkdownProps } from './Markdown';
+export { Markdown as default, Markdown, MarkdownProps };

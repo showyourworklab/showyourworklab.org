@@ -23,7 +23,7 @@ hgroup.TeamItemHeading {
 .TeamItemName {
 	width: 160px;
 	margin-bottom: 0;
-	@apply font-body-bold;
+	@apply font-display-medium;
 	color: inherit;
 	font-size: inherit;
 	text-transform: none;

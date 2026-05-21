@@ -3,11 +3,19 @@ import Link from "next/link";
 import { cn } from "@/utils/helpers";
 import { getLang } from "@/utils/selectors";
 
-export default function Hero() {
+export default function Hero({
+	image
+} : {
+	image: any
+}) {
 	return (
 		<section
 			id="hero"
 			className="Hero"
+			style={{
+				// backgroundImage: `url(${image?.sizes?.large?.url})`
+				backgroundImage: `url(${image?.url})`
+			}}
 		>
 			<div
 				className="HeroInner"

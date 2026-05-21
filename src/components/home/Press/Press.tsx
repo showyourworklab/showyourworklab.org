@@ -1,24 +1,42 @@
 import { getLang } from "@/utils/selectors";
 import { formatDate } from "@/utils/helpers";
-import { PRESS_ITEMS } from "./utils/constants";
+import RichText from "@/components/common/RichText";
 
-export default function Press() {
+export default function Press({
+	data
+} : {
+	data: any;
+}) {
 	return (
 		<>
 			<div
 				className="HomeSectionInner"
 			>
-				<hgroup>
+				<hgroup
+					className="HomeSectionHeading"
+				>
 					<h2
 						className="HomeSectionTitle"
 					>
 						{getLang("home", "press", "title")}
 					</h2>
+					{data?.lede ?
+						<RichText
+							data={data?.lede}
+							className="HomeSectionLede"
+						/>
+					: null}
 				</hgroup>
+				{data?.body ?
+					<RichText
+						data={data?.body}
+						className="HomeSectionBody"
+					/>
+				: null}
 				<ul
 					className="PressItems"
 				>
-					{PRESS_ITEMS.map((item: any, index: number) =>
+					{data?.items.map((item: any, index: number) =>
 						<li
 							key={index}
 							className="PressItem"
