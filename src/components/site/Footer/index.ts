@@ -1,2 +1,2 @@
-import Header from "./Header";
-export { Header as default, Header };
+import Footer from "./Footer";
+export { Footer as default, Footer };

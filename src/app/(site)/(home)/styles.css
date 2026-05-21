@@ -28,14 +28,21 @@ section.HomeSection > section.HomeSection {
 	@apply lg:px-8;
 	@apply lg:py-24; 
 }
-.HomeSectionSubitle {
+.HomeSectionHeading {
+	@apply mb-12;
+}
+.HomeSectionTitle {
+	@apply mb-4;
+}
+.HomeSectionLede {
 	@apply text-primary-light;
     @apply font-body;
     @apply text-2xl;
 	@apply font-body-normal;
 }
-.HomeSectionSubitle a,
-.HomeSectionSubitle u {
+.HomeSectionLede a,
+.HomeSectionLede u,
+.HomeSectionLede strong {
 	@apply text-primary;
 }
 .HomeSectionInner p, .HomeSectionInner ul {

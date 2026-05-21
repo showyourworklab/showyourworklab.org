@@ -22,6 +22,12 @@
 			"@/*": [
 				"./src/*"
 			],
+			"@payload-config": [
+				"./payload.config.ts"
+			],
+			"@payload-types": [
+				"./payload-types.ts"
+			]
 		}
 	},
 	"include": [

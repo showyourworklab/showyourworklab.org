@@ -1,8 +1,11 @@
 import { getLang } from "@/utils/selectors";
-import { TEAM_ITEMS } from "./utils/constants";
-import Markdown from "@/components/common/Markdown/Markdown";
+import RichText from "@/components/common/RichText";
 
-export default function Team() {
+export default function Team({
+	data
+} : {
+	data: any
+}) {
 	return (
 		<>
 			<div
@@ -15,54 +18,57 @@ export default function Team() {
 						{getLang("home", "team", "title")}
 					</h2>
 				</hgroup>
-				<ul
-					className="TeamItems"
-				>
-					{TEAM_ITEMS.map((item: any, index: number) =>
-						<li
-							key={index}
-							className="TeamItem"
-						>
-							<img
-								src={`/images/team/${item.slug}.jpg`}
-								alt={`Portrait of ${item.name}`}
-								// caption="Photo by Roshni Khatri"
-							/>
-							<hgroup
-								className="TeamItemHeading"
+				{data?.items ?
+					<ul
+						className="TeamItems"
+					>
+						{data?.items.map((item: any, index: number) =>
+							<li
+								key={index}
+								className="TeamItem"
 							>
-								<h3
-									className="TeamItemName"
+								{item?.image?.sizes?.small?.url ?
+									<img
+										src={ item?.image?.sizes?.small?.url}
+										alt={`Portrait of ${item?.name}`}
+									/>
+								: null}
+								<hgroup
+									className="TeamItemHeading"
 								>
-									{item.name}
-								</h3>
-								<div
-									className="TeamItemWebsite"
-								>
-									<a
-										href={item.website}
-										target="_blank"
-										rel="noreferrer nofollow"
+									<h3
+										className="TeamItemName"
 									>
-										{item.website.replace("https://", "")}
-									</a>
+										{item?.name}
+									</h3>
+									<div
+										className="TeamItemWebsite"
+									>
+										<a
+											href={item?.url}
+											target="_blank"
+											rel="noreferrer nofollow"
+										>
+											{item?.url?.replace("https://", "")}
+										</a>
+									</div>
+								</hgroup>
+								<div
+									className="TeamItemRole"
+								>
+									{item?.role}
 								</div>
-							</hgroup>
-							<div
-								className="TeamItemRole"
-							>
-								{item.role}
-							</div>
-							<div
-								className="TeamItemBio"
-							>
-								<Markdown>
-									{item.bio}
-								</Markdown>
-							</div>
-						</li>
-					)}
-				</ul>
+								<div
+									className="TeamItemBio"
+								>
+									<RichText
+										data={item?.body}
+									/>
+								</div>
+							</li>
+						)}
+					</ul>
+				: null}
 			</div>
 		</>
 	);

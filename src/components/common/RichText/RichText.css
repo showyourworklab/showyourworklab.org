@@ -1,0 +1,33 @@
+.RichText p,
+.RichText ul,
+.RichText ol,
+.RichText dl {
+	@apply mb-5;
+}
+.RichText p:last-child,
+.RichText ul:last-child,
+.RichText ol:last-child,
+.RichText dl:last-child {
+	@apply mb-0;
+}
+.RichText a {
+	@apply underline;
+	/* @apply text-highlight; */
+	@apply transition-colors;
+}
+.RichText a:hover {
+	/* @apply text-highlight-dark; */
+}
+.RichText ul,
+.RichText ol {
+	@apply pl-4;
+}
+.RichText ul {
+	list-style: disc;
+}
+.RichText ol {
+	list-style: decimal;
+}
+.RichText li:not(:last-of-type) {
+	@apply mb-2;
+}

@@ -6,7 +6,6 @@
     position: relative;
 	@apply bg-primary;
 	background-color: var(--color-primary);
-	background-image: url(/images/photos/photo-5.jpg);
 	background-position: center 30%;
 	background-size: cover;
 }

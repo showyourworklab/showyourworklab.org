@@ -3,8 +3,7 @@ import { cn } from "@/utils/helpers";
 
 export interface ButtonProps extends HTMLProps<HTMLButtonElement & HTMLAnchorElement> {
 	href?: string;
-	variant?: "default";
-	color?: "primary" | "secondary" | "tertiary" | "quaternary" | "explorer-primary" | "explorer-secondary";
+	color?: "primary" | "secondary" | "tertiary";
 	filled?: boolean;
 	outlined?: boolean;
 	small?: boolean;
@@ -17,7 +16,6 @@ export interface ButtonProps extends HTMLProps<HTMLButtonElement & HTMLAnchorEle
 
 export default forwardRef(function Button({
 	href,
-	variant = "default",
 	color = "primary",
 	filled,
 	outlined,
@@ -61,7 +59,6 @@ export default forwardRef(function Button({
 			ref={ref}
 			className={cn(
 				"Button",
-				`Button_${variant}`,
 				color ? `Button_${color}` : null,
 				filled ? "Button_filled" : null,
 				outlined ? "Button_outlined" : null,
@@ -76,27 +73,31 @@ export default forwardRef(function Button({
 			{...buttonProps}
 			{...props}
 		>
-			{before ?
-				<span
-					className={cn(
-						"ButtonIcon",
-						"ButtonIcon_before"
-					)}
-				>
-					{before}
-				</span>
-			: null}
-			{children && <span>{children}</span>}
-			{after ?
-				<span
-					className={cn(
-						"ButtonIcon",
-						"ButtonIcon_after"
-					)}
-				>
-					{after}
-				</span>
-			: null}
+			<span
+				className="ButtonInner"
+			>
+				{before ?
+					<span
+						className={cn(
+							"ButtonIcon",
+							"ButtonIcon_before"
+						)}
+					>
+						{before}
+					</span>
+				: null}
+				{children && <span>{children}</span>}
+				{after ?
+					<span
+						className={cn(
+							"ButtonIcon",
+							"ButtonIcon_after"
+						)}
+					>
+						{after}
+					</span>
+				: null}
+			</span>
 		</Tag>
 	)
 });

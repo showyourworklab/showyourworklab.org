@@ -4,6 +4,7 @@ export const PAGES = [
 export const HOME_SECTIONS = [
 	"about",
 	"code",
+	"updates",
 	"press",
 	"team",
 	"contact"
@@ -14,8 +15,8 @@ export const SOCIALS = [
 	"github",
 	"email"
 ];
-export const GITHUB = 'https://github.com/showyourworklab';
-export const EMAIL = 'info@showyourworklab.org';
+export const GITHUB = "https://github.com/showyourworklab";
+export const EMAIL = "info@showyourworklab.org";
 export const LANG = {
 	// Site
 	site_title: "Show Your Work Lab",
@@ -29,18 +30,12 @@ export const LANG = {
 	social_email_title: "info@showyourworklab.org",
 	social_email_url: "mailto:info@showyourworklab.org",
 	// Home
-	home_about_overline: 'About',
-	home_about_title: 'What We Do',
-	home_code_overline: 'Code',
-	home_code_title: 'Our Web Tool',
-	home_values_overline: 'Values',
-	home_values_title: 'Our Values',
-	home_press_overline: 'In The News',
-	home_press_title: 'Press',
-	home_team_overline: 'Team',
-	home_team_title: 'Who We Are',
-	home_contact_overline: 'Contact',
-	home_contact_title: 'Get in Touch',
+	home_about_title: "About",
+	home_code_title: "Code",
+	home_updates_title: "Updates",
+	home_press_title: "Press",
+	home_team_title: "Team",
+	home_contact_title: "Contact",
 	// Verify
 	verify_upload_allow_png: "PNG",
 	verify_upload_allow_jpeg: "JPEG",
