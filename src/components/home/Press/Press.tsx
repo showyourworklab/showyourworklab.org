@@ -32,33 +32,37 @@ export default function Press({
 				<ul
 					className="PressItems"
 				>
-					{data?.items.map((item: any, index: number) =>
-						<li
-							key={index}
-							className="PressItem"
-						>
-							<div
-								className="PressItemSource"
+					{data?.items
+						.sort((a: any, b: any) =>
+							new Date(b.date).getTime() - new Date(a.date).getTime()
+						)
+						.map((item: any, index: number) =>
+							<li
+								key={index}
+								className="PressItem"
 							>
-								{item.source}
-							</div>
-							<h3
-								className="PressItemTitle"
-							>
-								<a
-									href={item.url}
-									target="_blank"
-									rel="noreferrer nofollow"
+								<div
+									className="PressItemSource"
 								>
-									{item.title}
-								</a>
-							</h3>
-							<div
-								className="PressItemDate"
-							>
-								{formatDate(item.date)}
-							</div>
-						</li>
+									{item.source}
+								</div>
+								<h3
+									className="PressItemTitle"
+								>
+									<a
+										href={item.url}
+										target="_blank"
+										rel="noreferrer nofollow"
+									>
+										{item.title}
+									</a>
+								</h3>
+								<div
+									className="PressItemDate"
+								>
+									{formatDate(item.date)}
+								</div>
+							</li>
 					)}
 				</ul>
 			</div>
