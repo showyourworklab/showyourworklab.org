@@ -1,8 +1,9 @@
 import { useMemo, forwardRef, HTMLProps, ReactNode } from "react";
 import { cn } from "@/utils/helpers";
 
-export interface ButtonProps extends HTMLProps<HTMLButtonElement & HTMLAnchorElement> {
+export interface ButtonProps extends Omit<HTMLProps<HTMLButtonElement & HTMLAnchorElement>, "size"> {
 	href?: string;
+	size?: "small" | "base" | "large";
 	color?: "primary" | "secondary" | "tertiary";
 	filled?: boolean;
 	outlined?: boolean;
@@ -16,6 +17,7 @@ export interface ButtonProps extends HTMLProps<HTMLButtonElement & HTMLAnchorEle
 
 export default forwardRef(function Button({
 	href,
+	size = "base",
 	color = "primary",
 	filled,
 	outlined,
@@ -59,11 +61,11 @@ export default forwardRef(function Button({
 			ref={ref}
 			className={cn(
 				"Button",
+				size ? `Button_${size}` : null,
 				color ? `Button_${color}` : null,
 				filled ? "Button_filled" : null,
 				outlined ? "Button_outlined" : null,
 				square ? "Button_square" : null,
-				small ? "Button_small" : null,
 				before ? "Button_before" : null,
 				after ? "Button_after" : null,
 				external ? "Button_external" : null,

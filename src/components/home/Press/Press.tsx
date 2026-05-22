@@ -20,19 +20,15 @@ export default function Press({
 					>
 						{getLang("home", "press", "title")}
 					</h2>
-					{data?.lede ?
-						<RichText
-							data={data?.lede}
-							className="HomeSectionLede"
-						/>
-					: null}
-				</hgroup>
-				{data?.body ?
 					<RichText
-						data={data?.body}
-						className="HomeSectionBody"
+						data={data?.lede}
+						className="HomeSectionLede"
 					/>
-				: null}
+				</hgroup>
+				<RichText
+					data={data?.body}
+					className="HomeSectionBody"
+				/>
 				<ul
 					className="PressItems"
 				>

@@ -3,11 +3,10 @@ export const PAGES = [
 ];
 export const HOME_SECTIONS = [
 	"about",
-	"code",
 	"updates",
-	"press",
 	"team",
-	"contact"
+	"press",
+	"contact",
 ];
 export const SOCIALS = [
 	"linkedin",

@@ -1,2 +1,2 @@
-import Code from './Code';
+import Code from './Contact';
 export { Code as default, Code };

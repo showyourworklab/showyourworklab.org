@@ -9,7 +9,16 @@
 	@apply inline-flex;
 	@apply items-center;
 }
-/* Button > Default */
+/* Button > Sizes */
+.Button.Button_small {
+	@apply text-sm;
+	@apply leading-1.5;
+}
+.Button.Button_large {
+	@apply text-xl;
+	/* @apply leading-1.5; */
+}
+/* Button > Colors */
 .Button_primary {
 	--button-primary: var(--color-primary);
 	--button-secondary: var(--color-secondary);
@@ -32,8 +41,12 @@
 	@apply py-1;
 	@apply px-2;
 	@apply rounded-xl;
-	@apply text-sm;
-	@apply leading-1.5;
+}
+.Button_outlined.Button_large,
+.Button_filled.Button_large {
+	@apply py-2;
+	@apply px-4;
+	@apply rounded-3xl;
 }
 /* Button > Outlined */
 .Button_outlined {

@@ -162,6 +162,7 @@ a code {
 @import "../components/site/Hero/Hero.css";
 @import "../components/site/Footer/Footer.css";
 /* Imports > Components > Home */
+@import "../components/home/About/About.css";
 @import "../components/home/Updates/Updates.css";
 @import "../components/home/Press/Press.css";
 @import "../components/home/Team/Team.css";

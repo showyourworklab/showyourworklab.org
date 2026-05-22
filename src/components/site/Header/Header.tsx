@@ -11,7 +11,7 @@ export default function Header() {
 	useEffect(() => {
 		const heroElem = document.querySelector("#hero");
 		function handleScroll(event: Event) {
-			console.log(window.scrollY)
+			// console.log(window.scrollY)
 		};
 		window.addEventListener("scroll", handleScroll);
 		return () => window.removeEventListener("scroll", handleScroll);
@@ -60,9 +60,9 @@ export default function Header() {
 							>
 								<Button
 									href={`#${section}`}
-									small={true}
-									outlined={true}
+									size={"small"}
 									color="secondary"
+									outlined={true}
 									className={"HeaderNavItemButton"}
 								>
 									{getLang("home", section, "title")}

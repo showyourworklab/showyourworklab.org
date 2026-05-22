@@ -1,5 +1,7 @@
+import { hasText } from "@payloadcms/richtext-lexical/shared";
 import { getLang } from "@/utils/selectors"
 import RichText from "@/components/common/RichText";
+import { cn } from "@/utils/helpers";
 
 export default function About({
 	data
@@ -26,15 +28,49 @@ export default function About({
 						/>
 					: null}
 				</hgroup>
-				{data?.body ?
+				{hasText(data?.body) ?
 					<RichText
 						data={data?.body}
 						className="HomeSectionBody"
 					/>
 				: null}
 			</div>
-			{/* // <AboutJournalism /> */}
-			{/* // <AboutHumanRights /> */}
+			<div>
+				{data?.sections.map((section: any, index: number) =>
+					<div
+						key={index}
+						className="HomeSectionSubsection"
+					>
+						<div
+							className={cn(
+								"HomeSectionSubsectionColumn",
+								"HomeSectionSubsectionContent"
+							)}
+						>
+							<h3
+								className="HomeSectionSubsectionContentTitle"
+							>
+								{section?.title}
+							</h3>
+							<RichText
+								data={section?.body}
+								className="HomeSectionSubsectionContentBody"
+							/>
+						</div>
+						<div
+							className={cn(
+								"HomeSectionSubsectionColumn",
+								"HomeSectionSubsectionImage"
+							)}
+						>
+							<img
+								src={section?.image?.sizes?.large?.url}
+								alt={section?.image?.alt}
+							/>
+						</div>
+					</div>
+				)}
+			</div>
 		</>
 	);
 }

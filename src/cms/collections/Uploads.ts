@@ -14,6 +14,13 @@ const Uploads: CollectionConfig = {
 		staticDir: "public/uploads",
 		mimeTypes: ["image/*"],
 		displayPreview: true,
+		handlers: [
+			async (req, { params }) => {
+				// Redirect to static file path
+				const staticPath = `/uploads/${params.filename}`;
+				return Response.redirect(staticPath, 302);
+			},
+		],
 		imageSizes: [
 			{
 				name: "thumbnail",

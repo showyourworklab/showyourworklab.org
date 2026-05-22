@@ -8,10 +8,10 @@ import { postgresAdapter } from "@payloadcms/db-postgres";
 // import { s3Storage } from "@payloadcms/storage-s3";
 import Home from "@/cms/globals/pages/Home";
 import About from "@/cms/globals/pages/About";
-import Code from "@/cms/globals/pages/Code";
 import Updates from "@/cms/globals/pages/Updates";
-import Press from "@/cms/globals/pages/Press";
 import Team from "@/cms/globals/pages/Team";
+import Press from "@/cms/globals/pages/Press";
+import Contact from "@/cms/globals/pages/Contact";
 import Uploads from "@/cms/collections/Uploads";
 // import { AWS_S3_CONFIG } from "@/db/utils/s3";
 
@@ -76,10 +76,10 @@ export default buildConfig({
 		// Pages
 		Home,
 		About,
-		Code,
 		Updates,
-		Press,
 		Team,
+		Press,
+		Contact
 	],
 	// Collections
 	collections: [

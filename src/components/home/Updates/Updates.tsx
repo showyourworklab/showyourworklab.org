@@ -2,14 +2,12 @@ import { getLang } from "@/utils/selectors";
 import { formatDate } from "@/utils/helpers";
 import Button from "@/components/common/Button";
 import RichText from "@/components/common/RichText";
-// import Carousel from "@/components/common/Carousel";
 
 export default function Updates({
 	data
 } : {
 	data: any;
 }) {
-	console.log(data?.items)
 	return (
 		<>
 			<div
@@ -38,11 +36,11 @@ export default function Updates({
 				: null}
 				
 				<div
-					className="HomeSectionBodUpdatesItems"
+					className="HomeSectionUpdatesItems"
 				>
 					{data?.items
 						.sort((a: any, b: any) =>
-							new Date(b.date).getUTCDate() - new Date(a.date).getUTCDate()
+							new Date(b.date).getTime() - new Date(a.date).getTime()
 						)
 						.map((item: any, index: number) =>
 							<div
@@ -72,8 +70,8 @@ export default function Updates({
 											href={item.url}
 											target="_blank"
 											rel="noreferrer nofollow"
+											size="small"
 											outlined={true}
-											small={true}
 											className="UpdatesItemPrompt"
 										>
 											Read more

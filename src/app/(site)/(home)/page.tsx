@@ -5,10 +5,10 @@ import { draftMode } from "next/headers";
 import { HOME_SECTIONS } from "@/utils/constants";
 import Hero from "@/components/site/Hero";
 import About from "@/components/home/About";
-import Code from "@/components/home/Code";
 import Updates from "@/components/home/Updates";
 import Press from "@/components/home/Press";
-import Team from "@/components/home/Team/Team";
+import Team from "@/components/home/Team";
+import Contact from "@/components/home/Contact";
 
 export default async function Home() {
 	const payload = await getPayload({ config: await payloadConfig });
@@ -23,19 +23,9 @@ export default async function Home() {
 		slug: "about",
 		draft: isEnabled,
 	});
-	
-	const code = await payload.findGlobal({
-		slug: "code",
-		draft: isEnabled,
-	});
 
 	const updates = await payload.findGlobal({
 		slug: "updates",
-		draft: isEnabled,
-	});
-
-	const press = await payload.findGlobal({
-		slug: "press",
 		draft: isEnabled,
 	});
 
@@ -45,6 +35,16 @@ export default async function Home() {
 		depth: 1,
 	});
 
+	const press = await payload.findGlobal({
+		slug: "press",
+		draft: isEnabled,
+	});
+
+	const contact = await payload.findGlobal({
+		slug: "contact",
+		draft: isEnabled,
+	});
+
 	return (
 		<div
 			className={"Home"}
@@ -52,19 +52,21 @@ export default async function Home() {
 			<Hero
 				image={home?.hero}
 			/>
-			{HOME_SECTIONS.map((section: string, index: number) =>
-				<section
-					key={index}
-					id={section}
-					className="HomeSection"
-				>
-					{section === "about" ? <About data={about} /> : null}
-					{section === "code" ? <Code data={code} /> : null}
-					{section === "updates" ? <Updates data={updates} /> : null}
-					{section === "press" ? <Press data={press} /> : null}
-					{section === "team" ? <Team data={team} /> : null}
-				</section>
-			)}
+			<div>
+				{HOME_SECTIONS.map((section: string, index: number) =>
+					<section
+						key={index}
+						id={section}
+						className="HomeSection"
+					>
+						{section === "about" ? <About data={about} /> : null}
+						{section === "updates" ? <Updates data={updates} /> : null}
+						{section === "team" ? <Team data={team} /> : null}
+						{section === "press" ? <Press data={press} /> : null}
+						{section === "contact" ? <Contact data={contact} /> : null}
+					</section>
+				)}
+			</div>
 		</div>
 	);
 };

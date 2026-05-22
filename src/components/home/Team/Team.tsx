@@ -17,7 +17,15 @@ export default function Team({
 					>
 						{getLang("home", "team", "title")}
 					</h2>
+					<RichText
+						data={data?.lede}
+						className="HomeSectionLede"
+					/>
 				</hgroup>
+				<RichText
+					data={data?.body}
+					className="HomeSectionBody"
+				/>
 				{data?.items ?
 					<ul
 						className="TeamItems"

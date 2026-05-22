@@ -1,0 +1,52 @@
+.HomeSection#about .HomeSectionInner {
+	@apply max-w-5xl;
+}
+.HomeSection#about h2.HomeSectionTitle {
+	@apply hidden;
+}
+.HomeSection#about .HomeSectionLede {
+    @apply font-body;
+    @apply text-4xl;
+	@apply leading-13;
+	@apply font-body;
+	/* @apply font-body-bold; */
+	@apply text-primary;
+}
+.HomeSectionSubsection {
+	@apply flex;
+	@apply flex-row;
+	@apply flex-wrap;
+	@apply bg-secondary;
+}
+.HomeSectionSubsection:nth-child(odd) {
+	@apply flex-row-reverse;
+	@apply bg-secondary-dark;
+}
+.HomeSectionSubsectionColumn {
+	@apply w-1/2;
+	@apply min-h-125;
+	position: relative;
+}
+.HomeSectionSubsectionContent {
+	@apply py-8;
+	@apply px-8;
+}
+.HomeSectionSubsectionContentTitle {
+
+}
+.HomeSectionSubsectionContentBody {
+	@apply text-primary-light;
+    @apply font-body;
+    @apply text-2xl;
+	@apply font-body-normal;
+}
+.HomeSectionSubsectionImage {
+	
+}
+.HomeSectionSubsectionImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+	/* object-position: center right; */
+}

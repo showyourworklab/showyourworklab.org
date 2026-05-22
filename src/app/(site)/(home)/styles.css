@@ -28,8 +28,11 @@ section.HomeSection > section.HomeSection {
 	@apply lg:px-8;
 	@apply lg:py-24; 
 }
-.HomeSectionHeading {
+hgroup.HomeSectionHeading {
 	@apply mb-12;
+}
+hgroup.HomeSectionHeading:last-child {
+	@apply mb-0;
 }
 .HomeSectionTitle {
 	@apply mb-4;

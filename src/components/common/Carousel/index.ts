@@ -1,2 +1,2 @@
-import Button, { type ButtonProps } from './Button';
-export { Button as default, Button, ButtonProps };
+import Carousel, { type CarouselProps } from './Carousel';
+export { Carousel as default, Carousel, CarouselProps };

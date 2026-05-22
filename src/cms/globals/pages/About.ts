@@ -35,6 +35,30 @@ export const About: GlobalConfig = {
 			name: "body",
 			label: "Body",
 			type: "richText",
+		},
+		{
+			name: "sections",
+			label: "Sections",
+			type: "array",
+			fields: [
+				{
+					name: "title",
+					type: "text",
+					required: true,
+				},
+				{
+					name: "body",
+					label: "Body",
+					type: "richText",
+				},
+				{
+					name: "image",
+					label: "Image",
+					type: "upload",
+					relationTo: "uploads",
+					displayPreview: true,
+				},
+			]
 		}
 	]
 };
