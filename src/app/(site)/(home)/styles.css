@@ -25,8 +25,8 @@ section.HomeSection > section.HomeSection {
 	@apply m-auto;
 	@apply px-4;
 	@apply py-12;
-	@apply lg:px-8;
-	@apply lg:py-24; 
+	@apply md:px-8;
+	@apply md:py-24; 
 }
 hgroup.HomeSectionHeading {
 	@apply mb-12;

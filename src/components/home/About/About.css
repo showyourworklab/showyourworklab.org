@@ -5,31 +5,42 @@
 	@apply hidden;
 }
 .HomeSection#about .HomeSectionLede {
+	@apply mb-4;
+	@apply md:mb-0;
     @apply font-body;
-    @apply text-4xl;
-	@apply leading-13;
+	@apply text-3xl;
+	@apply leading-11;
+    @apply md:text-4xl;
+	@apply md:leading-13;
 	@apply font-body;
-	/* @apply font-body-bold; */
 	@apply text-primary;
 }
 .HomeSectionSubsection {
 	@apply flex;
-	@apply flex-row;
-	@apply flex-wrap;
-	@apply bg-secondary;
+	@apply flex-col;
+	@apply md:flex-wrap;
+	@apply md:flex-row;
 }
 .HomeSectionSubsection:nth-child(odd) {
-	@apply flex-row-reverse;
 	@apply bg-secondary-dark;
+	@apply flex-col-reverse;
+	@apply md:flex-row-reverse;
+}
+.HomeSectionSubsection:nth-child(even) {
+	@apply bg-secondary;
+	@apply flex-col-reverse;
+	@apply md:flex-row;
 }
 .HomeSectionSubsectionColumn {
-	@apply w-1/2;
-	@apply min-h-125;
+	@apply w-full;
+	@apply md:w-1/2;
 	position: relative;
 }
 .HomeSectionSubsectionContent {
+	@apply px-4;
 	@apply py-8;
-	@apply px-8;
+	@apply md:p-8;
+	@apply md:min-h-125;
 }
 .HomeSectionSubsectionContentTitle {
 
@@ -41,7 +52,7 @@
 	@apply font-body-normal;
 }
 .HomeSectionSubsectionImage {
-	
+	@apply min-h-125;
 }
 .HomeSectionSubsectionImage img {
     width: 100%;

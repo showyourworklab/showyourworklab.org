@@ -14,9 +14,9 @@ footer.Footer a {
 }
 .FooterColumns {
 	@apply pt-8;
-	@apply grid;
-	@apply grid-cols-2;
-	@apply gap-4;
+	@apply md:grid;
+	@apply md:grid-cols-2;
+	@apply md:gap-4;
 }
 .FooterBranding a[href="#home"] {
 	text-decoration: none;
@@ -39,19 +39,21 @@ ul.FooterNavItems {
 	@apply text-sm;
 }
 li.FooterNavItem {
-	padding-left: 0;
+	@apply p-0;
 }
 li.FooterNavItem a.FooterNavItemButton {
-	text-transform: lowercase;
+	@apply lowercase;
 }
 .FooterSocials {
-	text-align: right;
+	@apply mt-8;
+	@apply md:mt-0;
+	@apply md:text-right;
 }
 ul.FooterSocialsItems {
-
+	@apply p-0;
 }
 li.FooterSocialsItem {
-
+	@apply p-0;
 }
 .FooterSocialsItemButton {
 
