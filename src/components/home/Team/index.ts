@@ -1,2 +1,2 @@
-import Press from './Press';
-export { Press as default, Press };
+import Team from './Team';
+export { Team as default, Team };
