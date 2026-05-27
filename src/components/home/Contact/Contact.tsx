@@ -7,7 +7,6 @@ export default function Contact({
 } : {
 	data: any
 }) {
-	console.log(data?.lede)
 	return (
 		<div
 			className="HomeSectionInner"

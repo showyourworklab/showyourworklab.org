@@ -7,6 +7,14 @@ export const HOME_SECTIONS = [
 	"team",
 	"press",
 	"contact",
+	"support"
+];
+export const HOME_SECTIONS_NAV = [
+	"about",
+	"updates",
+	"team",
+	"press",
+	"contact",
 ];
 export const SOCIALS = [
 	"linkedin",
@@ -35,6 +43,7 @@ export const LANG = {
 	home_press_title: "Press",
 	home_team_title: "Team",
 	home_contact_title: "Contact",
+	home_support_title: "Support",
 	// Verify
 	verify_upload_allow_png: "PNG",
 	verify_upload_allow_jpeg: "JPEG",

@@ -2,6 +2,7 @@ import { hasText } from "@payloadcms/richtext-lexical/shared";
 import { getLang } from "@/utils/selectors"
 import RichText from "@/components/common/RichText";
 import { cn } from "@/utils/helpers";
+import Figure from "@/components/common/Figure";
 
 export default function About({
 	data
@@ -63,9 +64,11 @@ export default function About({
 								"HomeSectionSubsectionImage"
 							)}
 						>
-							<img
+							<Figure
 								src={section?.image?.sizes?.large?.url}
 								alt={section?.image?.alt}
+								caption={section?.image?.caption}
+								className="HomeSectionSubsectionImageFigure"
 							/>
 						</div>
 					</div>

@@ -1,26 +1,34 @@
 "use client";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { cn } from "@/utils/helpers";
 import { getLang } from "@/utils/selectors";
-import { HOME_SECTIONS } from "@/utils/constants";
+import { HOME_SECTIONS_NAV } from "@/utils/constants";
 import Button from "@/components/common/Button";
-import { useEffect } from "react";
 
 export default function Header() {
+	const [belowHero, setBelowHero] = useState(false);
 
 	useEffect(() => {
-		const heroElem = document.querySelector("#hero");
-		function handleScroll(event: Event) {
-			// console.log(window.scrollY)
+		const heroElem = document.getElementById("hero");
+		const headerElem = document.getElementById("header");
+		function handleScroll() {
+			const scrollY = window.scrollY;
+			const targetY = (heroElem?.clientHeight ?? 0) - (headerElem?.clientHeight ?? 0);
+			setBelowHero(scrollY > targetY);
 		};
-		window.addEventListener("scroll", handleScroll);
+		handleScroll();
+		window.addEventListener("scroll", handleScroll, { passive: true });
 		return () => window.removeEventListener("scroll", handleScroll);
 	}, []);
 
 	return (
 		<header
 			id="header"
-			className={"Header"}
+			className={cn(
+				"Header",
+				belowHero ? "Header_belowHero" : null
+			)}
 		>
 			<div
 				className={"HeaderInner"}
@@ -33,9 +41,7 @@ export default function Header() {
 						src="/images/logo-light.svg"
 						alt={`Logo for ${getLang("site", "title")}`}
 						id="logo-lg"
-						className={cn(
-							"HeaderLogo"
-						)}
+						className={"HeaderLogo"}
 					/>
 					{/* <img
 						src="/images/logo-sm-light.svg"
@@ -53,7 +59,7 @@ export default function Header() {
 					<ul
 						className={"HeaderNavItems"}
 					>
-						{HOME_SECTIONS.map((section: string, index: number) =>
+						{HOME_SECTIONS_NAV.map((section: string, index: number) =>
 							<li
 								key={index}
 								className={"HeaderNavItem"}

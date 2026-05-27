@@ -1,5 +1,6 @@
 import { getLang } from "@/utils/selectors";
 import RichText from "@/components/common/RichText";
+import Figure from "@/components/common/Figure";
 
 export default function Team({
 	data
@@ -36,9 +37,10 @@ export default function Team({
 								className="TeamItem"
 							>
 								{item?.image?.sizes?.small?.url ?
-									<img
-										src={ item?.image?.sizes?.small?.url}
-										alt={`Portrait of ${item?.name}`}
+									<Figure
+										src={item?.image?.sizes?.small?.url}
+										alt={item?.image?.alt}
+										caption={item?.image?.caption}
 									/>
 								: null}
 								<hgroup
