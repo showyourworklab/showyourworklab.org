@@ -10,7 +10,7 @@ li.PressItem {
 	@apply not-last:border-b-secondary-dark;
 }
 .PressItemSource {
-	@apply lowercase;
+	/* @apply lowercase; */
     @apply font-body-bold;
 	@apply text-primary-dark;
 }

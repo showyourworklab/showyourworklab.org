@@ -31,6 +31,10 @@
 	--font-weight-display-normal: 400;
 	--font-weight-display-medium: 700;
 	--font-weight-display-bold: 800;
+	/* Typography > Size */
+	--text-2xs: 0.625rem;
+	/* Typography > Shadows */
+	--text-shadow-image: 0px 0px 2px var(--color-primary-dark), 0px 0px 1px black;
 	/* Spacing */
 	--spacing-header: 3.5rem;
 	--spacing-header-logo: 1.25rem;
@@ -77,13 +81,14 @@ html, body {
 html {
 	@apply h-full;
 	scroll-behavior: smooth;
+	overflow-x: hidden;
 }
 body {
 	@apply m-0;
 	@apply h-full;
 }
 main {
-	@apply pt-header;
+	/* @apply pt-header; */
 }
 :is(p, ul) {
 	margin: 1rem 0;
@@ -115,7 +120,7 @@ li {
 /* Headings */
 :is(h1, h2, h3, h4) {
 	line-height: 1.2em;
-	text-transform: lowercase;
+	/* text-transform: lowercase; */
 	@apply font-display;
 	@apply font-display-bold;
 	@apply text-primary;
@@ -154,6 +159,7 @@ a code {
 /* Imports > Components > Common */
 @import "../components/common/Button/Button.css";
 @import "../components/common/Field/Field.css";
+@import "../components/common/Figure/Figure.css";
 @import "../components/common/Carousel/Carousel.css";
 @import "../components/common/Markdown/Markdown.css";
 @import "../components/common/RichText/RichText.css";
@@ -166,6 +172,7 @@ a code {
 @import "../components/home/Updates/Updates.css";
 @import "../components/home/Press/Press.css";
 @import "../components/home/Team/Team.css";
+@import "../components/home/Support/Support.css";
 /* Imports > Components > Verify */
 @import "../components/verify/Upload/Upload.css";
 @import "../components/verify/Info/Info.css";

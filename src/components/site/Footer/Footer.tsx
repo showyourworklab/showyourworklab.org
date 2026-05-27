@@ -1,8 +1,7 @@
 "use client";
-import Link from "next/link";
 import { cn } from "@/utils/helpers";
 import { getLang } from "@/utils/selectors";
-import { EMAIL, GITHUB, HOME_SECTIONS, SOCIALS } from "@/utils/constants";
+import { HOME_SECTIONS_NAV, SOCIALS } from "@/utils/constants";
 import Button from "@/components/common/Button";
 
 export default function Footer() {
@@ -50,7 +49,7 @@ export default function Footer() {
 							<ul
 								className="FooterNavItems"
 							>
-								{HOME_SECTIONS.map((section: string, index: number) =>
+								{HOME_SECTIONS_NAV.map((section: string, index: number) =>
 									<li
 										key={index}
 										className="FooterNavItem"

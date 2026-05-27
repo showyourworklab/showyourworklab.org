@@ -9,6 +9,7 @@ import Updates from "@/components/home/Updates";
 import Press from "@/components/home/Press";
 import Team from "@/components/home/Team";
 import Contact from "@/components/home/Contact";
+import Support from "@/components/home/Support";
 
 export default async function Home() {
 	const payload = await getPayload({ config: await payloadConfig });
@@ -45,6 +46,11 @@ export default async function Home() {
 		draft: isEnabled,
 	});
 
+	const support = await payload.findGlobal({
+		slug: "support",
+		draft: isEnabled,
+	});
+
 	return (
 		<div
 			className={"Home"}
@@ -64,6 +70,7 @@ export default async function Home() {
 						{section === "team" ? <Team data={team} /> : null}
 						{section === "press" ? <Press data={press} /> : null}
 						{section === "contact" ? <Contact data={contact} /> : null}
+						{section === "support" ? <Support data={support} /> : null}
 					</section>
 				)}
 			</div>

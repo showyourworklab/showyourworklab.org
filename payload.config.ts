@@ -12,6 +12,7 @@ import Updates from "@/cms/globals/pages/Updates";
 import Team from "@/cms/globals/pages/Team";
 import Press from "@/cms/globals/pages/Press";
 import Contact from "@/cms/globals/pages/Contact";
+import Support from "@/cms/globals/pages/Support";
 import Uploads from "@/cms/collections/Uploads";
 // import { AWS_S3_CONFIG } from "@/db/utils/s3";
 
@@ -79,7 +80,8 @@ export default buildConfig({
 		Updates,
 		Team,
 		Press,
-		Contact
+		Contact,
+		Support
 	],
 	// Collections
 	collections: [

@@ -54,6 +54,10 @@
 .HomeSectionSubsectionImage {
 	@apply min-h-125;
 }
+.HomeSectionSubsectionImageFigure {
+	width: 100%;
+    height: 100%;
+}
 .HomeSectionSubsectionImage img {
     width: 100%;
     height: 100%;

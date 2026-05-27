@@ -1,0 +1,19 @@
+figure.Figure {
+	position: relative;
+}
+figcaption.FigureCaption {
+	max-width: 100%;
+	position: absolute;
+	z-index: 2;
+	pointer-events: none;
+	user-select: none;
+	@apply bottom-1.5;
+	@apply right-1.5;
+	@apply text-2xs;
+	@apply text-secondary;
+	@apply text-shadow-image;
+	@apply transition-opacity;
+}
+figure.Figure:hover figcaption.FigureCaption {
+	/* opacity: 1; */
+}

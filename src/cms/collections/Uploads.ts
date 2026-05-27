@@ -12,7 +12,7 @@ const Uploads: CollectionConfig = {
 	},
 	upload: {
 		staticDir: "public/uploads",
-		mimeTypes: ["image/*"],
+		mimeTypes: ["image/*", "application/xml"],
 		displayPreview: true,
 		handlers: [
 			async (req, { params }) => {
