@@ -34,7 +34,6 @@ export default function Updates({
 						className="HomeSectionBody"
 					/>
 				: null}
-				
 				<div
 					className="HomeSectionUpdatesItems"
 				>
@@ -74,7 +73,7 @@ export default function Updates({
 											outlined={true}
 											className="UpdatesItemPrompt"
 										>
-											Read more
+											{getLang("home", "updates", "prompt")}
 										</Button>
 									: null}
 								</div>

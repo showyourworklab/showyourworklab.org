@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { cn } from "@/utils/helpers";
 import { getLang } from "@/utils/selectors";
-import { HOME_SECTIONS_NAV } from "@/utils/constants";
+import { HOME_SECTIONS_NAV, LOCALES } from "@/utils/constants";
 import Button from "@/components/common/Button";
 
 export default function Header() {
@@ -73,6 +73,28 @@ export default function Header() {
 								>
 									{getLang("home", section, "title")}
 								</Button>
+							</li>
+						)}
+					</ul>
+				</nav>
+				<nav
+					className={"HeaderLocale"}
+					aria-label="Language options"
+				>
+					<ul
+						className={"HeaderLocaleItems"}
+					>
+						{LOCALES.map((locale: string, index: number) =>
+							<li
+								key={index}
+								className={"HeaderLocaleItem"}
+							>
+								<Link
+									href=""
+									locale={locale}
+								>
+									{locale}
+								</Link>
 							</li>
 						)}
 					</ul>

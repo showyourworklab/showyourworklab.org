@@ -66,3 +66,19 @@ a.HeaderNavItemButton {
 .Header_belowHero a.HeaderNavItemButton {
 	@apply text-shadow-none;
 }
+nav.HeaderLocale {
+
+}
+ul.HeaderLocaleItems {
+	@apply pl-0;
+	@apply flex;
+	@apply space-x-1.5;
+}
+li.HeaderLocaleItem {
+	@apply pl-0;
+	@apply pb-0;
+}
+li.HeaderLocaleItem a {
+	@apply uppercase;
+	@apply text-xs;
+}

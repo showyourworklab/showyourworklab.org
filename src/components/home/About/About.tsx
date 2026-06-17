@@ -14,8 +14,8 @@ export default function About({
 			<div
 				className="HomeSectionInner"
 			>
-				<hgroup
-					className="HomeSectionHeading"
+				<div
+					className={"HomeSectionHeading"}
 				>
 					<h2
 						className="HomeSectionTitle"
@@ -28,7 +28,7 @@ export default function About({
 							className="HomeSectionLede"
 						/>
 					: null}
-				</hgroup>
+				</div>
 				{hasText(data?.body) ?
 					<RichText
 						data={data?.body}
@@ -38,7 +38,7 @@ export default function About({
 			</div>
 			<div>
 				{data?.sections.map((section: any, index: number) =>
-					<div
+					<section
 						key={index}
 						className="HomeSectionSubsection"
 					>
@@ -71,7 +71,7 @@ export default function About({
 								className="HomeSectionSubsectionImageFigure"
 							/>
 						</div>
-					</div>
+					</section>
 				)}
 			</div>
 		</>

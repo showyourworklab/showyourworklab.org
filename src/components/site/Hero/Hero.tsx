@@ -1,6 +1,4 @@
 "use client";
-import Link from "next/link";
-import { cn } from "@/utils/helpers";
 import { getLang } from "@/utils/selectors";
 
 export default function Hero({
@@ -13,7 +11,6 @@ export default function Hero({
 			id="hero"
 			className="Hero"
 			style={{
-				// backgroundImage: `url(${image?.sizes?.large?.url})`
 				backgroundImage: `url(${image?.url})`
 			}}
 		>
@@ -28,7 +25,7 @@ export default function Hero({
 				<div
 					className="HeroTagline"
 				>
-					We prove what's real rather than identify what's fake
+					{getLang("site", "tagline")}
 				</div>
 			</div>
 		</section>

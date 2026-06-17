@@ -1,4 +1,4 @@
-import { LANG } from "@/utils/constants";
+import { DICTIONARIES, LANG, LOCALES } from "@/utils/constants";
 
 /** Gets value from object if exists */
 export const getValue = (key: string, object: any) =>
@@ -7,18 +7,24 @@ export const getValue = (key: string, object: any) =>
 export const getLang = (
 	...strs: (string | number | object | null | undefined)[]
 ): string => {
+
+	// If first argument is a locale string, set dictionary, otherwise use default
+	const locale = LOCALES.includes(String(strs[0]))
+		? String(strs.shift())
+		: LOCALES[0];
 	// If last argument is an object, remove this from string list and use as params
 	const params = typeof strs[strs.length - 1] === "object"
 		? strs.pop()
 		: null;
+	const dictionary = getValue(locale, DICTIONARIES);
 	// If attempting to get lang for a year (i.e. `start_year`), just return year
 	if(String(strs[0])?.includes("year") && strs.length === 2) return String(strs[1]);
 	// If attempting to get lang for a month (i.e. `start_month` or `end_month`), return month name
-	if(String(strs[0])?.includes("month") && strs.length === 2) return getValue(`month_${strs[1]}`, LANG);
+	if(String(strs[0])?.includes("month") && strs.length === 2) return getValue(`month_${strs[1]}`, dictionary);
 	// Join all string arguments with underscore to create single key string
 	const key = strs.filter(s => s !== null && s !== undefined).join("_");
 	// Get lang using key from ./lang.ts object
-	const lang = getValue(key, LANG) ?? "";
+	const lang = getValue(key, dictionary) ?? "";
 	// If params exists in arguments, replace param's keys found in lang string with param's value
 	if(params && typeof params === "object") {
 		return replaceStringWithParams(lang, params);

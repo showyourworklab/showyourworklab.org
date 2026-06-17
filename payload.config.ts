@@ -55,7 +55,19 @@ export default buildConfig({
 	},
 	sharp,
 	telemetry: false,
-	// Plugins
+	localization: {
+		locales: [
+			{
+				code: "en",
+				label: "English"
+			}, 
+			{
+				code: "no",
+				label: "Norsk"
+			}
+		],
+		defaultLocale: "en",
+	},
 	plugins: [
 		// s3Storage({
 		// 	collections: {

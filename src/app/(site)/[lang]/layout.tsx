@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import { Instrument_Sans, Rethink_Sans } from "next/font/google";
 import { cn } from "@/utils/helpers";
 import { getLang } from "@/utils/selectors";
+import { LOCALES } from "@/utils/constants";
 import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
-import "../globals.css";
+import "@/app/globals.css";
 
 const instrumentSans = Instrument_Sans({
 	variable: "--font-instrument-sans",
@@ -22,17 +23,21 @@ const rethinkSans = Rethink_Sans({
 
 export const metadata: Metadata = {
 	title: getLang("site", "title"),
-	description: "Show Your Work Lab provides news organizations with the tools and strategies to make visual journalism verifiable, transparent, and trustworthy.",
+	description: getLang("site", "description"),
 };
 
-export default function RootLayout({
+export default async function RootLayout({
 	children,
+	params
 }: Readonly<{
 	children: React.ReactNode;
+	params: Promise<{ locale: string }>;
 }>) {
+	const locale = (await params)?.locale ?? LOCALES[0];
+
 	return (
 		<html
-			lang="en"
+			lang={locale}
 			className={cn(
 				instrumentSans.variable,
 				rethinkSans.variable

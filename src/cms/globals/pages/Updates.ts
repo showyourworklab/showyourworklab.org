@@ -44,22 +44,25 @@ export const Updates: GlobalConfig = {
 				{
 					name: "title",
 					label: "Title",
-					type: "text"
+					type: "text",
+					localized: true,
 				},
 				{
 					name: "blurb",
 					label: "Blurb",
-					type: "richText"
+					type: "richText",
+					localized: true,
 				},
 				{
 					name: "url",
 					label: "URL",
-					type: "text"
+					type: "text",
+					localized: true,
 				},
 				{
 					name: "date",
 					label: "Date",
-					type: "date"
+					type: "date",
 				}
 			]
 		}

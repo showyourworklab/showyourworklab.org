@@ -30,11 +30,13 @@ export const Press: GlobalConfig = {
 			name: "lede",
 			label: "Lede",
 			type: "richText",
+			localized: true,
 		},
 		{
 			name: "body",
 			label: "Body",
 			type: "richText",
+			localized: true,
 		},
 		{
 			name: "items",
@@ -44,22 +46,22 @@ export const Press: GlobalConfig = {
 				{
 					name: "source",
 					label: "Source",
-					type: "text"
+					type: "text",
 				},
 				{
 					name: "title",
 					label: "Title",
-					type: "text"
+					type: "text",
 				},
 				{
 					name: "url",
 					label: "URL",
-					type: "text"
+					type: "text",
 				},
 				{
 					name: "date",
 					label: "Date",
-					type: "date"
+					type: "date",
 				}
 			]
 		}

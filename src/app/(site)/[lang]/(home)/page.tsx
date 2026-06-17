@@ -1,7 +1,7 @@
 import "syw-react/styles.css"
+import { draftMode } from "next/headers";
 import { getPayload } from "payload";
 import payloadConfig from "@payload-config";
-import { draftMode } from "next/headers";
 import { HOME_SECTIONS } from "@/utils/constants";
 import Hero from "@/components/site/Hero";
 import About from "@/components/home/About";
