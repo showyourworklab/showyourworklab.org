@@ -1,5 +1,9 @@
 .Verify {
 	@apply h-full;
+	@apply mt-header;
+}
+.Verify .Header {
+	@apply bg-primary;
 }
 .VerifyColumns {
 	@apply grid;
