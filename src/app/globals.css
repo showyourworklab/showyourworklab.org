@@ -177,5 +177,5 @@ a code {
 @import "../components/verify/Upload/Upload.css";
 @import "../components/verify/Info/Info.css";
 /* Imports > App */
-@import "../app/(site)/(home)/styles.css";
-@import "../app/(site)/verify/styles.css";
+@import "../app/(site)/[lang]/(home)/styles.css";
+@import "../app/(site)/[lang]/verify/styles.css";
