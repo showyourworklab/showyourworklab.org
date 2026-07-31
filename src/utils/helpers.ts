@@ -1,9 +1,11 @@
+import { LOCALES } from "./constants";
+
 /** Joins class names */
 export const cn = (...arr: (string | null | undefined)[]) => arr.filter(item => item).join(" ");
 
-export function formatDate(dateStr: string) {
+export function formatDate(locale: string, dateStr: string) {
 	const dateObj = new Date(dateStr);
-	const formattedDateStr = dateObj.toLocaleDateString("en-US", {
+	const formattedDateStr = dateObj.toLocaleDateString(locale, {
 		year: "numeric",
 		month: "long",
 		day: "numeric",
@@ -69,4 +71,9 @@ export const getFileFromSrc = async (src: string | null) => {
 	} else {
 		return null;
 	}
+};
+
+export const getLocaleHref = (pathname: any, locale: string) => {
+	const rest = pathname.replace(new RegExp(`^/(${LOCALES.join("|")})(?=/|$)`), "");
+	return `/${locale}${rest}`;
 };

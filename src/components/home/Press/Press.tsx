@@ -3,9 +3,11 @@ import { formatDate } from "@/utils/helpers";
 import RichText from "@/components/common/RichText";
 
 export default function Press({
-	data
+	data,
+	locale
 } : {
 	data: any;
+	locale: string;
 }) {
 	return (
 		<>
@@ -18,7 +20,7 @@ export default function Press({
 					<h2
 						className="HomeSectionTitle"
 					>
-						{getLang("home", "press", "title")}
+						{getLang(locale, "home", "press", "title")}
 					</h2>
 					<RichText
 						data={data?.lede}
@@ -60,7 +62,7 @@ export default function Press({
 								<div
 									className="PressItemDate"
 								>
-									{formatDate(item.date)}
+									{formatDate(locale, item.date)}
 								</div>
 							</li>
 					)}

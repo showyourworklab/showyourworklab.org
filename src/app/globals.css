@@ -38,6 +38,8 @@
 	/* Spacing */
 	--spacing-header: 3.5rem;
 	--spacing-header-logo: 1.25rem;
+	--spacing-hero-tagline-en: auto;
+	--spacing-hero-tagline-no: 30rem;
 	--spacing-inner: 750px;
 	--spacing-paragraph: 52ch;
 	--spacing-upload-width: 40rem;

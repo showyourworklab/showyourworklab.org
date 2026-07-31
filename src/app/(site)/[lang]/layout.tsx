@@ -21,19 +21,30 @@ const rethinkSans = Rethink_Sans({
 	weight: ["400", "700", "800"]
 });
 
-export const metadata: Metadata = {
-	title: getLang("site", "title"),
-	description: getLang("site", "description"),
-};
+export function generateStaticParams() {
+	return LOCALES.map(lang => ({ lang }));
+}
+
+export async function generateMetadata({
+	params
+}: {
+	params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+	const locale = (await params)?.lang ?? LOCALES[0];
+	return {
+		title: getLang(locale, "site", "title"),
+		description: getLang(locale, "site", "description"),
+	};
+}
 
 export default async function RootLayout({
 	children,
 	params
 }: Readonly<{
 	children: React.ReactNode;
-	params: Promise<{ locale: string }>;
+	params: Promise<{ lang: string }>;
 }>) {
-	const locale = (await params)?.locale ?? LOCALES[0];
+	const locale = (await params)?.lang ?? LOCALES[0];
 
 	return (
 		<html

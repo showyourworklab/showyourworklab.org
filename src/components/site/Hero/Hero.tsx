@@ -1,11 +1,13 @@
 "use client";
+import { useParams } from "next/navigation";
 import { getLang } from "@/utils/selectors";
 
 export default function Hero({
 	image
 } : {
-	image: any
+	image: any;
 }) {
+	const { lang: locale } = useParams<{ lang: string }>();
 	return (
 		<section
 			id="hero"
@@ -25,7 +27,7 @@ export default function Hero({
 				<div
 					className="HeroTagline"
 				>
-					{getLang("site", "tagline")}
+					{getLang(locale, "site", "tagline")}
 				</div>
 			</div>
 		</section>

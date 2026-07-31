@@ -5,9 +5,11 @@ import { cn } from "@/utils/helpers";
 import Figure from "@/components/common/Figure";
 
 export default function About({
-	data
+	data,
+	locale
 } : {
-	data: any
+	data: any;
+	locale: string;
 }) {
 	return (
 		<>
@@ -20,7 +22,7 @@ export default function About({
 					<h2
 						className="HomeSectionTitle"
 					>
-						{getLang("home", "about", "title")}
+						{getLang(locale, "home", "about", "title")}
 					</h2>
 					{data?.lede ?
 						<RichText

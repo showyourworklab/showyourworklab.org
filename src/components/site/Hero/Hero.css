@@ -37,6 +37,10 @@ h1.HeroTitle span:last-child {
 	@apply font-body;
 	@apply font-body-bold;
 	@apply text-center;
-	@apply mt-8;
+	@apply mt-6;
+	@apply mx-auto;
 	text-shadow: 0px 0px 1px rgba(0,0,0,1), 0px 0px 25px rgba(0,0,0,0.5), 0px 0px 50px rgba(0,0,0,0.75);
+}
+html[lang="no"] .HeroTagline {
+	@apply max-w-hero-tagline-no;
 }

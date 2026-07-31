@@ -1,4 +1,5 @@
 "use client";
+import { useParams } from "next/navigation";
 import { FileUpload, useFileUpload } from "@ark-ui/react/file-upload";
 import { useVerifyStore } from "@/store/verify";
 import UploadUrl from "./components/UploadUrl";
@@ -9,6 +10,7 @@ import { getLang } from "@/utils/selectors";
 import UploadExamples from "./components/UploadExamples";
 
 export default function Upload() {
+	const { lang: locale } = useParams<{ lang: string }>();
 	const setFile = useVerifyStore(state => state.setFile);
 
 	const fileUpload = useFileUpload({
@@ -44,7 +46,7 @@ export default function Upload() {
 					<FileUpload.Label
 						className={"UploadLabel"}
 					>
-						{getLang("verify", "upload", "label")}
+						{getLang(locale, "verify", "upload", "label")}
 					</FileUpload.Label>
 					<UploadDropzone />
 					<UploadUrl />

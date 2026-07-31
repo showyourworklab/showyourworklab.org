@@ -2,9 +2,11 @@ import { getLang } from "@/utils/selectors";
 import RichText from "@/components/common/RichText";
 
 export default function Support({
-	data
+	data,
+	locale
 } : {
-	data: any
+	data: any;
+	locale: string;
 }) {
 	return (
 		<div
@@ -14,7 +16,7 @@ export default function Support({
 				<h2
 					className="HomeSectionTitle"
 				>
-					{getLang("home", "support", "title")}
+					{getLang(locale, "home", "support", "title")}
 				</h2>
 				<RichText
 					data={data?.lede}

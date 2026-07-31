@@ -11,52 +11,36 @@ import Team from "@/components/home/Team";
 import Contact from "@/components/home/Contact";
 import Support from "@/components/home/Support";
 
-export default async function Home() {
-	const payload = await getPayload({ config: await payloadConfig });
+export default async function Home({
+	params
+} : {
+	params: Promise<{ lang: string }>;
+}) {
+	const { lang: locale } = await params;
+	const payload = await getPayload({
+		config: await payloadConfig
+	});
 	const { isEnabled } = await draftMode();
 
-	const home = await payload.findGlobal({
-		slug: "home",
-		draft: isEnabled,
-	});
-
-	const about = await payload.findGlobal({
-		slug: "about",
-		draft: isEnabled,
-	});
-
-	const updates = await payload.findGlobal({
-		slug: "updates",
-		draft: isEnabled,
-	});
-
-	const team = await payload.findGlobal({
-		slug: "team",
-		draft: isEnabled,
-		depth: 1,
-	});
-
-	const press = await payload.findGlobal({
-		slug: "press",
-		draft: isEnabled,
-	});
-
-	const contact = await payload.findGlobal({
-		slug: "contact",
-		draft: isEnabled,
-	});
-
-	const support = await payload.findGlobal({
-		slug: "support",
-		draft: isEnabled,
-	});
+	const data = (await Promise.all(
+		["home", ...HOME_SECTIONS].map((section: string) =>
+			payload.findGlobal({
+				slug: section,
+				draft: isEnabled,
+				locale: locale,
+			})
+		)
+	)).reduce((obj, promise) => ({
+		...obj,
+		[promise.globalType]: promise
+	}), {});
 
 	return (
 		<div
 			className={"Home"}
 		>
 			<Hero
-				image={home?.hero}
+				image={data?.home?.hero}
 			/>
 			<div>
 				{HOME_SECTIONS.map((section: string, index: number) =>
@@ -65,12 +49,12 @@ export default async function Home() {
 						id={section}
 						className="HomeSection"
 					>
-						{section === "about" ? <About data={about} /> : null}
-						{section === "updates" ? <Updates data={updates} /> : null}
-						{section === "team" ? <Team data={team} /> : null}
-						{section === "press" ? <Press data={press} /> : null}
-						{section === "contact" ? <Contact data={contact} /> : null}
-						{section === "support" ? <Support data={support} /> : null}
+						{section === "about" ? <About data={data?.about} locale={locale} /> : null}
+						{section === "updates" ? <Updates data={data?.updates} locale={locale} /> : null}
+						{section === "team" ? <Team data={data?.team} locale={locale} /> : null}
+						{section === "press" ? <Press data={data?.press} locale={locale} /> : null}
+						{section === "contact" ? <Contact data={data?.contact} locale={locale} /> : null}
+						{section === "support" ? <Support data={data?.support} locale={locale} /> : null}
 					</section>
 				)}
 			</div>
