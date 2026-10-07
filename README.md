@@ -17,14 +17,8 @@ The site runs on [Payload CMS](https://payloadcms.com) using [Neon DB](https://n
 ### Changing the schema
 
 1. Edit CMS fiels in `src/cms/*`.
-2. Create a migration:
-   ```bash
-   npm run migrate:create -- <name>
-   ```
-3. Apply it to the staging database:
-   ```bash
-   npm run migrate:push
-   ```
+2. Create a migration with `npm run migrate:create -- <name>`
+3. Apply it to the staging database with `npm run migrate:push`
 4. Test locally with `npm run dev`.
 5. Commit the new files in `src/migrations/` and push to `staging`.
 6. Merge to `main`. Production runs the migration automatically during the build.

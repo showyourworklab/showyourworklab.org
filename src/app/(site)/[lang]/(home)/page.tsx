@@ -1,6 +1,7 @@
 import "syw-react/styles.css";
 import { draftMode } from "next/headers";
 import { getPayload } from "payload";
+import type { DataFromGlobalSlug, GlobalSlug, TypedLocale } from "payload";
 import payloadConfig from "@payload-config";
 import { HOME_SECTIONS } from "@/utils/constants";
 import Hero from "@/components/site/Hero";
@@ -22,18 +23,19 @@ export default async function Home({
 	});
 	const { isEnabled } = await draftMode();
 
-	const data = (await Promise.all(
-		["home", ...HOME_SECTIONS].map((section: string) =>
+	const slugs = ["home", ...HOME_SECTIONS] as GlobalSlug[];
+	const results = await Promise.all(
+		slugs.map((slug) =>
 			payload.findGlobal({
-				slug: section,
+				slug,
 				draft: isEnabled,
-				locale: locale,
+				locale: locale as TypedLocale,
 			})
 		)
-	)).reduce((obj, promise) => ({
-		...obj,
-		[promise.globalType]: promise
-	}), {});
+	);
+	const data = Object.fromEntries(
+		slugs.map((slug, index) => [slug, results[index]])
+	) as { [K in GlobalSlug]?: DataFromGlobalSlug<K> };
 
 	return (
 		<div

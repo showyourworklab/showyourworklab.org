@@ -12,8 +12,6 @@ const IMAGE_EXTENSIONS = new Set([
 	".svg",
 ]);
 
-const toPosixPath = (value: string): string => value.split(path.sep).join("/");
-
 async function walkDirectory(dirPath: string): Promise<string[]> {
 	const entries = await fs.readdir(dirPath, { withFileTypes: true });
 	const results = await Promise.all(
@@ -55,8 +53,6 @@ export async function syncImages(payload: Payload): Promise<void> {
 	});
 
 	for (const absolutePath of imageFiles) {
-		const relativeToPublic = toPosixPath(path.relative(publicDir, absolutePath));
-		const publicPath = `/${relativeToPublic}`;
 		const filename = path.basename(absolutePath);
 		const defaultAlt = path
 			.basename(filename, path.extname(filename))
@@ -66,8 +62,8 @@ export async function syncImages(payload: Payload): Promise<void> {
 		const existing = await payload.find({
 			collection: "uploads",
 			where: {
-				sourcePath: {
-					equals: publicPath,
+				filename: {
+					equals: filename,
 				},
 			},
 			limit: 1,
@@ -83,7 +79,6 @@ export async function syncImages(payload: Payload): Promise<void> {
 			collection: "uploads",
 			overrideAccess: true,
 			data: {
-				sourcePath: publicPath,
 				alt: defaultAlt,
 			},
 			filePath: absolutePath,
