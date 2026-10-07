@@ -9,7 +9,7 @@ export const Home: GlobalConfig = {
 		group: "Pages",
 	},
 	versions: {
-		drafts: { autosave: { interval: 200 } },
+		drafts: true,
 	},
 	hooks: {
 		afterChange: [
