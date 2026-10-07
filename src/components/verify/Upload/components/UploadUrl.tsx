@@ -8,10 +8,12 @@ export default function UploadUrl() {
 	const [error, setError] = useState<string | null>(null);
 	const fileSrc = useVerifyStore(state => state.fileSrc);
 	const setFileSrc = useVerifyStore(state => state.setFileSrc);
+	const setInit = useVerifyStore(state => state.setInit);
 
 	const handleFieldChange = useCallback((event: any) => {
 		const newValue = event?.target?.value;
 		setValue(newValue);
+		setInit(false);
 	}, []);
 
 	useEffect(() => {

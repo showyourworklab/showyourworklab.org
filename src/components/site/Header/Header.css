@@ -9,6 +9,7 @@
 }
 .Header.Header_belowHero {
 	@apply bg-primary;
+	@apply shadow-core;
 }
 .HeaderInner {
 	@apply h-full;

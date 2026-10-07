@@ -1,6 +1,9 @@
 .Verify {
 	@apply h-full;
 	@apply mt-header;
+	min-height: calc(85vh - var(--spacing-header));
+	position: relative;
+	display: flex;
 }
 .Verify .Header {
 	@apply bg-primary;
@@ -8,13 +11,25 @@
 .VerifyColumns {
 	@apply grid;
     @apply grid-cols-1;
-    @apply md:grid-cols-[var(--spacing-upload-column)_minmax(0,1fr)];
+    @apply lg:grid-cols-[var(--spacing-upload-column)_minmax(0,1fr)];
+	@apply w-full;
+	@apply min-h-full;
 }
 .VerifyColumn {
-	@apply p-4;
+	@apply px-6;
+	@apply py-8;
+	@apply min-h-full;
+	@apply flex;
 }
 .VerifyColumnUpload {
 	@apply w-full;
+	@apply bg-secondary;
+	@apply shadow-core;
+	position: relative;
+}
+.Verify_initial .VerifyColumnUpload {
+	@apply absolute;
+	@apply items-center;
 }
 .VerifyColumnInfo {
 	@apply min-w-0;

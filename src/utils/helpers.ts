@@ -1,4 +1,4 @@
-import { LOCALES } from "./constants";
+import { DATE_OPTIONS, LOCALES, TIME_OPTIONS } from "./constants";
 
 /** Joins class names */
 export const cn = (...arr: (string | null | undefined)[]) => arr.filter(item => item).join(" ");
@@ -11,6 +11,41 @@ export function formatDate(locale: string, dateStr: string) {
 		day: "numeric",
 	});
 	return formattedDateStr;
+};
+
+/** Gets a human-readable date string for a given locale */
+export const getDateString = (
+	locale: string,
+	timestamp?: {
+		date?: Date,
+		offset?: string | null
+	}
+): string | null => {
+	if(!timestamp) return null
+	const { date, offset } = timestamp
+	const isValidDate = date && date instanceof Date && isFinite(date.getTime())
+	if(!isValidDate) return null
+	const dateOpts = { ...DATE_OPTIONS, timeZone: offset ?? undefined }
+	const timeOpts = { ...TIME_OPTIONS, timeZone: offset ?? undefined }
+	const localeOpt = locale.replace('_', '-')
+
+	let dateString, timeString
+	try {
+		dateString = date.toLocaleDateString(localeOpt, dateOpts)
+		timeString = date.toLocaleTimeString(localeOpt, timeOpts)
+	} catch {
+		// Fallback for engines without offset-identifier support (only available ES2026 and up)
+		if(offset) {
+			const sign = offset[0] === '-' ? -1 : 1
+			const [h, m] = offset.slice(1).split(':').map(Number)
+			const shifted = new Date(date.getTime() + sign * (h * 60 + m) * 60000)
+			dateString = shifted.toLocaleDateString(localeOpt, { ...dateOpts, timeZone: 'UTC' })
+			timeString = shifted.toLocaleTimeString(localeOpt, { ...timeOpts, timeZone: 'UTC' })
+		} else {
+			return null
+		}
+	}
+	return `${dateString}, ${timeString}`
 };
 
 /** Checks if URL matches origin of current site or is another */

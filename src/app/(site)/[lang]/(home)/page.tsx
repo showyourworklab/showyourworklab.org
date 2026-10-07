@@ -1,4 +1,4 @@
-import "syw-react/styles.css"
+import "syw-react/styles.css";
 import { draftMode } from "next/headers";
 import { getPayload } from "payload";
 import payloadConfig from "@payload-config";

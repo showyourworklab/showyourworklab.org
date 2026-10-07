@@ -1,32 +1,94 @@
 /* Info */
 .Info {
 	@apply w-full;
+	@apply max-w-3xl;
+	@apply mx-auto;
+}
+.InfoLabel {
+	@apply mb-2;
+	@apply text-sm;
+	@apply font-body-bold;
+	@apply text-primary-dark;
+}
+/* Info > Status */
+.InfoStatus {
+	@apply mb-4;
+}
+.InfoStatusButton {
+	@apply font-display;
+	@apply font-display-medium;
+	@apply uppercase;
+	@apply tracking-wide;
+	@apply bg-secondary;
+	@apply border-0;
+	@apply shadow-core;
+}
+.InfoStatusButton svg.InfoStatusButtonIcon {
+	@apply size-6;
 }
 /* Info > Manifest */
 .InfoManifest {
-	@apply p-2;
 	@apply mb-2;
 	@apply rounded-xl;
 	@apply bg-secondary;
+	@apply shadow-core;
+}
+.InfoManifestToggle {
+	@apply w-full;
+	@apply flex;
+	@apply p-3;
+	@apply space-x-4;
+	@apply items-center;
+	@apply font-display;
+	@apply font-display-medium;
+	@apply text-primary;
+}
+.InfoManifestTable {
+	@apply p-3;
+	@apply space-y-2;
+	@apply border-t;
+	@apply border-t-tertiary;
+}
+.InfoManifestTableRow {
+}
+.InfoManifestTableRowLabel {
+	@apply text-2xs;
+	@apply uppercase;
+}
+.InfoManifestTableRowValue {
+	@apply text-sm;
 }
 /* Info > Tree */
 .InfoTree {
 	@apply mt-4;
 	@apply w-full;
 }
-.InfoTreeLabel {
-	@apply mb-2;
-	@apply text-sm;
-	@apply font-body-bold;
+.InfoTreeContent {
+	@apply max-h-96;
+	@apply flex;
+	@apply overflow-hidden;
+	@apply rounded-xl;
+	@apply bg-secondary;
+	@apply shadow-core;
+}
+.InfoTreeRoot {
+	@apply p-2;
+	@apply max-h-full;
+	@apply overflow-y-auto;
 }
 .InfoTreeTree {
-	color: var(--demo-neutral-fg);
+	display: flex;
+	flex-direction: column;
+	font-size: 0.75rem;
+	line-height: 1.8;
 	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+.InfoTreeTree [aria-expanded] {
+	cursor: pointer;
 }
 .InfoTreeTree [data-part="branch-content"] {
 	position: relative;
 }
-
 .InfoTreeTree [data-part="branch-indent-guide"] {
 	height: 100%;
 	width: 1px;
@@ -48,7 +110,6 @@
 .InfoTreeTree [data-part="branch-control"]:hover {
 	@apply bg-tertiary
 }
-
 .InfoTreeTree [data-part="branch-indicator"] {
 	display: inline-flex;
 	align-items: flex-start;
@@ -60,7 +121,6 @@
 .InfoTreeTree [data-part="branch-indicator"][data-state="open"] {
 	transform: rotate(90deg);
 }
-
 .InfoTreeTree [data-part="item"] {
 	display: flex;
 	position: relative;
@@ -69,11 +129,9 @@
 .InfoTreeTree [data-part="item"][data-depth="1"] {
 	padding-inline-start: 1.5rem;
 }
-
 .InfoTreeTree [data-part="item"]:hover {
 	@apply bg-tertiary
 }
-
 .InfoTreeTree [data-part="item-text"],
 .InfoTreeTree [data-part="branch-text"] {
 	display: flex;
@@ -82,23 +140,10 @@
 	text-overflow: ellipsis;
     white-space: nowrap;
 }
-
-.InfoTreeTree {
-	@apply p-2;
-	@apply rounded-xl;
-	display: flex;
-	flex-direction: column;
-	font-size: 0.75rem;
-	line-height: 1.8;
-	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-	@apply bg-secondary;
-	
-}
 .InfoTreeTree svg {
 	width: 1rem;
 	height: 1rem;
 }
-
 /* JSON value types */
 .InfoTreeTree [data-type="string"] {
 	@apply text-tree-string;

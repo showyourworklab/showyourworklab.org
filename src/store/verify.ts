@@ -1,7 +1,7 @@
 
 import { useContext } from "react";
 import { useStore, createStore } from "zustand"
-import { parseSywData } from "syw-react/tools";
+import { parseSywData } from "syw-react";
 import { VerifyStoreContext } from "@/providers/verify";
 import { getFileFromSrc, getSrcFromFile } from "@/utils/helpers";
 
@@ -16,6 +16,9 @@ export interface VerifyStoreProps {
 	// Data
 	data: any;
 	setData: (data: any | null) => void;
+	// Init
+	init: boolean;
+	setInit: (init: boolean) => void;
 };
 
 export const createVerifyStore = () => createStore<VerifyStoreProps>()(
@@ -50,6 +53,9 @@ export const createVerifyStore = () => createStore<VerifyStoreProps>()(
 		// Data
 		data: null,
 		setData: data => set({ data }),
+		// Init
+		init: true,
+		setInit: init => set({ init }),
 	})
 );
 

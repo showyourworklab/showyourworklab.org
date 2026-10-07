@@ -25,7 +25,8 @@
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "react-markdown": "^10.1.0",
-    "syw-react": "^0.0.28",
+    "syw-common": "^0.0.34",
+    "syw-react": "^0.0.34",
     "zustand": "^5.0.13"
   },
   "devDependencies": {
