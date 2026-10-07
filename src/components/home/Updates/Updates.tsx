@@ -4,9 +4,11 @@ import Button from "@/components/common/Button";
 import RichText from "@/components/common/RichText";
 
 export default function Updates({
-	data
+	data,
+	locale
 } : {
 	data: any;
+	locale: string;
 }) {
 	return (
 		<>
@@ -19,7 +21,7 @@ export default function Updates({
 					<h2
 						className="HomeSectionTitle"
 					>
-						{getLang("home", "updates", "title")}
+						{getLang(locale, "home", "updates", "title")}
 					</h2>
 					{data?.lede ?
 						<RichText
@@ -34,7 +36,6 @@ export default function Updates({
 						className="HomeSectionBody"
 					/>
 				: null}
-				
 				<div
 					className="HomeSectionUpdatesItems"
 				>
@@ -63,7 +64,7 @@ export default function Updates({
 									<div
 										className="UpdatesItemDate"
 									>
-										{formatDate(item.date)}
+										{formatDate(locale, item.date)}
 									</div>
 									{item.url ?
 										<Button
@@ -74,7 +75,7 @@ export default function Updates({
 											outlined={true}
 											className="UpdatesItemPrompt"
 										>
-											Read more
+											{getLang(locale, "home", "updates", "prompt")}
 										</Button>
 									: null}
 								</div>

@@ -10,6 +10,7 @@ export interface ButtonProps extends Omit<HTMLProps<HTMLButtonElement & HTMLAnch
 	small?: boolean;
 	square?: boolean;
 	external?: boolean;
+	custom?: boolean;
 	before?: ReactNode;
 	after?: ReactNode;
 	tag?: string;
@@ -24,6 +25,7 @@ export default forwardRef(function Button({
 	small,
 	square,
 	external,
+	custom,
 	before,
 	after,
 	tag = "button",
@@ -75,31 +77,33 @@ export default forwardRef(function Button({
 			{...buttonProps}
 			{...props}
 		>
-			<span
-				className="ButtonInner"
-			>
-				{before ?
-					<span
-						className={cn(
-							"ButtonIcon",
-							"ButtonIcon_before"
-						)}
-					>
-						{before}
-					</span>
-				: null}
-				{children && <span>{children}</span>}
-				{after ?
-					<span
-						className={cn(
-							"ButtonIcon",
-							"ButtonIcon_after"
-						)}
-					>
-						{after}
-					</span>
-				: null}
-			</span>
+			{!custom ?
+				<span
+					className="ButtonInner"
+				>
+					{before ?
+						<span
+							className={cn(
+								"ButtonIcon",
+								"ButtonIcon_before"
+							)}
+						>
+							{before}
+						</span>
+					: null}
+					{children && <span>{children}</span>}
+					{after ?
+						<span
+							className={cn(
+								"ButtonIcon",
+								"ButtonIcon_after"
+							)}
+						>
+							{after}
+						</span>
+					: null}
+				</span>
+			: children}
 		</Tag>
 	)
 });

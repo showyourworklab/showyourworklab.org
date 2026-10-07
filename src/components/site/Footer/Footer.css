@@ -2,6 +2,7 @@ footer.Footer {
 	display: flex;
 	@apply bg-primary;
 	@apply text-secondary;
+	@apply shadow-core;
 }
 footer.Footer a {
 	@apply text-secondary;

@@ -3,9 +3,11 @@ import RichText from "@/components/common/RichText";
 import Figure from "@/components/common/Figure";
 
 export default function Team({
-	data
+	data,
+	locale
 } : {
-	data: any
+	data: any;
+	locale: string;
 }) {
 	return (
 		<>
@@ -16,7 +18,7 @@ export default function Team({
 					<h2
 						className="HomeSectionTitle"
 					>
-						{getLang("home", "team", "title")}
+						{getLang(locale, "home", "team", "title")}
 					</h2>
 					<RichText
 						data={data?.lede}

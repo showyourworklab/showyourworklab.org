@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import { Instrument_Sans, Rethink_Sans } from "next/font/google";
 import { cn } from "@/utils/helpers";
 import { getLang } from "@/utils/selectors";
+import { LOCALES } from "@/utils/constants";
 import Header from "@/components/site/Header";
 import Footer from "@/components/site/Footer";
-import "../globals.css";
+import "@/app/globals.css";
 
 const instrumentSans = Instrument_Sans({
 	variable: "--font-instrument-sans",
@@ -20,19 +21,34 @@ const rethinkSans = Rethink_Sans({
 	weight: ["400", "700", "800"]
 });
 
-export const metadata: Metadata = {
-	title: getLang("site", "title"),
-	description: "Show Your Work Lab provides news organizations with the tools and strategies to make visual journalism verifiable, transparent, and trustworthy.",
-};
+export function generateStaticParams() {
+	return LOCALES.map(lang => ({ lang }));
+}
 
-export default function RootLayout({
+export async function generateMetadata({
+	params
+}: {
+	params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+	const locale = (await params)?.lang ?? LOCALES[0];
+	return {
+		title: getLang(locale, "site", "title"),
+		description: getLang(locale, "site", "description"),
+	};
+}
+
+export default async function RootLayout({
 	children,
+	params
 }: Readonly<{
 	children: React.ReactNode;
+	params: Promise<{ lang: string }>;
 }>) {
+	const locale = (await params)?.lang ?? LOCALES[0];
+
 	return (
 		<html
-			lang="en"
+			lang={locale}
 			className={cn(
 				instrumentSans.variable,
 				rethinkSans.variable

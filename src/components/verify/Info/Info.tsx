@@ -1,7 +1,8 @@
 "use client";
 import { useVerifyStore } from "@/store/verify";
+import InfoStatus from "./components/InfoStatus";
 import InfoTree from "./components/InfoTree";
-import InfoManifest from "./components/InfoManifest";
+import InfoManifests from "./components/InfoManifests";
 
 export default function Info() {
 	const data = useVerifyStore(state => state.data);
@@ -10,14 +11,12 @@ export default function Info() {
 		<div
 			className={"Info"}
 		>
-			{data?.manifests?.map((manifest: any, index: number) =>
-				<InfoManifest
-					key={index}
-					data={manifest}
-				/>
-			)}
 			{data ?
-				<InfoTree />
+				<>
+					<InfoStatus />
+					<InfoManifests />
+					<InfoTree />
+				</>
 			: null}
 		</div>
 	);

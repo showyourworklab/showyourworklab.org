@@ -30,11 +30,13 @@ export const Contact: GlobalConfig = {
 			name: "lede",
 			label: "Lede",
 			type: "richText",
+			localized: true,
 		},
 		{
 			name: "body",
 			label: "Body",
 			type: "richText",
+			localized: true,
 		}
 	]
 };

@@ -5,7 +5,7 @@ import { SerializedEditorState } from "@payloadcms/richtext-lexical/lexical";
 
 export interface RichTextProps {
 	data?: SerializedEditorState | null;
-}
+};
 
 export default function RichText({
 	data,

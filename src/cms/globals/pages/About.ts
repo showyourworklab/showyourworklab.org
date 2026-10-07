@@ -30,11 +30,13 @@ export const About: GlobalConfig = {
 			name: "lede",
 			label: "Lede",
 			type: "richText",
+			localized: true,
 		},
 		{
 			name: "body",
 			label: "Body",
 			type: "richText",
+			localized: true,
 		},
 		{
 			name: "sections",
@@ -45,11 +47,13 @@ export const About: GlobalConfig = {
 					name: "title",
 					type: "text",
 					required: true,
+					localized: true,
 				},
 				{
 					name: "body",
 					label: "Body",
 					type: "richText",
+					localized: true,
 				},
 				{
 					name: "image",

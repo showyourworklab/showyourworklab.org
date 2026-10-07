@@ -18,6 +18,7 @@ export default function Field({
 	placeholder,
 	className,
 	children,
+	onChange,
 	...props
 } : FieldProps) {
 	
@@ -39,6 +40,7 @@ export default function Field({
 			: null}
 			<ArkField.Input
 				value={value}
+				onChange={onChange}
 				placeholder={placeholder}
 				className={"FieldInput"}
 			/>

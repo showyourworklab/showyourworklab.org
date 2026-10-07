@@ -5,22 +5,24 @@ import { cn } from "@/utils/helpers";
 import Figure from "@/components/common/Figure";
 
 export default function About({
-	data
+	data,
+	locale
 } : {
-	data: any
+	data: any;
+	locale: string;
 }) {
 	return (
 		<>
 			<div
 				className="HomeSectionInner"
 			>
-				<hgroup
-					className="HomeSectionHeading"
+				<div
+					className={"HomeSectionHeading"}
 				>
 					<h2
 						className="HomeSectionTitle"
 					>
-						{getLang("home", "about", "title")}
+						{getLang(locale, "home", "about", "title")}
 					</h2>
 					{data?.lede ?
 						<RichText
@@ -28,7 +30,7 @@ export default function About({
 							className="HomeSectionLede"
 						/>
 					: null}
-				</hgroup>
+				</div>
 				{hasText(data?.body) ?
 					<RichText
 						data={data?.body}
@@ -38,7 +40,7 @@ export default function About({
 			</div>
 			<div>
 				{data?.sections.map((section: any, index: number) =>
-					<div
+					<section
 						key={index}
 						className="HomeSectionSubsection"
 					>
@@ -71,7 +73,7 @@ export default function About({
 								className="HomeSectionSubsectionImageFigure"
 							/>
 						</div>
-					</div>
+					</section>
 				)}
 			</div>
 		</>

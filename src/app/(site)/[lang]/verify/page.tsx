@@ -1,17 +1,21 @@
-import "syw-react/styles.css"
+"use client";
 import { cn } from "@/utils/helpers";
-import { VerifyStoreProvider } from "@/providers/verify";
+import { useVerifyStore } from "@/store/verify";
 import Upload from "@/components/verify/Upload";
 import Info from "@/components/verify/Info";
 
-export default function Verify() {
+export default function VerifyPage() {
+	const init = useVerifyStore(state => state.init);
+
 	return (
-		<VerifyStoreProvider>
+		<div
+			className={cn(
+				"Verify",
+				init ? "Verify_init" : null,
+			)}
+		>
 			<div
-				className={cn(
-					"Verify",
-					"VerifyColumns",
-				)}
+				className={"VerifyColumns"}
 			>
 				<div
 					className={cn(
@@ -30,6 +34,6 @@ export default function Verify() {
 					<Info />
 				</div>
 			</div>
-		</VerifyStoreProvider>
+		</div>
 	);
 };

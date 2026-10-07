@@ -1,0 +1,11 @@
+.Ui {
+	@apply pt-header;
+}
+.Ui section {
+	@apply px-12;
+	@apply py-24;
+}
+.Ui .Syw-App {
+	@apply max-w-[800px];
+	@apply mx-auto;
+}

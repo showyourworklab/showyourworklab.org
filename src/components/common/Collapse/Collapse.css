@@ -1,0 +1,43 @@
+/* Collapse */
+.Collapse {
+	/* opacity: 0; */
+	/* transition-property: opacity;
+	transition-duration: 200ms;
+	transition-timing-function: ease; */
+}
+/* Collapse > Open */
+.Collapse.Collapse_open {
+	/* opacity: 1; */
+}
+/* Collapse > Inner */
+.CollapseInner {
+	transform: translate(0, 0);
+}
+
+@keyframes collapse-expand {
+	from {
+		height: var(--collapsed-height, 0);
+	}
+	to {
+		height: var(--height);
+	}
+}
+
+@keyframes collapse-collapse {
+	from {
+		height: var(--height);
+	}
+	to {
+		height: var(--collapsed-height, 0);
+	}
+}
+
+[data-scope="collapsible"][data-part="content"] {
+	overflow: hidden;
+}
+[data-scope="collapsible"][data-part="content"][data-state="open"] {
+	animation: collapse-expand 250ms forwards;
+}
+[data-scope="collapsible"][data-part="content"][data-state="closed"] {
+	animation: collapse-collapse 250ms;
+}

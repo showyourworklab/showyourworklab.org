@@ -1,13 +1,16 @@
 "use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { cn } from "@/utils/helpers";
+import { usePathname, useParams } from "next/navigation";
+import { cn, getLocaleHref } from "@/utils/helpers";
 import { getLang } from "@/utils/selectors";
-import { HOME_SECTIONS_NAV } from "@/utils/constants";
+import { HOME_SECTIONS_NAV, LOCALES } from "@/utils/constants";
 import Button from "@/components/common/Button";
 
 export default function Header() {
+	const { lang: locale } = useParams<{ lang: string }>();
 	const [belowHero, setBelowHero] = useState(false);
+	const pathname = usePathname();
 
 	useEffect(() => {
 		const heroElem = document.getElementById("hero");
@@ -31,52 +34,85 @@ export default function Header() {
 			)}
 		>
 			<div
-				className={"HeaderInner"}
+				className="HeaderInner"
 			>
-				<Link
-					href={`/`}
-					className={"HeaderHome"}
+				<div
+					className="HeaderHome"
 				>
-					<img
-						src="/images/logo-light.svg"
-						alt={`Logo for ${getLang("site", "title")}`}
-						id="logo-lg"
-						className={"HeaderLogo"}
-					/>
-					{/* <img
-						src="/images/logo-sm-light.svg"
-						alt="Logo for Show Your Work Lab"
-						id="logo-sm"
-						className={cn(
-							"HeaderLogo",
-							"HeaderLogo_sm",
-						)}
-					/> */}
-				</Link>
+					<Link
+						href={`/${locale}`}
+					>
+						<img
+							src="/images/logo-light.svg"
+							alt={`Logo for ${getLang(locale, "site", "title")}`}
+							id="logo-lg"
+							className="HeaderHomeLogo"
+						/>
+						{/* <img
+							src="/images/logo-sm-light.svg"
+							alt="Logo for Show Your Work Lab"
+							id="logo-sm"
+							className={cn(
+								"HeaderLogo",
+								"HeaderLogo_sm",
+							)}
+						/> */}
+					</Link>
+				</div>
 				<nav
-					className={"HeaderNav"}
+					className="HeaderNav"
 				>
 					<ul
-						className={"HeaderNavItems"}
+						className="HeaderNavItems"
 					>
 						{HOME_SECTIONS_NAV.map((section: string, index: number) =>
 							<li
 								key={index}
-								className={"HeaderNavItem"}
+								className="HeaderNavItem"
 							>
 								<Button
 									href={`#${section}`}
-									size={"small"}
+									size="small"
 									color="secondary"
 									outlined={true}
-									className={"HeaderNavItemButton"}
+									className="HeaderNavItemButton"
 								>
-									{getLang("home", section, "title")}
+									{getLang(locale, "home", section, "title")}
 								</Button>
 							</li>
 						)}
 					</ul>
 				</nav>
+				{/* <div
+					className="HeaderLocale"
+				>
+					<nav
+						className="HeaderLocaleNav"
+						aria-label={getLang(locale, "locale", "switch")}
+					>
+						<ul
+							className="HeaderLocaleItems"
+						>
+							{LOCALES.map((l: string) =>
+								<li
+									key={l}
+									className="HeaderLocaleItem"
+								>
+									<Link
+										href={getLocaleHref(pathname, l)}
+										aria-current={l === locale ? "true" : undefined}
+										className={cn(
+											"HeaderLocaleItemLink",
+											l === locale ? "HeaderLocaleItemLink_active" : null
+										)}
+									>
+										{l}
+									</Link>
+								</li>
+							)}
+						</ul>
+					</nav>
+				</div> */}
 			</div>
 		</header>
 	);

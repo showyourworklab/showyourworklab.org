@@ -1,10 +1,12 @@
 "use client";
+import { useParams } from "next/navigation";
 import { cn } from "@/utils/helpers";
 import { getLang } from "@/utils/selectors";
 import { HOME_SECTIONS_NAV, SOCIALS } from "@/utils/constants";
 import Button from "@/components/common/Button";
 
 export default function Footer() {
+	const { lang: locale } = useParams<{ lang: string }>();
 	return (
 		<footer
 			id="footer"
@@ -25,11 +27,11 @@ export default function Footer() {
 						<span
 							className="FooterBrandingTitle"
 						>
-							{getLang("site", "title")}
+							{getLang(locale, "site", "title")}
 						</span>
 						<img
 							src="/images/logo-light.svg"
-							alt={`Logo for ${getLang("site", "title")}`}
+							alt={`Logo for ${getLang(locale, "site", "title")}`}
 							id="logo-lg"
 							className={cn(
 								"FooterBrandingImage"
@@ -60,7 +62,7 @@ export default function Footer() {
 											// outlined={true}
 											className="FooterNavItemButton"
 										>
-											{getLang("home", section, "title")}
+											{getLang(locale, "home", section, "title")}
 										</Button>
 									</li>
 								)}
@@ -82,12 +84,12 @@ export default function Footer() {
 										className="FooterSocialsItem"
 									>
 										<Button
-											href={getLang("social", social, "url")}
+											href={getLang(locale, "social", social, "url")}
 											target="_blank"
 											rel="noreferrer nofollow"
 											className="FooterSocialsItemButton"
 										>
-											{getLang("social", social, "title")}
+											{getLang(locale, "social", social, "title")}
 										</Button>
 									</li>
 								)}

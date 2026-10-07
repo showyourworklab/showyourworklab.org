@@ -6,6 +6,7 @@ import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { postgresAdapter } from "@payloadcms/db-postgres";
 // import { nodemailerAdapter } from "@payloadcms/email-nodemailer";
 // import { s3Storage } from "@payloadcms/storage-s3";
+import { migrations } from "@/migrations";
 import Home from "@/cms/globals/pages/Home";
 import About from "@/cms/globals/pages/About";
 import Updates from "@/cms/globals/pages/Updates";
@@ -43,7 +44,9 @@ export default buildConfig({
 		pool: {
 			connectionString: process.env.NEON_CONNECTION_URL || "",
 		},
-		push: process.env.NODE_ENV !== "production",
+		// Schema changes go through migrations in every environment (npm run migrate:create / migrate)
+		push: false,
+		prodMigrations: migrations,
 	}),
 	typescript: {
 		outputFile: path.resolve(dirname, "payload-types.ts"),
@@ -55,7 +58,19 @@ export default buildConfig({
 	},
 	sharp,
 	telemetry: false,
-	// Plugins
+	localization: {
+		locales: [
+			{
+				code: "en",
+				label: "English"
+			}, 
+			{
+				code: "no",
+				label: "Norsk"
+			}
+		],
+		defaultLocale: "en",
+	},
 	plugins: [
 		// s3Storage({
 		// 	collections: {

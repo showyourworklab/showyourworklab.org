@@ -51,22 +51,24 @@ export const Team: GlobalConfig = {
 				{
 					name: "name",
 					label: "Name",
-					type: "text"
+					type: "text",
 				},
 				{
 					name: "role",
 					label: "Role",
-					type: "text"
+					type: "text",
+					localized: true,
 				},
 				{
 					name: "url",
 					label: "URL",
-					type: "text"
+					type: "text",
 				},
 				{
 					name: "body",
 					label: "Body",
-					type: "richText"
+					type: "richText",
+					localized: true,
 				}
 			]
 		}

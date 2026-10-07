@@ -57,10 +57,12 @@ const Uploads: CollectionConfig = {
 		{
 			name: "alt",
 			type: "text",
+			localized: true,
 		},
 		{
 			name: "caption",
 			type: "text",
+			localized: true,
 		},
 	],
 };

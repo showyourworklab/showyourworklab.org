@@ -38,14 +38,18 @@
 	/* Spacing */
 	--spacing-header: 3.5rem;
 	--spacing-header-logo: 1.25rem;
+	--spacing-hero-tagline-en: auto;
+	--spacing-hero-tagline-no: 30rem;
 	--spacing-inner: 750px;
 	--spacing-paragraph: 52ch;
 	--spacing-upload-width: 40rem;
 	--spacing-upload-height: 20rem;
-	--spacing-upload-column: 30rem;
+	--spacing-upload-column: 40rem;
 	--spacing-preview-width: 40rem;
 	/* Z-index */
 	--z-header: 10;
+	/* Shadow */
+	--shadow-core: 0 0 6px 0 rgba(0, 0, 0, 0.0625);
 	/*
 	--text-*
 	--font-weight-*
@@ -177,5 +181,6 @@ a code {
 @import "../components/verify/Upload/Upload.css";
 @import "../components/verify/Info/Info.css";
 /* Imports > App */
-@import "../app/(site)/(home)/styles.css";
-@import "../app/(site)/verify/styles.css";
+@import "../app/(site)/[lang]/(home)/styles.css";
+@import "../app/(site)/[lang]/verify/styles.css";
+@import "../app/(site)/[lang]/ui/styles.css";

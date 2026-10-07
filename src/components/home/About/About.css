@@ -58,6 +58,10 @@ figure.HomeSectionSubsectionImageFigure {
 	width: 100%;
     height: 100%;
 }
+.HomeSectionSubsectionImageFigure {
+	width: 100%;
+    height: 100%;
+}
 .HomeSectionSubsectionImage img {
     @apply md:size-full;
     @apply md:absolute;

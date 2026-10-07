@@ -1,30 +1,43 @@
 "use client";
 import { JsonTreeView } from "@ark-ui/react/json-tree-view";
 import { ChevronRightIcon } from "lucide-react";
+import { useLocale } from "@/utils/hooks";
 import { useVerifyStore } from "@/store/verify";
+import { cn } from "@/utils/helpers";
+import { getLang } from "@/utils/selectors";
 
 export default function InfoTree() {
+	const locale = useLocale();
 	const data = useVerifyStore(state => state.data);
-	// console.log(data)
+	
 	return (
 		<div
 			className={"InfoTree"}
 		>
+			<h3
+				className={cn(
+					"InfoLabel",
+					"InfoTreeLabel"
+				)}
+			>
+				{getLang(locale, "verify", "info", "tree")}
+			</h3>
 			<div
-				className={"InfoTreeLabel"}
+				className={"InfoTreeContent"}
 			>
-				View C2PA provenance as JSON
+				{data ?
+					<JsonTreeView.Root
+						data={data}
+						defaultExpandedDepth={0}
+						className={"InfoTreeRoot"}
+					>
+						<JsonTreeView.Tree
+							arrow={<ChevronRightIcon />}
+							className={"InfoTreeTree"}
+						/>
+					</JsonTreeView.Root>
+				: "N/A"}
 			</div>
-			<JsonTreeView.Root
-				data={data?.provenance?.manifestStore}
-				defaultExpandedDepth={1}
-				className={"InfoTreeRoot"}
-			>
-				<JsonTreeView.Tree
-					arrow={<ChevronRightIcon />}
-					className={"InfoTreeTree"}
-				/>
-			</JsonTreeView.Root>
 		</div>
 	);
 }

@@ -1,18 +1,22 @@
 "use client";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useState } from "react";
+import { useParams } from "next/navigation";
 import { ToggleGroup, ToggleGroupValueChangeDetails, useToggleGroup } from "@ark-ui/react";
 import { useVerifyStore } from "@/store/verify";
-import { UPLOAD_EXAMPLES } from "../utils/constants";
 import { getLang } from "@/utils/selectors";
+import { UPLOAD_EXAMPLES } from "../utils/constants";
 
 export default function UploadExamples() {
+	const { lang: locale } = useParams<{ lang: string }>();
 	const [error, setError] = useState<string | null>(null);
 	const fileSrc = useVerifyStore(state => state.fileSrc);
 	const setFileSrc = useVerifyStore(state => state.setFileSrc);
+	const setInit = useVerifyStore(state => state.setInit);
 
 	const handleValueChange = useCallback((details: ToggleGroupValueChangeDetails) => {
 		const newValue = details?.value?.[0] ?? null;
 		setFileSrc(newValue);
+		setInit(false);
 	}, [setFileSrc]);
 
 	const toggleGroup = useToggleGroup({
@@ -29,7 +33,7 @@ export default function UploadExamples() {
 			<div
 				className={"UploadExamplesLabel"}
 			>
-				{getLang("upload", "examples", "title")}
+				{getLang(locale, "verify", "upload", "examples", "title")}
 			</div>
 			<ToggleGroup.RootProvider
 				value={toggleGroup}

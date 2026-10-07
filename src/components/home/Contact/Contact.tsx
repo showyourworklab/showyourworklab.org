@@ -3,9 +3,11 @@ import RichText from "@/components/common/RichText";
 import Button from "@/components/common/Button";
 
 export default function Contact({
-	data
+	data,
+	locale
 } : {
-	data: any
+	data: any;
+	locale: string;
 }) {
 	return (
 		<div
@@ -17,7 +19,7 @@ export default function Contact({
 				<h2
 					className="HomeSectionTitle"
 				>
-					{getLang("home", "contact", "title")}
+					{getLang(locale, "home", "contact", "title")}
 				</h2>
 				<RichText
 					data={data?.lede}

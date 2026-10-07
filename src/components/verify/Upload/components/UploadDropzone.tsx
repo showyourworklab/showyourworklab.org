@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { useParams } from "next/navigation";
 import { FileUpload } from "@ark-ui/react/file-upload";
 import { PaperclipIcon, UploadIcon } from "lucide-react";
 import { useVerifyStore } from "@/store/verify";
@@ -7,6 +8,7 @@ import { getLang } from "@/utils/selectors";
 import Button from "@/components/common/Button";
 
 export default function UploadDropzone() {
+	const { lang: locale } = useParams<{ lang: string }>();
 	const fileSrc = useVerifyStore(state => state.fileSrc);
 	return (
 		<FileUpload.Dropzone
@@ -25,12 +27,12 @@ export default function UploadDropzone() {
 				<span
 					className={"UploadDropzoneTitle"}
 				>
-					{getLang("verify", "upload", "dropzone", "title")}
+					{getLang(locale, "verify", "upload", "dropzone", "title")}
 				</span>
 				<span
 					className={"UploadDropzoneDescription"}
 				>
-					{getLang("verify", "upload", "dropzone", "description")}
+					{getLang(locale, "verify", "upload", "dropzone", "description")}
 				</span>
 
 				<FileUpload.Trigger
@@ -41,7 +43,7 @@ export default function UploadDropzone() {
 						outlined
 						className={"UploadDropzoneTrigger"}
 					>
-						{getLang("verify", "upload", "trigger")}
+						{getLang(locale, "verify", "upload", "trigger")}
 					</Button>
 				</FileUpload.Trigger>
 			</div>

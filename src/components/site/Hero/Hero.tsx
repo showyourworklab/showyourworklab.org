@@ -1,19 +1,18 @@
 "use client";
-import Link from "next/link";
-import { cn } from "@/utils/helpers";
+import { useParams } from "next/navigation";
 import { getLang } from "@/utils/selectors";
 
 export default function Hero({
 	image
 } : {
-	image: any
+	image: any;
 }) {
+	const { lang: locale } = useParams<{ lang: string }>();
 	return (
 		<section
 			id="hero"
 			className="Hero"
 			style={{
-				// backgroundImage: `url(${image?.sizes?.large?.url})`
 				backgroundImage: `url(${image?.url})`
 			}}
 		>
@@ -28,7 +27,7 @@ export default function Hero({
 				<div
 					className="HeroTagline"
 				>
-					We prove what's real rather than identify what's fake
+					{getLang(locale, "site", "tagline")}
 				</div>
 			</div>
 		</section>

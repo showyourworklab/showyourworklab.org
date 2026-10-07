@@ -30,11 +30,13 @@ export const Support: GlobalConfig = {
 			name: "lede",
 			label: "Lede",
 			type: "richText",
+			localized: true,
 		},
 		{
 			name: "body",
 			label: "Body",
 			type: "richText",
+			localized: true,
 		},
 		{
 			name: "groups",
@@ -46,6 +48,7 @@ export const Support: GlobalConfig = {
 					label: "Title",
 					type: "text",
 					required: true,
+					localized: true,
 				},
 				{
 					name: "items",
@@ -57,6 +60,7 @@ export const Support: GlobalConfig = {
 							label: "Title",
 							type: "text",
 							required: true,
+							localized: true,
 						},
 						{
 							name: "image",
@@ -69,6 +73,7 @@ export const Support: GlobalConfig = {
 							name: "url",
 							label: "URL",
 							type: "text",
+							localized: true,
 						},
 					]
 				}
