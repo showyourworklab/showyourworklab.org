@@ -2,11 +2,15 @@
   "name": "showyourworklab.org",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev --webpack",
     "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint",
+    "migrate:create": "NODE_OPTIONS=--no-deprecation payload migrate:create",
+    "migrate:push": "NODE_OPTIONS=--no-deprecation payload migrate",
+    "migrate:status": "NODE_OPTIONS=--no-deprecation payload migrate:status",
     "link": "npm link syw-react"
   },
   "dependencies": {
