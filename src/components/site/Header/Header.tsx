@@ -83,7 +83,7 @@ export default function Header() {
 						)}
 					</ul>
 				</nav>
-				<div
+				{/* <div
 					className="HeaderLocale"
 				>
 					<nav
@@ -106,14 +106,13 @@ export default function Header() {
 											l === locale ? "HeaderLocaleItemLink_active" : null
 										)}
 									>
-										{/* {getLang(locale, "locale", l)} */}
 										{l}
 									</Link>
 								</li>
 							)}
 						</ul>
 					</nav>
-				</div>
+				</div> */}
 			</div>
 		</header>
 	);
