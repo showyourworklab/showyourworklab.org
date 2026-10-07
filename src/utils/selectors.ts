@@ -1,4 +1,4 @@
-import { DICTIONARIES, LANG, LOCALES } from "@/utils/constants";
+import { DICTIONARIES, LOCALES } from "@/utils/constants";
 
 /** Gets value from object if exists */
 export const getValue = (key: string, object: any) =>

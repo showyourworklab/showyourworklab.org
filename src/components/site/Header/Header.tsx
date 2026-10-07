@@ -106,7 +106,8 @@ export default function Header() {
 											l === locale ? "HeaderLocaleItemLink_active" : null
 										)}
 									>
-										{getLang(locale, "locale", l)}
+										{/* {getLang(locale, "locale", l)} */}
+										{l}
 									</Link>
 								</li>
 							)}
