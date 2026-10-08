@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import { BadgeInfo, Camera, Check, Ellipsis, SquarePen, Sparkles, TriangleAlert, ImageOff, X, LucideProps } from 'lucide-react'
+import { BadgeInfo, Camera, Check, Ellipsis, SquarePen, Sparkles, TriangleAlert, ImageOff, X, LucideProps, ArrowDown, ArrowUp, ChevronDown, ChevronUp } from 'lucide-react'
 import { cn } from '@/utils/helpers';
 import { getValue } from '@/utils/selectors';
 import IconSvgSocial from './components/IconSvgSocial';
@@ -16,6 +16,8 @@ export const ICONS = {
 	ai: Sparkles,
 	missing: ImageOff,
 	close: X,
+	down: ChevronDown,
+	up: ChevronUp,
 	social: IconSvgSocial
 };
 

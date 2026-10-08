@@ -1,6 +1,8 @@
 import { getLang } from "@/utils/selectors";
 import RichText from "@/components/common/RichText";
 import Figure from "@/components/common/Figure";
+import { Collapsible } from "@ark-ui/react";
+import Icon from "@/components/common/Icon";
 
 export default function Team({
 	data,
@@ -74,13 +76,31 @@ export default function Team({
 									>
 										{item?.role}
 									</div>
-									<div
-										className="TeamItemBio"
+									<Collapsible.Root
+										className="TeamItemCollapsible"
+										collapsedHeight="200px"
 									>
-										<RichText
-											data={item?.body}
-										/>
-									</div>
+										<Collapsible.Trigger
+											className="TeamItemCollapsibleTrigger"
+										>
+											<div>
+												<Icon
+													type="down"
+												/>
+											</div>
+										</Collapsible.Trigger>
+										<Collapsible.Content
+											className="TeamItemCollapsibleContent"
+										>
+											<div
+												className="TeamItemBio"
+											>
+												<RichText
+													data={item?.body}
+												/>
+											</div>
+										</Collapsible.Content>
+									</Collapsible.Root>
 								</div>
 							</div>
 						)}

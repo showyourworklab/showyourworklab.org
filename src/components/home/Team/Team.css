@@ -17,7 +17,6 @@
 	@apply overflow-hidden;
 }
 .TeamItemContent {
-	@apply p-3;
 }
 .TeamItem figure.TeamItemFigure {
 	@apply rounded-none;
@@ -28,6 +27,8 @@
 	align-items: center;
 	justify-content: space-between;
 	margin-bottom: 0.25rem;
+	@apply px-3;
+	@apply pt-3;
 }
 .TeamItemName {
 	width: 160px;
@@ -45,6 +46,7 @@
 	@apply text-primary-dark;
 }
 .TeamItemRole {
+	@apply px-3;
 	@apply text-xs;
 	@apply text-primary-light;
 	white-space: nowrap;
@@ -53,4 +55,103 @@
 	@apply text-sm;
 	@apply leading-5;
 	@apply mt-4;
+	@apply px-3;
+	@apply pb-3;
+}
+.TeamItemCollapsible {
+	@apply relative;
+}
+.TeamItemCollapsibleContent {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	overflow: hidden;
+}
+.TeamItemCollapsibleContent[data-state="open"] {
+    animation: expand-height 120ms ease-out, fade-in 120ms ease-out;
+}
+.TeamItemCollapsibleContent[data-state="open"][data-has-collapsed-size] {
+	animation-name: expand-height;
+}
+.TeamItemCollapsibleContent[data-state="closed"] {
+	animation: collapse-height 120ms ease-out, fade-out 120ms ease-out;
+}
+.TeamItemCollapsibleContent[data-state="closed"][data-has-collapsed-size] {
+	animation-name: collapse-height;
+}
+.TeamItemCollapsibleTrigger {
+	@apply w-full;
+	@apply h-24;
+	@apply absolute;
+	@apply bottom-0;
+	@apply left-0;
+	@apply z-2;
+	cursor: pointer;
+}
+.TeamItemCollapsibleTrigger::before {
+	content: "";
+	@apply size-full;
+	@apply absolute;
+	@apply top-0;
+	@apply left-0;
+	@apply transition-opacity;
+	@apply duration-500;
+	background-image: linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+.TeamItemCollapsibleTrigger:hover::before {
+	opacity: 0.75;
+}
+.TeamItemCollapsibleTrigger div {
+	@apply px-2;
+	@apply text-sm;
+	@apply text-primary-light;
+	@apply bg-secondary;
+	@apply rounded-2xl;
+	@apply shadow-sm;
+	@apply inline-block;
+	@apply absolute;
+	@apply bottom-0;
+	@apply left-1/2;
+	@apply transition-all;
+	@apply duration-500;
+	transform: translateY(-0.75rem) translateX(-50%);
+}
+.TeamItemCollapsibleTrigger:hover div {
+	@apply text-primary-dark;
+	transform: translateY(-0.5rem) translateX(-50%);
+}
+@keyframes expand-height {
+  from {
+    height: var(--collapsed-height, 0);
+  }
+  to {
+    height: var(--height);
+  }
+}
+
+@keyframes collapse-height {
+  from {
+    height: var(--height);
+  }
+  to {
+    height: var(--collapsed-height, 0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
