@@ -46,7 +46,9 @@ li.FooterNavItem {
 	@apply p-0;
 }
 li.FooterNavItem a.FooterNavItemButton {
-	/* @apply lowercase; */
+	@apply text-base;
+	@apply font-display;
+	@apply font-display-normal;
 }
 .FooterSocials {
 	@apply mt-8;
@@ -59,6 +61,8 @@ ul.FooterSocialsItems {
 li.FooterSocialsItem {
 	@apply p-0;
 }
-.FooterSocialsItemButton {
-
+li.FooterSocialsItem a.FooterSocialsItemButton {
+	@apply text-base;
+	@apply font-display;
+	@apply font-display-normal;
 }

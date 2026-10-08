@@ -8,7 +8,7 @@
 	@apply text-secondary;
 }
 .Header.Header_belowHero {
-	@apply text-primary-dark;
+	@apply text-primary;
 	@apply bg-white;
 	@apply shadow-core;
 }
@@ -67,7 +67,7 @@ a.HeaderNavItemButton {
 	@apply font-display-normal;
 }
 .Header.Header_belowHero a.HeaderNavItemButton {
-	@apply bg-transparent;
+
 }
 .HeaderLocale {
 	@apply h-full;
