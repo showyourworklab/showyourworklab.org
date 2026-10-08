@@ -1,6 +1,16 @@
 #updates .HomeSectionInner {
-	@apply pr-0;
-	@apply max-w-inner-xl;
+	@apply px-0;
+	@apply max-w-none;
+	/* @apply max-w-inner-xl; */
+}
+#updates .HomeSectionHeading {
+	@apply px-4;
+	@apply md:px-8;
+	/* @apply mx-auto; */
+	/* @apply max-w-inner-xl; */
+}
+.UpdatesCarousel {
+	
 }
 .UpdatesItems {
 	@apply m-0;

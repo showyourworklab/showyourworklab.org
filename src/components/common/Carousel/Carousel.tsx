@@ -6,11 +6,13 @@ import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
 export interface CarouselProps extends Omit<HTMLProps<HTMLDivElement>, "label"> {
 	slideCount: number;
 	slidesPerPage?: number;
+	fullWidth?: boolean;
 };
 
 export default function Carousel({
 	slideCount = 0,
 	slidesPerPage = 4,
+	fullWidth,
 	className,
 	children,
 	...props
@@ -20,10 +22,13 @@ export default function Carousel({
 		<ArkCarousel.Root
 			autoSize={true}
 			slideCount={slideCount}
-			// slidesPerPage={slidesPerPage}
+			allowMouseDrag={true}
+			snapType="proximity"
 			spacing="2rem"
+			padding="var(--carousel-padding)"
 			className={cn(
 				"CarouselRoot",
+				fullWidth ? "CarouselRoot_fullWidth" : null,
 				className
 			)}
 			{...props}

@@ -46,6 +46,8 @@ export default function Updates({
 				<Carousel
 					slideCount={data?.items.length}
 					slidesPerPage={4}
+					fullWidth={true}
+					className="UpdatesCarousel"
 				>
 					{sortedItems.map((item: any, index: number) =>
 						<CarouselItem

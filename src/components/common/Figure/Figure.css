@@ -1,8 +1,8 @@
 figure.Figure {
 	position: relative;
-	@apply rounded-2xl;
-	@apply overflow-hidden;
-	@apply shadow-sm;
+	/* @apply rounded-2xl; */
+	/* @apply overflow-hidden; */
+	/* @apply shadow-sm; */
 }
 figure.Figure img {
 	@apply w-full;
