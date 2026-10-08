@@ -112,6 +112,7 @@ a {
 	text-decoration-thickness: 0.1em;
 	text-decoration-color: var(--color-primary-light);
 	@apply transition-all;
+	transition-property: color, opacity;
 }
 a:hover {
 	text-decoration-color: currentColor;
