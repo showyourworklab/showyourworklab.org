@@ -34,3 +34,11 @@
 .SupportSectionListItemImage {
 	@apply w-full;
 }
+.SupportSectionListItem a span {
+	@apply text-2xl;
+	@apply font-display;
+	@apply font-display-bold;
+}
+.SupportSectionListItem a span:not(:only-child) {
+	@apply sr-only;
+}

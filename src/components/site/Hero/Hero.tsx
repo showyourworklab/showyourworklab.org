@@ -1,11 +1,19 @@
 "use client";
+import RichText from "@/components/common/RichText";
+import { cn } from "@/utils/helpers";
+import { SerializedEditorState } from "@payloadcms/richtext-lexical/lexical";
 import { useParams } from "next/navigation";
-import { getLang } from "@/utils/selectors";
 
 export default function Hero({
-	image
+	image,
+	title,
+	hideTitle,
+	lede
 } : {
 	image: any;
+	title?: string;
+	hideTitle?: boolean;
+	lede?: SerializedEditorState | null;
 }) {
 	const { lang: locale } = useParams<{ lang: string }>();
 	return (
@@ -19,16 +27,22 @@ export default function Hero({
 			<div
 				className="HeroInner"
 			>
-				<h1
-					className="HeroTitle"
-				>
-					<span>Show Your Work</span> <span>Lab</span>
-				</h1>
-				<div
-					className="HeroTagline"
-				>
-					{getLang(locale, "site", "tagline")}
-				</div>
+				{title ?
+					<h1
+						className={cn(
+							"HeroTitle",
+							hideTitle ? "HeroTitle_hide" : null
+						)}
+					>
+						{title}
+					</h1>
+				: null}
+				{lede ?
+					<RichText
+						data={lede}
+						className="HeroLede"
+					/>
+				: null}
 			</div>
 		</section>
 	);

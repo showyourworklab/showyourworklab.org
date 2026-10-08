@@ -1,6 +1,5 @@
 import { getLang } from "@/utils/selectors";
 import { formatDate } from "@/utils/helpers";
-import Button from "@/components/common/Button";
 import RichText from "@/components/common/RichText";
 
 export default function Updates({
@@ -51,7 +50,14 @@ export default function Updates({
 								<h3
 									className="UpdatesItemTitle"
 								>
-									{item.title}
+									<a
+										href={item.url}
+										target="_blank"
+										rel="noreferrer nofollow"
+										className="UpdatesItemTitleLink"
+									>
+										{item.title}
+									</a>
 								</h3>
 								{/* <div
 									className="UpdatesItemBlurb"
@@ -66,7 +72,7 @@ export default function Updates({
 									>
 										{formatDate(locale, item.date)}
 									</div>
-									{item.url ?
+									{/* {item.url ?
 										<Button
 											href={item.url}
 											target="_blank"
@@ -77,7 +83,7 @@ export default function Updates({
 										>
 											{getLang(locale, "home", "updates", "prompt")}
 										</Button>
-									: null}
+									: null} */}
 								</div>
 							</div>
 						)}

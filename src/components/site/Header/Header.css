@@ -8,33 +8,44 @@
 	@apply text-secondary;
 }
 .Header.Header_belowHero {
-	@apply bg-primary;
+	@apply text-primary-dark;
+	@apply bg-white;
 	@apply shadow-core;
 }
 .HeaderInner {
 	@apply h-full;
 	@apply py-1;
+	@apply px-4;
+	@apply sm:px-6;
+	@apply md:px-10;
 	@apply my-auto;
-	@apply mx-8;
+	@apply mx-auto;
 	@apply flex;
 	@apply items-center;
-	@apply justify-center;
+	@apply max-w-inner-lg;
 	position: relative;
 	z-index: 2;
 }
 .HeaderHome {
 	@apply h-full;
-	@apply absolute;
-	@apply top-0;
-	@apply left-0;
 	@apply flex;
 	@apply items-center;
+	@apply mr-auto;
 }
 .HeaderHome img.HeaderHomeLogo {
 	@apply w-auto;
 	@apply h-header-logo;
 }
+.Header .HeaderHome img.HeaderHomeLogo_light,
+.Header.Header_belowHero .HeaderHome img.HeaderHomeLogo_dark {
+	@apply block;
+}
+.Header .HeaderHome img.HeaderHomeLogo_dark,
+.Header.Header_belowHero .HeaderHome img.HeaderHomeLogo_light {
+	@apply hidden;
+}
 nav.HeaderNav {
+	@apply mx-8;
 	@apply hidden;
 	@apply lg:block;
 }
@@ -51,37 +62,45 @@ li.HeaderNavItem {
 	@apply p-0;
 }
 a.HeaderNavItemButton {
-	@apply bg-[rgba(0,0,0,0.4)];
-	@apply transition-all;
+	@apply text-base;
+	@apply font-display;
+	@apply font-display-normal;
 }
 .Header.Header_belowHero a.HeaderNavItemButton {
 	@apply bg-transparent;
 }
 .HeaderLocale {
 	@apply h-full;
-	@apply absolute;
-	@apply top-0;
-	@apply right-0;
 	@apply flex;
 	@apply items-center;
 }
 nav.HeaderLocaleNav {
-
+	@apply rounded-sm;
+	@apply overflow-hidden;
 }
 ul.HeaderLocaleItems {
 	@apply pl-0;
 	@apply flex;
-	@apply space-x-1.5;
 }
 li.HeaderLocaleItem {
 	@apply pl-0;
 	@apply pb-0;
+	@apply flex;
 }
 li.HeaderLocaleItem a.HeaderLocaleItemLink {
+	@apply py-1;
+	@apply px-2;
+	@apply h-full;
 	@apply uppercase;
 	@apply text-xs;
+	@apply font-display;
+	@apply font-display-medium;
 	@apply no-underline;
-	opacity: 0.75;
+	@apply bg-primary-dark;
+	opacity: 0.5;
+}
+.Header.Header_belowHero li.HeaderLocaleItem a.HeaderLocaleItemLink {
+	@apply bg-secondary;
 }
 li.HeaderLocaleItem a.HeaderLocaleItemLink_active {
 	opacity: 0.9;

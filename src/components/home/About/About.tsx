@@ -13,36 +13,16 @@ export default function About({
 }) {
 	return (
 		<>
-			<div
-				className="HomeSectionInner"
-			>
-				<div
-					className={"HomeSectionHeading"}
+			{data?.sections.map((section: any, index: number) =>
+				<section
+					key={index}
+					className={cn(
+						"HomeSectionInner",
+						"HomeSectionSubsection"
+					)}
 				>
-					<h2
-						className="HomeSectionTitle"
-					>
-						{getLang(locale, "home", "about", "title")}
-					</h2>
-					{data?.lede ?
-						<RichText
-							data={data?.lede}
-							className="HomeSectionLede"
-						/>
-					: null}
-				</div>
-				{hasText(data?.body) ?
-					<RichText
-						data={data?.body}
-						className="HomeSectionBody"
-					/>
-				: null}
-			</div>
-			<div>
-				{data?.sections.map((section: any, index: number) =>
-					<section
-						key={index}
-						className="HomeSectionSubsection"
+					<div
+						className="HomeSectionSubsectionColumns"
 					>
 						<div
 							className={cn(
@@ -73,9 +53,9 @@ export default function About({
 								className="HomeSectionSubsectionImageFigure"
 							/>
 						</div>
-					</section>
-				)}
-			</div>
+					</div>
+				</section>
+			)}
 		</>
 	);
 }

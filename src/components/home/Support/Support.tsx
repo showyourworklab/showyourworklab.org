@@ -55,11 +55,16 @@ export default function Support({
 											href={item?.url}
 											target="_blank"
 										>
-											<img
-												src={item?.image?.url}
-												alt={item?.image?.alt}
-												className="SupportSectionListItemImage"
-											/>
+											{item?.image?.url ?
+												<img
+													src={item?.image?.url}
+													alt={item?.image?.alt}
+													className="SupportSectionListItemImage"
+												/>
+											: null}
+											<span>
+												{item?.title}
+											</span>
 										</a>
 									</li>
 								)}

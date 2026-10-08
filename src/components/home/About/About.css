@@ -1,46 +1,63 @@
 .HomeSection#about .HomeSectionInner {
-	@apply max-w-5xl;
+	@apply px-0;
+	@apply max-w-none;
 }
 .HomeSection#about h2.HomeSectionTitle {
 	@apply hidden;
 }
 .HomeSection#about .HomeSectionLede {
 	@apply mb-4;
-	@apply md:mb-0;
+	@apply sm:mb-0;
     @apply font-body;
 	@apply text-3xl;
 	@apply leading-11;
-    @apply md:text-4xl;
-	@apply md:leading-13;
+    @apply sm:text-4xl;
+	@apply sm:leading-13;
 	@apply font-body;
 	@apply text-primary;
 }
 .HomeSectionSubsection {
-	@apply flex;
-	@apply flex-col;
-	@apply md:flex-wrap;
-	@apply md:flex-row;
+	/* @apply py-4; */
+	/* @apply sm:py-8; */
+	/* @apply lg:py-12; */
 }
 .HomeSectionSubsection:nth-child(odd) {
 	@apply bg-secondary-dark;
-	@apply flex-col-reverse;
-	@apply md:flex-row-reverse;
 }
 .HomeSectionSubsection:nth-child(even) {
 	@apply bg-secondary;
+}
+.HomeSectionSubsectionColumns {
+	@apply mx-auto;
+	@apply max-w-inner-xl;
+	@apply flex;
+	/* @apply flex-col; */
+	/* @apply sm:flex-wrap;
+	@apply sm:flex-row; */
+}
+.HomeSectionSubsection:nth-child(odd) .HomeSectionSubsectionColumns {
 	@apply flex-col-reverse;
-	@apply md:flex-row;
+	@apply lg:flex-row-reverse;
+}
+.HomeSectionSubsection:nth-child(even) .HomeSectionSubsectionColumns {
+	@apply flex-col-reverse;
+	@apply lg:flex-row;
 }
 .HomeSectionSubsectionColumn {
 	@apply w-full;
-	@apply md:w-1/2;
+	@apply lg:w-1/2;
 	position: relative;
 }
 .HomeSectionSubsectionContent {
-	@apply px-4;
-	@apply py-8;
-	@apply md:p-8;
-	@apply md:min-h-125;
+	@apply p-4;
+	@apply pt-0;
+	@apply sm:p-6;
+	@apply sm:pt-0;
+	@apply lg:p-10;
+	@apply lg:min-h-125;
+	@apply flex;
+	@apply flex-col;
+	@apply justify-center;
 }
 .HomeSectionSubsectionContentTitle {
 
@@ -50,18 +67,23 @@
     @apply font-body;
     @apply text-2xl;
 	@apply font-body-normal;
+	@apply max-w-2xl;
 }
 .HomeSectionSubsectionImage {
-	@apply min-h-125;
+	@apply p-4;
+	@apply sm:p-6;
+	@apply lg:p-10;
+	@apply lg:min-h-125;
+	@apply flex;
 }
 .HomeSectionSubsectionImageFigure {
-	width: 100%;
-    height: 100%;
+	@apply m-auto;
+	/* @apply size-full; */
 }
-.HomeSectionSubsectionImage img {
+.HomeSectionSubsectionImageFigure img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
+    /* height: 100%; */
+    /* object-fit: cover; */
+    /* position: absolute; */
 	/* object-position: center right; */
 }

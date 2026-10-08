@@ -46,7 +46,19 @@ export default function Header() {
 							src="/images/logo-light.svg"
 							alt={`Logo for ${getLang(locale, "site", "title")}`}
 							id="logo-lg"
-							className="HeaderHomeLogo"
+							className={cn(
+								"HeaderHomeLogo",
+								"HeaderHomeLogo_light"
+							)}
+						/>
+						<img
+							src="/images/logo-dark.svg"
+							alt={`Logo for ${getLang(locale, "site", "title")}`}
+							id="logo-lg"
+							className={cn(
+								"HeaderHomeLogo",
+								"HeaderHomeLogo_dark"
+							)}
 						/>
 						{/* <img
 							src="/images/logo-sm-light.svg"
@@ -72,9 +84,8 @@ export default function Header() {
 							>
 								<Button
 									href={`#${section}`}
-									size="small"
+									// size="small"
 									color="secondary"
-									outlined={true}
 									className="HeaderNavItemButton"
 								>
 									{getLang(locale, "home", section, "title")}
@@ -83,7 +94,7 @@ export default function Header() {
 						)}
 					</ul>
 				</nav>
-				{/* <div
+				<div
 					className="HeaderLocale"
 				>
 					<nav
@@ -112,7 +123,7 @@ export default function Header() {
 							)}
 						</ul>
 					</nav>
-				</div> */}
+				</div>
 			</div>
 		</header>
 	);

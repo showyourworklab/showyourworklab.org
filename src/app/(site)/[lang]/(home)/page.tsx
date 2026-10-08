@@ -4,6 +4,7 @@ import { getPayload } from "payload";
 import type { DataFromGlobalSlug, GlobalSlug, TypedLocale } from "payload";
 import payloadConfig from "@payload-config";
 import { HOME_SECTIONS } from "@/utils/constants";
+import { getLang } from "@/utils/selectors";
 import Hero from "@/components/site/Hero";
 import About from "@/components/home/About";
 import Updates from "@/components/home/Updates";
@@ -39,10 +40,14 @@ export default async function Home({
 
 	return (
 		<div
+			id="home"
 			className={"Home"}
 		>
 			<Hero
 				image={data?.home?.hero}
+				title={getLang(locale, "site", "title")}
+				hideTitle={true}
+				lede={data?.home?.lede}
 			/>
 			<div>
 				{HOME_SECTIONS.map((section: string, index: number) =>

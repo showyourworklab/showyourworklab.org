@@ -26,7 +26,13 @@ export const Home: GlobalConfig = {
 			type: "upload",
 			relationTo: "uploads",
 			displayPreview: true,
-		}
+		},
+		{
+			name: "lede",
+			label: "Lede",
+			type: "richText",
+			localized: true,
+		},
 	]
 };
 
