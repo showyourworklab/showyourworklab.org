@@ -1,14 +1,16 @@
-import { HTMLProps, ReactNode } from "react";
+import { HTMLProps } from "react";
 import { Carousel as ArkCarousel } from "@ark-ui/react/carousel";
 import { cn } from "@/utils/helpers";
 import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
 
 export interface CarouselProps extends Omit<HTMLProps<HTMLDivElement>, "label"> {
-	items: any[];
+	slideCount: number;
+	slidesPerPage?: number;
 };
 
 export default function Carousel({
-	items,
+	slideCount = 0,
+	slidesPerPage = 4,
 	className,
 	children,
 	...props
@@ -16,8 +18,9 @@ export default function Carousel({
 	
 	return (
 		<ArkCarousel.Root
-			slideCount={items.length}
-			slidesPerPage={2}
+			autoSize={true}
+			slideCount={slideCount}
+			// slidesPerPage={slidesPerPage}
 			spacing="2rem"
 			className={cn(
 				"CarouselRoot",
@@ -28,15 +31,7 @@ export default function Carousel({
 			<ArkCarousel.ItemGroup
 				className={"CarouselItemGroup"}
 			>
-				{items.map((item, index) => (
-					<ArkCarousel.Item
-						key={index}
-						index={index}
-						className={"CarouselItem"}
-					>
-						{item.elem}
-					</ArkCarousel.Item>
-				))}
+				{children}
 			</ArkCarousel.ItemGroup>
 			<ArkCarousel.Control
 				className={"CarouselControl"}
@@ -49,7 +44,7 @@ export default function Carousel({
 				<ArkCarousel.IndicatorGroup
 					className={"CarouselIndicatorGroup"}
 				>
-					{items.map((_, index) => (
+					{Array.from({ length: slideCount }).map((_, index) => (
 						<ArkCarousel.Indicator
 							key={index}
 							index={index}

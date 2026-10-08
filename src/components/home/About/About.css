@@ -78,7 +78,9 @@
 }
 .HomeSectionSubsectionImageFigure {
 	@apply m-auto;
-	/* @apply size-full; */
+}
+.HomeSectionSubsectionImageFigure figcaption.FigureCaption {
+	@apply sr-only;
 }
 .HomeSectionSubsectionImageFigure img {
     width: 100%;

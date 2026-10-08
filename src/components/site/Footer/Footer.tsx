@@ -4,6 +4,7 @@ import { cn } from "@/utils/helpers";
 import { getLang } from "@/utils/selectors";
 import { HOME_SECTIONS_NAV, SOCIALS } from "@/utils/constants";
 import Button from "@/components/common/Button";
+import Icon from "@/components/common/Icon";
 
 export default function Footer() {
 	const { lang: locale } = useParams<{ lang: string }>();
@@ -88,6 +89,13 @@ export default function Footer() {
 											target="_blank"
 											rel="noreferrer nofollow"
 											className="FooterSocialsItemButton"
+											before={
+												<Icon
+													type="social"
+													variant={social}
+													className="FooterSocialsItemButtonIcon"
+												/>
+											}
 										>
 											{getLang(locale, "social", social, "title")}
 										</Button>

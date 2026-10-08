@@ -1,6 +1,10 @@
 import { getLang } from "@/utils/selectors";
 import { formatDate } from "@/utils/helpers";
 import RichText from "@/components/common/RichText";
+import Button from "@/components/common/Button";
+import Carousel from "@/components/common/Carousel";
+import CarouselItem from "@/components/common/Carousel/components/CarouselItem";
+import Figure from "@/components/common/Figure";
 
 export default function Updates({
 	data,
@@ -9,6 +13,10 @@ export default function Updates({
 	data: any;
 	locale: string;
 }) {
+	const sortedItems = data?.items
+		.sort((a: any, b: any) =>
+			new Date(b.date).getTime() - new Date(a.date).getTime()
+		);
 	return (
 		<>
 			<div
@@ -35,71 +43,32 @@ export default function Updates({
 						className="HomeSectionBody"
 					/>
 				: null}
-				<div
-					className="HomeSectionUpdatesItems"
+				<Carousel
+					slideCount={data?.items.length}
+					slidesPerPage={4}
 				>
-					{data?.items
-						.sort((a: any, b: any) =>
-							new Date(b.date).getTime() - new Date(a.date).getTime()
-						)
-						.map((item: any, index: number) =>
-							<div
-								key={index}
-								className="UpdatesItem"
+					{sortedItems.map((item: any, index: number) =>
+						<CarouselItem
+							key={index}
+							index={index}
+							className="UpdatesItem"
+						>
+							<a
+								href={item.url}
+								target="_blank"
+								rel="noreferrer nofollow"
+								className="UpdatesItemLink"
 							>
-								<h3
-									className="UpdatesItemTitle"
-								>
-									<a
-										href={item.url}
-										target="_blank"
-										rel="noreferrer nofollow"
-										className="UpdatesItemTitleLink"
-									>
-										{item.title}
-									</a>
-								</h3>
-								{/* <div
-									className="UpdatesItemBlurb"
-								>
-									{item.blurb}
-								</div> */}
+								{item?.image?.sizes?.small?.url ?
+									<Figure
+										src={item?.image?.sizes?.small?.url}
+										alt={item?.image?.alt}
+										caption={item?.image?.caption}
+										className="UpdatesItemFigure"
+									/>
+								: null}
 								<div
-									className="UpdatesItemFooter"
-								>
-									<div
-										className="UpdatesItemDate"
-									>
-										{formatDate(locale, item.date)}
-									</div>
-									{/* {item.url ?
-										<Button
-											href={item.url}
-											target="_blank"
-											rel="noreferrer nofollow"
-											size="small"
-											outlined={true}
-											className="UpdatesItemPrompt"
-										>
-											{getLang(locale, "home", "updates", "prompt")}
-										</Button>
-									: null} */}
-								</div>
-							</div>
-						)}
-				</div>
-
-				{/* <Carousel
-					items={data?.items
-						.sort((a: any, b: any) =>
-							new Date(a.date).getUTCDate() - new Date(b.date).getUTCDate()
-						)
-						.map((item: any, index: number) => ({
-							item,
-							elem: (
-								<div
-									key={index}
-									className="UpdatesItem"
+									className="UpdatesItemContent"
 								>
 									<h3
 										className="UpdatesItemTitle"
@@ -109,27 +78,13 @@ export default function Updates({
 									<div
 										className="UpdatesItemDate"
 									>
-										{formatDate(item.date)}
+										{formatDate(locale, item.date)}
 									</div>
-									<div
-										className="UpdatesItemBlurb"
-									>
-										{item.blurb}
-									</div>
-									{item.url ?
-										<a
-											href={item.url}
-											target="_blank"
-											rel="noreferrer nofollow"
-											className="UpdatesItemPrompt"
-										>
-											Read more
-										</a>
-									: null}
 								</div>
-							)
-						}))}
-				/> */}
+							</a>
+						</CarouselItem>
+					)}
+				</Carousel>
 			</div>
 		</>
 	);

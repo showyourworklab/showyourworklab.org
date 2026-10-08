@@ -44,7 +44,7 @@ export default buildConfig({
 		pool: {
 			connectionString: process.env.NEON_CONNECTION_URL || "",
 		},
-		// Schema changes go through migrations in every environment (npm run migrate:create / migrate)
+		// Schema changes go through migrations in every environment (npm run migrate:create / migrate:push)
 		push: false,
 		prodMigrations: migrations,
 	}),

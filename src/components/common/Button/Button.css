@@ -33,7 +33,7 @@
 .Button_filled {
 	@apply py-1.5;
 	@apply px-4;
-	@apply rounded-lg;
+	@apply rounded-3xl;
 	text-decoration: none;
 }
 .Button_outlined.Button_small,

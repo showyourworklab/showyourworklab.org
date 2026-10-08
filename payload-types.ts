@@ -557,6 +557,7 @@ export interface Update {
   } | null;
   items?:
     | {
+        image?: (number | null) | Upload;
         title?: string | null;
         blurb?: {
           root: {
@@ -837,6 +838,7 @@ export interface UpdatesSelect<T extends boolean = true> {
   items?:
     | T
     | {
+        image?: T;
         title?: T;
         blurb?: T;
         url?: T;

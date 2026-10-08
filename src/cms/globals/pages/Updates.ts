@@ -42,6 +42,13 @@ export const Updates: GlobalConfig = {
 			type: "array",
 			fields: [
 				{
+					name: "image",
+					label: "Image",
+					type: "upload",
+					relationTo: "uploads",
+					displayPreview: true,
+				},
+				{
 					name: "title",
 					label: "Title",
 					type: "text",
