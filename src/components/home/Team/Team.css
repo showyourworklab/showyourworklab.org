@@ -1,4 +1,4 @@
-ul.TeamItems {
+.TeamItems {
 	@apply p-0;
 	@apply m-0;
 	@apply w-full;
@@ -9,15 +9,24 @@ ul.TeamItems {
 	@apply md:gap-4;
 	@apply list-none;
 }
-li.TeamItem {
+.TeamItem {
 	@apply pt-0;
+	@apply bg-white;
+	@apply shadow-sm;
+	@apply rounded-2xl;
+	@apply overflow-hidden;
 }
-hgroup.TeamItemHeading {
+.TeamItemContent {
+	@apply p-3;
+}
+.TeamItem figure.TeamItemFigure {
+	@apply rounded-none;
+}
+.TeamItemHeading {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: space-between;
-	margin-top: 0.5rem;
 	margin-bottom: 0.25rem;
 }
 .TeamItemName {
@@ -28,13 +37,17 @@ hgroup.TeamItemHeading {
 	font-size: inherit;
 	text-transform: none;
 }
+.TeamItemWebsite a {
+	@apply text-xs;
+	@apply text-primary-light;
+}
+.TeamItemWebsite:hover a {
+	@apply text-primary-dark;
+}
 .TeamItemRole {
-	@apply text-sm;
+	@apply text-xs;
 	@apply text-primary-light;
 	white-space: nowrap;
-}
-.TeamItemWebsite {
-	@apply text-sm;
 }
 .TeamItemBio {
 	@apply text-sm;

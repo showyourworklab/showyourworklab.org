@@ -30,11 +30,11 @@ export default function Team({
 					className="HomeSectionBody"
 				/>
 				{data?.items ?
-					<ul
+					<div
 						className="TeamItems"
 					>
 						{data?.items.map((item: any, index: number) =>
-							<li
+							<div
 								key={index}
 								className="TeamItem"
 							>
@@ -43,43 +43,48 @@ export default function Team({
 										src={item?.image?.sizes?.small?.url}
 										alt={item?.image?.alt}
 										caption={item?.image?.caption}
+										className="TeamItemFigure"
 									/>
 								: null}
-								<hgroup
-									className="TeamItemHeading"
+								<div
+									className="TeamItemContent"
 								>
-									<h3
-										className="TeamItemName"
-									>
-										{item?.name}
-									</h3>
 									<div
-										className="TeamItemWebsite"
+										className="TeamItemHeading"
 									>
-										<a
-											href={item?.url}
-											target="_blank"
-											rel="noreferrer nofollow"
+										<h3
+											className="TeamItemName"
 										>
-											{item?.url?.replace("https://", "")}
-										</a>
+											{item?.name}
+										</h3>
+										<div
+											className="TeamItemWebsite"
+										>
+											<a
+												href={item?.url}
+												target="_blank"
+												rel="noreferrer nofollow"
+											>
+												{item?.url?.replace("https://", "")}
+											</a>
+										</div>
 									</div>
-								</hgroup>
-								<div
-									className="TeamItemRole"
-								>
-									{item?.role}
+									<div
+										className="TeamItemRole"
+									>
+										{item?.role}
+									</div>
+									<div
+										className="TeamItemBio"
+									>
+										<RichText
+											data={item?.body}
+										/>
+									</div>
 								</div>
-								<div
-									className="TeamItemBio"
-								>
-									<RichText
-										data={item?.body}
-									/>
-								</div>
-							</li>
+							</div>
 						)}
-					</ul>
+					</div>
 				: null}
 			</div>
 		</>

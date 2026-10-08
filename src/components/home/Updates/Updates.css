@@ -29,10 +29,15 @@ a.UpdatesItemLink {
 figure.UpdatesItemFigure {
 	@apply shadow-none;
 	@apply rounded-none;
+	@apply bg-primary;
 }
 figure.UpdatesItemFigure figcaption.FigureCaption {
 	@apply right-1;
 	@apply bottom-1;
+}
+a.UpdatesItemLink:hover figure.UpdatesItemFigure img {
+	filter: grayscale(100);
+    mix-blend-mode: luminosity;
 }
 .UpdatesItemContent {
 	@apply p-4;
