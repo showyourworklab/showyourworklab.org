@@ -94,7 +94,7 @@ export default function Header() {
 						)}
 					</ul>
 				</nav>
-				<div
+				{/* <div
 					className="HeaderLocale"
 				>
 					<nav
@@ -123,7 +123,7 @@ export default function Header() {
 							)}
 						</ul>
 					</nav>
-				</div>
+				</div> */}
 			</div>
 		</header>
 	);
