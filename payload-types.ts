@@ -436,6 +436,21 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
 export interface Home {
   id: number;
   hero?: (number | null) | Upload;
+  lede?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
   _status?: ('draft' | 'published') | null;
   updatedAt?: string | null;
   createdAt?: string | null;
@@ -784,6 +799,7 @@ export interface Support {
  */
 export interface HomeSelect<T extends boolean = true> {
   hero?: T;
+  lede?: T;
   _status?: T;
   updatedAt?: T;
   createdAt?: T;

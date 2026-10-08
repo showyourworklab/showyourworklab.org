@@ -9,7 +9,7 @@ export const Press: GlobalConfig = {
 		group: "Pages",
 	},
 	versions: {
-		drafts: { autosave: { interval: 200 } },
+		drafts: true,
 	},
 	hooks: {
 		afterChange: [

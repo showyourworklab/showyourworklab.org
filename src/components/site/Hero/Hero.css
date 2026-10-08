@@ -1,35 +1,39 @@
 .Hero {
-	height: 35rem;
-	max-height: 65vh;
+	min-height: 35rem;
 	display: flex;
     flex-direction: column;
     position: relative;
 	@apply bg-primary;
 	background-color: var(--color-primary);
-	background-position: center 30%;
+	background-position: center 50%;
 	background-size: cover;
 }
 .HeroInner {
 	@apply w-full;
-	@apply max-w-inner;
+	@apply max-w-inner-lg;
 	@apply m-auto;
-	@apply px-8;
 	@apply py-20;
+	@apply px-4;
+	@apply sm:px-6;
+	@apply md:px-10;
 }
-h1.HeroTitle {
+.HeroLede {
 	@apply mt-0;
-	@apply text-7xl;
+	@apply text-3xl;
+	@apply md:text-5xl;
 	@apply font-display;
 	@apply font-display-bold;
+	@apply text-secondary;
 	@apply text-center;
-	@apply lowercase;
+	@apply sm:text-left;
+	@apply max-w-inner;
 	cursor: default;
 }
-h1.HeroTitle span:first-child {
-	@apply text-secondary;
+h1.HeroTitle {
+	
 }
-h1.HeroTitle span:last-child {
-	@apply text-secondary-dark;
+h1.HeroTitle.HeroTitle_hide {
+	@apply sr-only;
 }
 .HeroTagline {
 	@apply text-secondary;

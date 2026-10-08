@@ -9,7 +9,7 @@ export const Home: GlobalConfig = {
 		group: "Pages",
 	},
 	versions: {
-		drafts: { autosave: { interval: 200 } },
+		drafts: true,
 	},
 	hooks: {
 		afterChange: [
@@ -26,7 +26,13 @@ export const Home: GlobalConfig = {
 			type: "upload",
 			relationTo: "uploads",
 			displayPreview: true,
-		}
+		},
+		{
+			name: "lede",
+			label: "Lede",
+			type: "richText",
+			localized: true,
+		},
 	]
 };
 

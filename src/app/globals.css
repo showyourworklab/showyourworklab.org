@@ -37,10 +37,12 @@
 	--text-shadow-image: 0px 0px 2px var(--color-primary-dark), 0px 0px 1px black;
 	/* Spacing */
 	--spacing-header: 3.5rem;
-	--spacing-header-logo: 1.25rem;
+	--spacing-header-logo: 1.5rem;
 	--spacing-hero-tagline-en: auto;
 	--spacing-hero-tagline-no: 30rem;
 	--spacing-inner: 750px;
+	--spacing-inner-lg: 1200px;
+	--spacing-inner-xl: 1800px;
 	--spacing-paragraph: 52ch;
 	--spacing-upload-width: 40rem;
 	--spacing-upload-height: 20rem;
@@ -177,6 +179,7 @@ a code {
 @import "../components/home/Press/Press.css";
 @import "../components/home/Team/Team.css";
 @import "../components/home/Support/Support.css";
+@import "../components/home/Contact/Contact.css";
 /* Imports > Components > Verify */
 @import "../components/verify/Upload/Upload.css";
 @import "../components/verify/Info/Info.css";
