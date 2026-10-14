@@ -60,7 +60,8 @@
 	@apply justify-center;
 }
 .HomeSectionSubsectionContentTitle {
-
+	@apply text-4xl;
+	@apply md:text-5xl;
 }
 .HomeSectionSubsectionContentBody {
 	@apply text-primary-light;
@@ -76,8 +77,10 @@
 	@apply lg:min-h-125;
 	@apply flex;
 }
-.HomeSectionSubsectionImageFigure {
+figure.HomeSectionSubsectionImageFigure {
 	@apply m-auto;
+	@apply hidden;
+	@apply lg:block;
 }
 .HomeSectionSubsectionImageFigure figcaption.FigureCaption {
 	@apply sr-only;

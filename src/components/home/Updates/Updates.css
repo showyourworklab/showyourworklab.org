@@ -54,10 +54,24 @@ a.UpdatesItemLink:hover figure.UpdatesItemFigure img {
 	@apply flex;
 	@apply flex-col;
 	@apply flex-1;
-	@apply justify-between;
+}
+.UpdatesItemOverline {
+	@apply text-xs;
+	@apply font-display;
+	@apply text-secondary-dark;
+	@apply bg-primary;
+	@apply rounded-4xl;
+	@apply px-2;
+	@apply py-1;
+	@apply mb-2;
+	@apply mr-auto;
+	@apply uppercase;
+	@apply tracking-widest;
 }
 h3.UpdatesItemTitle {
 	@apply text-2xl;
+	@apply leading-tight;
+	@apply mb-auto;
 }
 .UpdatesItemDate {
 	@apply mt-1;

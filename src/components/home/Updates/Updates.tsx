@@ -1,10 +1,9 @@
 import { getLang } from "@/utils/selectors";
 import { formatDate } from "@/utils/helpers";
 import RichText from "@/components/common/RichText";
-import Button from "@/components/common/Button";
+import Figure from "@/components/common/Figure";
 import Carousel from "@/components/common/Carousel";
 import CarouselItem from "@/components/common/Carousel/components/CarouselItem";
-import Figure from "@/components/common/Figure";
 
 export default function Updates({
 	data,
@@ -17,6 +16,7 @@ export default function Updates({
 		.sort((a: any, b: any) =>
 			new Date(b.date).getTime() - new Date(a.date).getTime()
 		);
+
 	return (
 		<>
 			<div
@@ -28,7 +28,7 @@ export default function Updates({
 					<h2
 						className="HomeSectionTitle"
 					>
-						{getLang(locale, "home", "updates", "title")}
+						{data?.title}
 					</h2>
 					{data?.lede ?
 						<RichText
@@ -45,7 +45,6 @@ export default function Updates({
 				: null}
 				<Carousel
 					slideCount={data?.items.length}
-					slidesPerPage={4}
 					fullWidth={true}
 					className="UpdatesCarousel"
 				>
@@ -72,6 +71,13 @@ export default function Updates({
 								<div
 									className="UpdatesItemContent"
 								>
+									{item.overline ?
+										<div
+											className="UpdatesItemOverline"
+										>
+											{item.overline}
+										</div>
+									: null}
 									<h3
 										className="UpdatesItemTitle"
 									>

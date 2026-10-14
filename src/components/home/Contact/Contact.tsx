@@ -19,7 +19,7 @@ export default function Contact({
 				<h2
 					className="HomeSectionTitle"
 				>
-					{getLang(locale, "home", "contact", "title")}
+					{data?.title}
 				</h2>
 				<RichText
 					data={data?.lede}

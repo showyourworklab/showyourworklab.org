@@ -5,13 +5,15 @@
     position: relative;
 	@apply bg-primary;
 	background-color: var(--color-primary);
-	background-position: center 50%;
 	background-size: cover;
+	@apply bg-position-[center_50%];
+	/* @apply md:bg-position-[center_50%]; */
 }
 .HeroInner {
 	@apply w-full;
 	@apply max-w-inner-lg;
-	@apply m-auto;
+	@apply mt-auto;
+	@apply mx-auto;
 	@apply py-20;
 	@apply px-4;
 	@apply sm:px-6;
@@ -24,8 +26,7 @@
 	@apply font-display;
 	@apply font-display-bold;
 	@apply text-secondary;
-	@apply text-center;
-	@apply sm:text-left;
+	@apply text-left;
 	@apply max-w-inner;
 	cursor: default;
 }

@@ -18,7 +18,7 @@ export default function Team({
 					<h2
 						className="HomeSectionTitle"
 					>
-						{getLang(locale, "home", "team", "title")}
+						{data?.title}
 					</h2>
 					<RichText
 						data={data?.lede}

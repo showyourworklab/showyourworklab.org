@@ -558,6 +558,7 @@ export interface Update {
   items?:
     | {
         image?: (number | null) | Upload;
+        overline?: string | null;
         title?: string | null;
         blurb?: {
           root: {
@@ -687,6 +688,7 @@ export interface Press {
   } | null;
   items?:
     | {
+        image?: (number | null) | Upload;
         source?: string | null;
         title?: string | null;
         url?: string | null;
@@ -839,6 +841,7 @@ export interface UpdatesSelect<T extends boolean = true> {
     | T
     | {
         image?: T;
+        overline?: T;
         title?: T;
         blurb?: T;
         url?: T;
@@ -884,6 +887,7 @@ export interface PressSelect<T extends boolean = true> {
   items?:
     | T
     | {
+        image?: T;
         source?: T;
         title?: T;
         url?: T;

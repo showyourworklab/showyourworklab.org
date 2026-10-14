@@ -1,6 +1,9 @@
 import { getLang } from "@/utils/selectors";
 import { formatDate } from "@/utils/helpers";
 import RichText from "@/components/common/RichText";
+import Figure from "@/components/common/Figure";
+import Carousel from "@/components/common/Carousel";
+import CarouselItem from "@/components/common/Carousel/components/CarouselItem";
 
 export default function Press({
 	data,
@@ -9,6 +12,11 @@ export default function Press({
 	data: any;
 	locale: string;
 }) {
+	const sortedItems = data?.items
+		.sort((a: any, b: any) =>
+			new Date(b.date).getTime() - new Date(a.date).getTime()
+		);
+
 	return (
 		<>
 			<div
@@ -20,53 +28,69 @@ export default function Press({
 					<h2
 						className="HomeSectionTitle"
 					>
-						{getLang(locale, "home", "press", "title")}
+						{data?.title}
 					</h2>
-					<RichText
-						data={data?.lede}
-						className="HomeSectionLede"
-					/>
+					{data?.lede ?
+						<RichText
+							data={data?.lede}
+							className="HomeSectionLede"
+						/>
+					: null}
 				</hgroup>
-				<RichText
-					data={data?.body}
-					className="HomeSectionBody"
-				/>
-				<ul
-					className="PressItems"
+				{data?.body ?
+					<RichText
+						data={data?.body}
+						className="HomeSectionBody"
+					/>
+				: null}
+				<Carousel
+					slideCount={data?.items.length}
+					fullWidth={true}
+					className="PressCarousel"
 				>
-					{data?.items
-						.sort((a: any, b: any) =>
-							new Date(b.date).getTime() - new Date(a.date).getTime()
-						)
-						.map((item: any, index: number) =>
-							<li
-								key={index}
-								className="PressItem"
+					{sortedItems.map((item: any, index: number) =>
+						<CarouselItem
+							key={index}
+							index={index}
+							className="PressItem"
+						>
+							<a
+								href={item.url}
+								target="_blank"
+								rel="noreferrer nofollow"
+								className="PressItemLink"
 							>
+								{item?.image?.sizes?.small?.url ?
+									<Figure
+										src={item?.image?.sizes?.small?.url}
+										alt={item?.image?.alt}
+										caption={item?.image?.caption}
+										className="PressItemFigure"
+									/>
+								: null}
 								<div
-									className="PressItemSource"
+									className="PressItemContent"
 								>
-									{item.source}
-								</div>
-								<h3
-									className="PressItemTitle"
-								>
-									<a
-										href={item.url}
-										target="_blank"
-										rel="noreferrer nofollow"
+									<div
+										className="PressItemSource"
 									>
-										{item.title}
-									</a>
-								</h3>
-								<div
-									className="PressItemDate"
-								>
-									{formatDate(locale, item.date)}
+										{item.source}
+									</div>
+									<h3
+										className="PressItemTitle"
+									>
+										"{item.title}""
+									</h3>
+									<div
+										className="PressItemDate"
+									>
+										{formatDate(locale, item.date)}
+									</div>
 								</div>
-							</li>
+							</a>
+						</CarouselItem>
 					)}
-				</ul>
+				</Carousel>
 			</div>
 		</>
 	);

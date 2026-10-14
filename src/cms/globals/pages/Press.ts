@@ -44,6 +44,13 @@ export const Press: GlobalConfig = {
 			type: "array",
 			fields: [
 				{
+					name: "image",
+					label: "Image",
+					type: "upload",
+					relationTo: "uploads",
+					displayPreview: true,
+				},
+				{
 					name: "source",
 					label: "Source",
 					type: "text",

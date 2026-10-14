@@ -16,7 +16,7 @@ export default function Support({
 				<h2
 					className="HomeSectionTitle"
 				>
-					{getLang(locale, "home", "support", "title")}
+					{data?.title}
 				</h2>
 				<RichText
 					data={data?.lede}

@@ -4,16 +4,16 @@ export const PAGES = [
 export const HOME_SECTIONS = [
 	"about",
 	"updates",
-	"team",
 	"press",
+	"team",
 	"contact",
 	"support"
 ];
 export const HOME_SECTIONS_NAV = [
 	"about",
 	"updates",
-	"team",
 	"press",
+	"team",
 	"contact",
 ];
 export const SOCIALS = [

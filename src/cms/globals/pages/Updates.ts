@@ -49,6 +49,11 @@ export const Updates: GlobalConfig = {
 					displayPreview: true,
 				},
 				{
+					name: "overline",
+					label: "Overline",
+					type: "text",
+				},
+				{
 					name: "title",
 					label: "Title",
 					type: "text",
