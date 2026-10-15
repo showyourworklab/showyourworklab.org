@@ -22,8 +22,8 @@
 	@apply w-full;
 	@apply sm:w-80;
 	@apply bg-white;
-	@apply rounded-2xl;
-	@apply shadow-sm;
+	/* @apply rounded-2xl; */
+	/* @apply shadow-sm; */
 	@apply flex;
 	@apply overflow-hidden;
 }
@@ -31,11 +31,19 @@ a.PressItemLink {
 	@apply flex;
 	@apply flex-col;
 	text-decoration: none;
+	@apply border;
+	@apply border-primary-light;
+}
+a.PressItemLink:hover {
+	@apply border-primary;
 }
 figure.PressItemFigure {
-	@apply shadow-none;
-	@apply rounded-none;
+	@apply border-b;
+	@apply border-b-primary-light;
 	@apply bg-primary;
+}
+a.PressItemLink:hover figure.PressItemFigure {
+	@apply border-b-primary;
 }
 figure.PressItemFigure figcaption.FigureCaption {
 	@apply right-1;

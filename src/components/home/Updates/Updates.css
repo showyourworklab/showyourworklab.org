@@ -22,8 +22,8 @@
 	@apply w-full;
 	@apply sm:w-96;
 	@apply bg-white;
-	@apply rounded-2xl;
-	@apply shadow-sm;
+	/* @apply rounded-2xl; */
+	/* @apply shadow-sm; */
 	@apply flex;
 	@apply overflow-hidden;
 	/* @apply not-last:pb-4; */
@@ -35,11 +35,19 @@ a.UpdatesItemLink {
 	@apply flex;
 	@apply flex-col;
 	text-decoration: none;
+	@apply border;
+	@apply border-primary-light;
+}
+a.UpdatesItemLink:hover {
+	@apply border-primary;
 }
 figure.UpdatesItemFigure {
-	@apply shadow-none;
-	@apply rounded-none;
+	@apply border-b;
+	@apply border-b-primary-light;
 	@apply bg-primary;
+}
+a.UpdatesItemLink:hover figure.UpdatesItemFigure {
+	@apply border-b-primary;
 }
 figure.UpdatesItemFigure figcaption.FigureCaption {
 	@apply right-1;

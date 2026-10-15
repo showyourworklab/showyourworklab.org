@@ -1,6 +1,5 @@
 figure.Figure {
 	position: relative;
-	/* @apply rounded-2xl; */
 	/* @apply overflow-hidden; */
 	/* @apply shadow-sm; */
 }

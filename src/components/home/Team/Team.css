@@ -12,15 +12,18 @@
 .TeamItem {
 	@apply pt-0;
 	@apply bg-white;
-	@apply shadow-sm;
-	@apply rounded-2xl;
+	/* @apply shadow-sm; */
+	/* @apply rounded-2xl; */
+	@apply border;
+	@apply border-primary-light;
 	@apply overflow-hidden;
 }
 .TeamItemContent {
 	@apply p-3;
 }
 .TeamItem figure.TeamItemFigure {
-	@apply rounded-none;
+	@apply border-b;
+	@apply border-b-primary-light;
 }
 .TeamItemHeading {
 	display: flex;

@@ -1,4 +1,5 @@
 a.ContactButton {
 	@apply text-primary;
 	@apply bg-white;
+	@apply border-primary-light;
 }
