@@ -28,22 +28,6 @@ const Uploads: CollectionConfig = {
 				height: 300,
 				position: "center",
 			},
-			{
-				name: "small",
-				width: 640,
-			},
-			{
-				name: "medium",
-				width: 1024,
-			},
-			{
-				name: "large",
-				width: 1600,
-			},
-			{
-				name: "xl",
-				width: 2400,
-			},
 		],
 		adminThumbnail: "thumbnail",
 	},

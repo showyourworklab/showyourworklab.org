@@ -5,11 +5,17 @@
     position: relative;
 	@apply bg-primary;
 	background-color: var(--color-primary);
-	background-size: cover;
-	@apply bg-position-[center_50%];
-	/* @apply md:bg-position-[center_50%]; */
+}
+figure.HeroFigure {
+	position: absolute;
+	inset: 0;
+}
+figure.HeroFigure img {
+	@apply object-cover;
+	@apply object-[center_50%];
 }
 .HeroInner {
+	position: relative;
 	@apply w-full;
 	@apply max-w-inner-lg;
 	@apply mt-auto;

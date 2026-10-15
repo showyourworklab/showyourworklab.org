@@ -60,14 +60,11 @@ export default function Press({
 								rel="noreferrer nofollow"
 								className="PressItemLink"
 							>
-								{item?.image?.sizes?.small?.url ?
-									<Figure
-										src={item?.image?.sizes?.small?.url}
-										alt={item?.image?.alt}
-										caption={item?.image?.caption}
-										className="PressItemFigure"
-									/>
-								: null}
+								<Figure
+									image={item?.image}
+									size="card"
+									className="PressItemFigure"
+								/>
 								<div
 									className="PressItemContent"
 								>

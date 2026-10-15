@@ -60,14 +60,11 @@ export default function Updates({
 								rel="noreferrer nofollow"
 								className="UpdatesItemLink"
 							>
-								{item?.image?.sizes?.small?.url ?
-									<Figure
-										src={item?.image?.sizes?.small?.url}
-										alt={item?.image?.alt}
-										caption={item?.image?.caption}
-										className="UpdatesItemFigure"
-									/>
-								: null}
+								<Figure
+									image={item?.image}
+									size="card"
+									className="UpdatesItemFigure"
+								/>
 								<div
 									className="UpdatesItemContent"
 								>

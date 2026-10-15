@@ -1,5 +1,7 @@
 "use client";
 import RichText from "@/components/common/RichText";
+import type { Upload } from "@payload-types";
+import Figure from "@/components/common/Figure";
 import { cn } from "@/utils/helpers";
 import { SerializedEditorState } from "@payloadcms/richtext-lexical/lexical";
 import { useParams } from "next/navigation";
@@ -10,7 +12,7 @@ export default function Hero({
 	hideTitle,
 	lede
 } : {
-	image: any;
+	image?: Upload | number | null;
 	title?: string;
 	hideTitle?: boolean;
 	lede?: SerializedEditorState | null;
@@ -20,10 +22,14 @@ export default function Hero({
 		<section
 			id="hero"
 			className="Hero"
-			style={{
-				backgroundImage: `url(${image?.url})`
-			}}
 		>
+			<Figure
+				image={image}
+				size="hero"
+				priority
+				fill
+				className="HeroFigure"
+			/>
 			<div
 				className="HeroInner"
 			>

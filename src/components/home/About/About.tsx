@@ -47,9 +47,8 @@ export default function About({
 							)}
 						>
 							<Figure
-								src={section?.image?.sizes?.large?.url}
-								alt={section?.image?.alt}
-								caption={section?.image?.caption}
+								image={section?.image}
+								size="half"
 								className="HomeSectionSubsectionImageFigure"
 							/>
 						</div>

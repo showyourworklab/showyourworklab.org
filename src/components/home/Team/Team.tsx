@@ -38,14 +38,11 @@ export default function Team({
 								key={index}
 								className="TeamItem"
 							>
-								{item?.image?.sizes?.small?.url ?
-									<Figure
-										src={item?.image?.sizes?.small?.url}
-										alt={item?.image?.alt}
-										caption={item?.image?.caption}
-										className="TeamItemFigure"
-									/>
-								: null}
+								<Figure
+									image={item?.image}
+									size="grid"
+									className="TeamItemFigure"
+								/>
 								<div
 									className="TeamItemContent"
 								>

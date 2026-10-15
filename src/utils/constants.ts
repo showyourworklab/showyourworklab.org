@@ -175,3 +175,19 @@ export const DICTIONARIES = {
 	en: DICTIONARY_EN,
 	no: DICTIONARY_NO
 };
+// How wide each kind of image displays, so the browser downloads the right file size.
+// Pick one with <Figure size="..." />; add a preset here when a new layout needs one.
+export const IMAGE_SIZES = {
+	// Spans the whole viewport
+	full: "100vw",
+	// Hero background: cover-cropped and wider than the viewport on tablets; phones get a lighter file
+	hero: "(max-width: 640px) 520px, (max-width: 840px) 840px, 100vw",
+	// Half of a two-column layout on large screens, full width below (About)
+	half: "(min-width: 1024px) 50vw, 100vw",
+	// Two-column grid from tablet up (Team)
+	grid: "(min-width: 768px) 50vw, 100vw",
+	// Fixed-width card in a carousel (Updates, Press)
+	card: "(min-width: 640px) 384px, 100vw",
+} as const;
+
+export type ImageSize = keyof typeof IMAGE_SIZES;
