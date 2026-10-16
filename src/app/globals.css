@@ -168,6 +168,8 @@ a code {
 /* Imports > Components */
 /* Imports > Components > Common */
 @import "../components/common/Button/Button.css";
+@import "../components/common/Card/Card.css";
+@import "../components/common/Section/Section.css";
 @import "../components/common/Field/Field.css";
 @import "../components/common/Figure/Figure.css";
 @import "../components/common/Carousel/Carousel.css";
@@ -179,6 +181,7 @@ a code {
 @import "../components/site/Footer/Footer.css";
 /* Imports > Components > Home */
 @import "../components/home/About/About.css";
+@import "../components/home/Projects/Projects.css";
 @import "../components/home/Updates/Updates.css";
 @import "../components/home/Press/Press.css";
 @import "../components/home/Team/Team.css";

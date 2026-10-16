@@ -1,11 +1,11 @@
-.HomeSection#about .HomeSectionInner {
-	@apply px-0;
+section.Section.AboutSection .SectionInner {
+	/* @apply px-0; */
 	@apply max-w-none;
 }
-.HomeSection#about h2.HomeSectionTitle {
+section.Section.AboutSection h2.SectionTitle {
 	@apply hidden;
 }
-.HomeSection#about .HomeSectionLede {
+section.Section.AboutSection .SectionLede {
 	@apply mb-4;
 	@apply sm:mb-0;
     @apply font-body;
@@ -16,18 +16,18 @@
 	@apply font-body;
 	@apply text-primary;
 }
-.HomeSectionSubsection {
+.AboutSection {
 	/* @apply py-4; */
 	/* @apply sm:py-8; */
 	/* @apply lg:py-12; */
 }
-.HomeSectionSubsection:nth-child(odd) {
+.AboutSection:nth-child(odd) {
 	@apply bg-secondary-dark;
 }
-.HomeSectionSubsection:nth-child(even) {
+.AboutSection:nth-child(even) {
 	@apply bg-secondary;
 }
-.HomeSectionSubsectionColumns {
+.AboutSectionColumns {
 	@apply mx-auto;
 	@apply max-w-inner-xl;
 	@apply flex;
@@ -35,60 +35,78 @@
 	/* @apply sm:flex-wrap;
 	@apply sm:flex-row; */
 }
-.HomeSectionSubsection:nth-child(odd) .HomeSectionSubsectionColumns {
+.AboutSection:nth-child(odd) .AboutSectionColumns {
 	@apply flex-col-reverse;
 	@apply lg:flex-row-reverse;
 }
-.HomeSectionSubsection:nth-child(even) .HomeSectionSubsectionColumns {
+.AboutSection:nth-child(even) .AboutSectionColumns {
 	@apply flex-col-reverse;
 	@apply lg:flex-row;
 }
-.HomeSectionSubsectionColumn {
+.AboutSectionColumn {
 	@apply w-full;
 	@apply lg:w-1/2;
 	position: relative;
 }
-.HomeSectionSubsectionContent {
-	@apply p-4;
-	@apply pt-0;
-	@apply sm:p-6;
-	@apply sm:pt-0;
-	@apply lg:p-10;
-	@apply lg:min-h-125;
+.AboutSectionText {
+	/* @apply p-4; */
+	/* @apply pt-0; */
+	/* @apply sm:p-6; */
+	/* @apply sm:pt-0; */
+	/* @apply lg:p-10; */
+	@apply my-auto;
+	/* @apply lg:min-h-125; */
 	@apply flex;
 	@apply flex-col;
 	@apply justify-center;
+	@apply lg:items-center;
 }
-.HomeSectionSubsectionContentTitle {
+.AboutSection:nth-child(odd) .AboutSectionText {
+	@apply text-left;
+}
+.AboutSection:nth-child(even) .AboutSectionText {
+	@apply lg:text-right;
+}
+.AboutSectionTextInner {
+	@apply max-w-2xl;
+	/* @apply pl-12; */
+	/* @apply border-l; */
+	/* @apply border-l-6; */
+	/* @apply border-l-primary; */
+}
+.AboutSection:nth-child(odd) .AboutSectionTextInner {
+	
+}
+.AboutSection:nth-child(even) .AboutSectionTextInner {
+	/* @apply lg:pr-12; */
+	/* @apply lg:border-r; */
+	/* @apply lg:border-r-6; */
+	/* @apply lg:border-r-primary; */
+	/* @apply lg:pl-0; */
+	/* @apply lg:border-l-0; */
+}
+.AboutSectionTextTitle {
 	@apply text-4xl;
 	@apply md:text-5xl;
 }
-.HomeSectionSubsectionContentBody {
+.AboutSectionTextBody {
 	@apply text-primary-light;
     @apply font-body;
     @apply text-2xl;
 	@apply font-body-normal;
-	@apply max-w-2xl;
 }
-.HomeSectionSubsectionImage {
+.AboutSectionImage {
 	@apply p-4;
 	@apply sm:p-6;
 	@apply lg:p-10;
 	@apply lg:min-h-125;
 	@apply flex;
 }
-figure.HomeSectionSubsectionImageFigure {
+figure.AboutSectionImageFigure {
 	@apply m-auto;
 	@apply hidden;
 	@apply lg:block;
 }
-.HomeSectionSubsectionImageFigure figcaption.FigureCaption {
-	@apply sr-only;
-}
-.HomeSectionSubsectionImageFigure img {
+.AboutSectionImageFigure img {
     width: 100%;
-    /* height: 100%; */
-    /* object-fit: cover; */
-    /* position: absolute; */
-	/* object-position: center right; */
 }

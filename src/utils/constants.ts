@@ -3,6 +3,7 @@ export const PAGES = [
 ];
 export const HOME_SECTIONS = [
 	"about",
+	// "projects",
 	"updates",
 	"press",
 	"team",
@@ -11,6 +12,7 @@ export const HOME_SECTIONS = [
 ];
 export const HOME_SECTIONS_NAV = [
 	"about",
+	// "projects",
 	"updates",
 	"press",
 	"team",
@@ -53,7 +55,7 @@ export const DICTIONARY_EN = {
 	social_email_url: "mailto:info@showyourworklab.org",
 	// Home
 	home_about_title: "About",
-	home_code_title: "Code",
+	home_project_title: "Projects",
 	home_updates_title: "Updates",
 	home_press_title: "Press",
 	home_team_title: "Team",

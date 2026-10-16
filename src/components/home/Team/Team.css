@@ -1,8 +1,11 @@
+section.Section.TeamSection h2.SectionTitle {
+	@apply text-center;
+}
 .TeamItems {
 	@apply p-0;
 	@apply m-0;
 	@apply w-full;
-	@apply !max-w-none;
+	@apply max-w-none!;
 	@apply grid;
 	@apply gap-12;
 	@apply md:grid-cols-2;
@@ -10,20 +13,8 @@
 	@apply list-none;
 }
 .TeamItem {
-	@apply pt-0;
-	@apply bg-white;
-	/* @apply shadow-sm; */
-	/* @apply rounded-2xl; */
-	@apply border;
-	@apply border-primary-light;
-	@apply overflow-hidden;
-}
-.TeamItemContent {
-	@apply p-3;
-}
-.TeamItem figure.TeamItemFigure {
-	@apply border-b;
-	@apply border-b-primary-light;
+	@apply mx-auto;
+	@apply max-w-md!;
 }
 .TeamItemHeading {
 	display: flex;

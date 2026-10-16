@@ -1,8 +1,7 @@
-import { hasText } from "@payloadcms/richtext-lexical/shared";
-import { getLang } from "@/utils/selectors"
-import RichText from "@/components/common/RichText";
 import { cn } from "@/utils/helpers";
 import Figure from "@/components/common/Figure";
+import Section from "@/components/common/Section";
+import RichText from "@/components/common/RichText";
 
 export default function About({
 	data,
@@ -14,46 +13,48 @@ export default function About({
 	return (
 		<>
 			{data?.sections.map((section: any, index: number) =>
-				<section
+				<Section
 					key={index}
-					className={cn(
-						"HomeSectionInner",
-						"HomeSectionSubsection"
-					)}
+					// title={section?.title}
+					className="AboutSection"
 				>
 					<div
-						className="HomeSectionSubsectionColumns"
+						className="AboutSectionColumns"
 					>
 						<div
 							className={cn(
-								"HomeSectionSubsectionColumn",
-								"HomeSectionSubsectionContent"
+								"AboutSectionColumn",
+								"AboutSectionText"
 							)}
 						>
-							<h3
-								className="HomeSectionSubsectionContentTitle"
+							<div
+								className="AboutSectionTextInner"
 							>
-								{section?.title}
-							</h3>
-							<RichText
-								data={section?.body}
-								className="HomeSectionSubsectionContentBody"
-							/>
+								<h3
+									className="AboutSectionTextTitle"
+								>
+									{section?.title}
+								</h3>
+								<RichText
+									data={section?.body}
+									className="AboutSectionTextBody"
+								/>
+							</div>
 						</div>
 						<div
 							className={cn(
-								"HomeSectionSubsectionColumn",
-								"HomeSectionSubsectionImage"
+								"AboutSectionColumn",
+								"AboutSectionImage"
 							)}
 						>
 							<Figure
 								image={section?.image}
 								size="half"
-								className="HomeSectionSubsectionImageFigure"
+								className="AboutSectionImageFigure"
 							/>
 						</div>
 					</div>
-				</section>
+				</Section>
 			)}
 		</>
 	);

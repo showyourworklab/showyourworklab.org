@@ -1,5 +1,5 @@
-import { getLang } from "@/utils/selectors";
 import RichText from "@/components/common/RichText";
+import Section from "@/components/common/Section";
 
 export default function Support({
 	data,
@@ -9,47 +9,40 @@ export default function Support({
 	locale: string;
 }) {
 	return (
-		<div
-			className="HomeSectionInner"
+		<Section
+			id="support"
+			title={data?.title}
+			lede={data?.lede}
+			center={true}
+			className="SupportSection"
 		>
-			<hgroup>
-				<h2
-					className="HomeSectionTitle"
-				>
-					{data?.title}
-				</h2>
-				<RichText
-					data={data?.lede}
-					className="HomeSectionLede"
-				/>
-			</hgroup>
 			<RichText
 				data={data?.body}
-				className="HomeSectionBody"
+				className="SupportBody"
 			/>
 			<div
-				className="Support"
+				className="SupportSubsections"
 			>
 				{data.groups.map((group: any, index: number) =>
 					<div
 						key={index}
-						className="SupportSection"
+						className="SupportSubection"
 					>
 						{group.title ?
 							<h3
-								className="SupportSectionTitle"
+								className="SupportSubectionTitle"
 							>
 								{group.title}
 							</h3>
 						: null}
 						{group.items?.length ?
 							<ul
-								className="SupportSectionList"
+								className="SupportSubectionList"
 							>
 								{group.items.map((item: any, index: number) =>
 									<li
 										key={index}
-										className="SupportSectionListItem"
+										className="SupportSubectionListItem"
 									>
 										<a
 											href={item?.url}
@@ -59,7 +52,7 @@ export default function Support({
 												<img
 													src={item?.image?.url}
 													alt={item?.image?.alt}
-													className="SupportSectionListItemImage"
+													className="SupportSubectionListItemImage"
 												/>
 											: null}
 											<span>
@@ -73,6 +66,6 @@ export default function Support({
 					</div>
 				)}
 			</div>
-		</div>
+		</Section>
 	);
 }

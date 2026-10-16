@@ -1,9 +1,7 @@
-import { getLang } from "@/utils/selectors";
 import { formatDate } from "@/utils/helpers";
-import RichText from "@/components/common/RichText";
-import Figure from "@/components/common/Figure";
-import Carousel from "@/components/common/Carousel";
-import CarouselItem from "@/components/common/Carousel/components/CarouselItem";
+import Card from "@/components/common/Card";
+import Section from "@/components/common/Section";
+import Carousel, { CarouselItem } from "@/components/common/Carousel";
 
 export default function Press({
 	data,
@@ -18,77 +16,36 @@ export default function Press({
 		);
 
 	return (
-		<>
-			<div
-				className="HomeSectionInner"
+		<Section
+			title={data?.title}
+			lede={data?.lede}
+			body={data?.body}
+			className="PressSection"
+		>
+			<Carousel
+				slideCount={data?.items.length}
+				fullWidth={true}
+				className="PressCarousel"
 			>
-				<hgroup
-					className="HomeSectionHeading"
-				>
-					<h2
-						className="HomeSectionTitle"
+				{sortedItems.map((item: any, index: number) =>
+					<CarouselItem
+						key={index}
+						index={index}
+						className="PressItem"
 					>
-						{data?.title}
-					</h2>
-					{data?.lede ?
-						<RichText
-							data={data?.lede}
-							className="HomeSectionLede"
+						<Card
+							image={item?.image}
+							title={`"${item?.title}"`}
+							overline={item.source}
+							footer={formatDate(locale, item.date)}
+							href={item.url}
+							target="_blank"
+							rel="noreferrer nofollow"
+							className="PressItemCard"
 						/>
-					: null}
-				</hgroup>
-				{data?.body ?
-					<RichText
-						data={data?.body}
-						className="HomeSectionBody"
-					/>
-				: null}
-				<Carousel
-					slideCount={data?.items.length}
-					fullWidth={true}
-					className="PressCarousel"
-				>
-					{sortedItems.map((item: any, index: number) =>
-						<CarouselItem
-							key={index}
-							index={index}
-							className="PressItem"
-						>
-							<a
-								href={item.url}
-								target="_blank"
-								rel="noreferrer nofollow"
-								className="PressItemLink"
-							>
-								<Figure
-									image={item?.image}
-									size="card"
-									className="PressItemFigure"
-								/>
-								<div
-									className="PressItemContent"
-								>
-									<div
-										className="PressItemSource"
-									>
-										{item.source}
-									</div>
-									<h3
-										className="PressItemTitle"
-									>
-										"{item.title}""
-									</h3>
-									<div
-										className="PressItemDate"
-									>
-										{formatDate(locale, item.date)}
-									</div>
-								</div>
-							</a>
-						</CarouselItem>
-					)}
-				</Carousel>
-			</div>
-		</>
+					</CarouselItem>
+				)}
+			</Carousel>
+		</Section>
 	);
 }

@@ -1,44 +1,50 @@
-.HomeSection#support {
+section.Section.SupportSection {
 	@apply bg-white;
 }
-.HomeSection#support .HomeSectionTitle {
+section.Section.SupportSection .SectionInner {
+
+}
+section.Section.SupportSection section.SectionTitle {
 	@apply sr-only;
 }
-.Support {
+.SupportSubsections {
 	@apply grid;
 	@apply grid-cols-2;
 	@apply gap-12;
 	/* @apply space-y-12; */
 }
-.SupportSection {
+.SupportSubection {
 	/* @apply p-4; */
 	/* @apply bg-white; */
 	/* @apply rounded-lg; */
 }
-.SupportSectionTitle {
+.SupportSubectionTitle {
 	@apply text-2xl;
+	/* @apply text-left; */
 	@apply font-body-bold;
 	@apply text-primary;
 }
-.SupportSectionList {
+.SupportSubectionList {
 	@apply p-0;
 	@apply m-0;
 	/* @apply grid; */
 	/* @apply grid-cols-2; */
 	/* @apply gap-4; */
 }
-.SupportSectionListItem {
+.SupportSubectionListItem {
 	@apply p-0;
-	@apply max-w-72;
-}
-.SupportSectionListItemImage {
 	@apply w-full;
 }
-.SupportSectionListItem a span {
+.SupportSubectionListItemImage {
+	@apply w-full;
+	@apply max-w-72;
+	@apply mx-auto;
+}
+.SupportSubectionListItem a span {
 	@apply text-2xl;
 	@apply font-display;
 	@apply font-display-bold;
 }
-.SupportSectionListItem a span:not(:only-child) {
+.SupportSubectionListItem a span:not(:only-child) {
 	@apply sr-only;
 }

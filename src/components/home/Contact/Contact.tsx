@@ -1,6 +1,6 @@
-import { getLang } from "@/utils/selectors"
 import RichText from "@/components/common/RichText";
 import Button from "@/components/common/Button";
+import Section from "@/components/common/Section";
 
 export default function Contact({
 	data,
@@ -10,25 +10,15 @@ export default function Contact({
 	locale: string;
 }) {
 	return (
-		<div
-			className="HomeSectionInner"
+		<Section
+			title={data?.title}
+			lede={data?.lede}
+			center={true}
+			className="Contact"
 		>
-			<hgroup
-				className="HomeSectionHeading"
-			>
-				<h2
-					className="HomeSectionTitle"
-				>
-					{data?.title}
-				</h2>
-				<RichText
-					data={data?.lede}
-					className="HomeSectionLede"
-				/>
-			</hgroup>
 			<RichText
 				data={data?.body}
-				className="HomeSectionBody"
+				className="ContactBody"
 			/>
 			<Button
 				size="large"
@@ -38,6 +28,6 @@ export default function Contact({
 			>
 				info@showyourworklab.org
 			</Button>
-		</div>
+		</Section>
 	);
 }

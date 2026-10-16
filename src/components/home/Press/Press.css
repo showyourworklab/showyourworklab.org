@@ -1,9 +1,9 @@
-#press .HomeSectionInner {
+section.Section.PressSection .SectionInner {
 	@apply px-0;
 	@apply max-w-none;
 	/* @apply max-w-inner-xl; */
 }
-#press .HomeSectionHeading {
+section.Section.PressSection .SectionHeading {
 	@apply px-4;
 	@apply md:px-8;
 	/* @apply mx-auto; */
@@ -21,55 +21,4 @@
 .PressItem {
 	@apply w-full;
 	@apply sm:w-80;
-	@apply bg-white;
-	/* @apply rounded-2xl; */
-	/* @apply shadow-sm; */
-	@apply flex;
-	@apply overflow-hidden;
-}
-a.PressItemLink {
-	@apply flex;
-	@apply flex-col;
-	text-decoration: none;
-	@apply border;
-	@apply border-primary-light;
-}
-a.PressItemLink:hover {
-	@apply border-primary;
-}
-figure.PressItemFigure {
-	@apply border-b;
-	@apply border-b-primary-light;
-	@apply bg-primary;
-}
-a.PressItemLink:hover figure.PressItemFigure {
-	@apply border-b-primary;
-}
-figure.PressItemFigure figcaption.FigureCaption {
-	@apply right-1;
-	@apply bottom-1;
-}
-a.PressItemLink:hover figure.PressItemFigure img {
-	filter: grayscale(100);
-    mix-blend-mode: luminosity;
-}
-.PressItemContent {
-	@apply p-4;
-	@apply flex;
-	@apply flex-col;
-	@apply flex-1;
-	/* @apply justify-between; */
-}
-.PressItemSource {
-    @apply font-body-bold;
-	@apply text-primary-dark;
-}
-h3.PressItemTitle {
-	@apply text-xl;
-	@apply leading-tight;
-	@apply mb-auto;
-}
-.PressItemDate {
-	@apply mt-1;
-	@apply text-primary-light;
 }

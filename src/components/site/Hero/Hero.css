@@ -7,8 +7,9 @@
 	background-color: var(--color-primary);
 }
 figure.HeroFigure {
-	position: absolute;
 	inset: 0;
+	position: absolute;
+	@apply border-t-0;
 }
 figure.HeroFigure img {
 	@apply object-cover;
