@@ -14,6 +14,7 @@ export default function Support({
 			title={data?.title}
 			lede={data?.lede}
 			center={true}
+			hideTitle={true}
 			className="SupportSection"
 		>
 			<RichText

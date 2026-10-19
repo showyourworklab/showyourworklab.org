@@ -19,6 +19,7 @@ export const Press: GlobalConfig = {
 			name: "title",
 			type: "text",
 			required: true,
+			localized: true,
 			defaultValue: getLang("home", "press", "title"),
 		},
 		{

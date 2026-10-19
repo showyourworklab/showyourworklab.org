@@ -121,13 +121,12 @@ export const DICTIONARY_NO = {
 	social_email_title: "info@showyourworklab.org",
 	social_email_url: "mailto:info@showyourworklab.org",
 	// Home
-	home_about_title: "Om",
-	home_code_title: "Kode",
+	home_about_title: "Om oss",
 	home_updates_title: "Oppdateringer",
-	home_press_title: "Pressen",
+	home_press_title: "Presse",
 	home_team_title: "Team",
 	home_contact_title: "Kontakt",
-	home_support_title: "Støtte",
+	home_support_title: "Støttet av",
 	// Updates
 	home_updates_prompt: "Les mer",
 	// Verify

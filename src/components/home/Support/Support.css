@@ -9,7 +9,7 @@ section.Section.SupportSection section.SectionTitle {
 }
 .SupportSubsections {
 	@apply grid;
-	@apply grid-cols-2;
+	@apply md:grid-cols-2;
 	@apply gap-12;
 	/* @apply space-y-12; */
 }

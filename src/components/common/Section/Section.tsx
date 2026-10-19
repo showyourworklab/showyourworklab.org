@@ -7,6 +7,7 @@ export interface SectionProps extends Omit<AllHTMLAttributes<HTMLElement>, "size
 	lede?: any;
 	body?: any
 	center?: boolean;
+	hideTitle?: boolean;
 };
 
 export default function Section({
@@ -14,6 +15,7 @@ export default function Section({
 	lede,
 	body,
 	center,
+	hideTitle,
 	children,
 	className,
 	...props
@@ -23,6 +25,7 @@ export default function Section({
 			className={cn(
 				"Section",
 				center ? "Section_center" : null,
+				hideTitle ? "Section_hideTitle" : null,
 				className
 			)}
 			{...props}

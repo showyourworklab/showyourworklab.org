@@ -31,6 +31,9 @@ hgroup.SectionHeading {
 hgroup.SectionHeading:last-child {
 	@apply mb-0;
 }
+section.Section.Section_hideTitle hgroup.SectionHeading {
+	@apply sr-only;
+}
 .SectionTab {
 	/* @apply pt-4;
 	@apply border-t;

@@ -19,6 +19,7 @@ export const Team: GlobalConfig = {
 			name: "title",
 			type: "text",
 			required: true,
+			localized: true,
 			defaultValue: getLang("home", "team", "title"),
 		},
 		{

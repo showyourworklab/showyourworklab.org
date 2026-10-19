@@ -19,6 +19,7 @@ export const Support: GlobalConfig = {
 			name: "title",
 			type: "text",
 			required: true,
+			localized: true,
 			defaultValue: getLang("home", "support", "title"),
 		},
 		{

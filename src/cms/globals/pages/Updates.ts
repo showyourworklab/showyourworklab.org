@@ -19,6 +19,7 @@ export const Updates: GlobalConfig = {
 			name: "title",
 			type: "text",
 			required: true,
+			localized: true,
 			defaultValue: getLang("home", "updates", "title"),
 		},
 		{
@@ -47,6 +48,7 @@ export const Updates: GlobalConfig = {
 					name: "overline",
 					label: "Overline",
 					type: "text",
+					localized: true,
 				},
 				{
 					name: "title",
