@@ -22,6 +22,12 @@ export const Home: GlobalConfig = {
 			relationTo: "uploads",
 			displayPreview: true,
 		},
+		// {
+		// 	name: "title",
+		// 	label: "Title",
+		// 	type: "text",
+		// 	localized: true,
+		// },
 		{
 			name: "lede",
 			label: "Lede",

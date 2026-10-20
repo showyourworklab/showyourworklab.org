@@ -41,7 +41,7 @@ export const DEFAULT_LOCALE = "en";
 export const DICTIONARY_EN = {
 	// Site
 	site_title: "Show Your Work Lab",
-	site_tagline: "We prove what's real rather than identify what's fake",
+	site_tagline: "We prove what's real rather than what's fake",
 	site_description: "Show Your Work Lab provides news organizations with the tools and strategies to make visual journalism verifiable, transparent, and trustworthy.",
 	// Socials
 	social_linkedin_title: "LinkedIn",
@@ -109,7 +109,7 @@ export const DICTIONARY_EN = {
 export const DICTIONARY_NO = {
 	// Site
 	site_title: "Show Your Work Lab",
-	site_tagline: "Vi beviser hva som er ekte i stedet for å identifisere hva som er falskt",
+	site_tagline: "Vi beviser det som er ekte fremfor å lete etter det som er falskt",
 	site_description: "Show Your Work Lab gir nyhetsorganisasjoner verktøyene og strategiene for å gjøre visuell journalistikk etterprøvbar, transparent og troverdig.",
 	// Socials
 	social_linkedin_title: "LinkedIn",
