@@ -5,6 +5,12 @@
 	position: relative;
 	width: 100%;
 }
+.CarouselRoot.CarouselRoot_fullWidth {
+	--carousel-padding: calc(var(--spacing) * 4);
+	@media (width >= 48rem) {
+		--carousel-padding: calc(var(--spacing) * 8);
+	}
+}
 .CarouselViewport {
 	overflow: hidden;
 }
@@ -13,10 +19,10 @@
 	flex: 1;
 	min-width: 0;
 	overflow: hidden;
-	border-radius: 0.5rem;
 	scrollbar-width: none;
 	-webkit-scrollbar-width: none;
 	-ms-overflow-style: none;
+	@apply pb-1;
 }
 .CarouselItemGroup::-webkit-scrollbar {
 	display: none;
@@ -30,12 +36,15 @@
 	align-items: center;
 	justify-content: center;
 	width: 100%;
-	height: 12rem;
 }
 .CarouselControl {
 	display: flex;
 	align-items: center;
 	gap: 0.5rem;
+}
+.CarouselRoot_fullWidth .CarouselControl {
+	@apply px-4;
+	@apply md:px-8;
 }
 .CarouselControl[data-orientation='vertical'] {
 	flex-direction: column;
@@ -58,13 +67,14 @@
 }
 .CarouselTrigger svg {
 	@apply size-4;
+	@apply stroke-current;
 }
 .CarouselTrigger:hover:not(:disabled, [data-disabled]) {
-	background: var(--demo-neutral-subtle);
+	@apply text-primary;
 }
 
 .CarouselTrigger:focus-visible {
-	outline: 2px solid var(--demo-coral-focus-ring);
+	outline: 2px solid var(--color-tertiary);
 	outline-offset: -1px;
 }
 .CarouselTrigger:is(:disabled, [data-disabled]) {
@@ -85,7 +95,7 @@
 .CarouselIndicator {
 	width: 0.625rem;
 	height: 0.625rem;
-	@apply bg-primary-light;
+	@apply bg-primary;
 	opacity: 0.5;
 	border-radius: 9999px;
 	border: none;
@@ -115,8 +125,8 @@
 	outline-offset: 2px;
 }
 .CarouselThumbnailIndicator[data-current] {
-	border-color: var(--demo-coral-solid);
 	opacity: 1;
+	@apply bg-primary;
 }
 .CarouselThumbnailIndicator img {
 	width: 100%;

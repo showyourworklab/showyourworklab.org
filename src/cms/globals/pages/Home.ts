@@ -1,6 +1,6 @@
-import { revalidatePath } from "next/cache";
 import type { Field, GlobalConfig } from "payload";
 import { getLang } from "@/utils/selectors";
+import { revalidateSite } from "@/cms/utils/helpers";
 
 export const Home: GlobalConfig = {
 	slug: "home",
@@ -12,12 +12,7 @@ export const Home: GlobalConfig = {
 		drafts: true,
 	},
 	hooks: {
-		afterChange: [
-			async ({ doc, req }) => {
-				revalidatePath(`/`);
-				return doc;
-			},
-		],
+		afterChange: [revalidateSite],
 	},
 	fields: [
 		{

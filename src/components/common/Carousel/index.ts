@@ -1,2 +1,3 @@
 import Carousel, { type CarouselProps } from './Carousel';
-export { Carousel as default, Carousel, CarouselProps };
+import CarouselItem, { type CarouselItemProps } from './components/CarouselItem';
+export { Carousel as default, Carousel, CarouselProps, CarouselItem, CarouselItemProps };

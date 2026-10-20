@@ -1,0 +1,74 @@
+/* Section */
+section.Section {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+}
+section.Section:nth-of-type(odd) {
+	@apply bg-secondary;
+}
+section.Section:nth-of-type(even) {
+	@apply bg-secondary-dark;
+}
+section.Section:nth-of-type(odd) .button:is(:hover, :focus) {
+	@apply bg-secondary-dark;
+}
+section.Section:nth-of-type(even) .button:is(:hover, :focus) {
+	@apply bg-secondary;
+}
+.SectionInner {
+	@apply w-full;
+	@apply max-w-inner;
+	@apply m-auto;
+	@apply px-4;
+	@apply py-8;
+	@apply md:px-8;
+	@apply md:py-24; 
+}
+hgroup.SectionHeading {
+	@apply mb-12;
+}
+hgroup.SectionHeading:last-child {
+	@apply mb-0;
+}
+section.Section.Section_hideTitle hgroup.SectionHeading {
+	@apply sr-only;
+}
+.SectionTab {
+	/* @apply pt-4;
+	@apply border-t;
+	@apply border-t-8;
+	@apply border-t-primary; */
+	/* @apply inline-block; */
+}
+.SectionTitle {
+	@apply mb-4;
+}
+.SectionLede {
+	@apply text-primary-light;
+    @apply font-body;
+    @apply text-2xl;
+	@apply font-body-normal;
+}
+.SectionLede a,
+.SectionLede u,
+.SectionLede strong {
+	@apply text-primary;
+}
+.SectionContent {
+	
+}
+.SectionBody {
+
+}
+.SectionBody p, .SectionBody ul {
+	@apply max-w-paragraph;
+}
+/* Section > Center */
+section.Section.Section_center {
+	@apply text-center;
+}
+section.Section.Section_center .SectionLede {
+	@apply mx-auto;
+	@apply max-w-md;
+}

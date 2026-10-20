@@ -1,3 +1,16 @@
+section.Section.UpdatesSection .SectionInner {
+	@apply px-0;
+	@apply max-w-none;
+}
+section.Section.UpdatesSection .SectionHeading {
+	@apply px-4;
+	@apply md:px-8;
+	/* @apply mx-auto; */
+	/* @apply max-w-inner-xl; */
+}
+.UpdatesCarousel {
+	
+}
 .UpdatesItems {
 	@apply m-0;
 	@apply p-0;
@@ -5,29 +18,11 @@
 	@apply gap-y-1;
 }
 .UpdatesItem {
-	@apply p-0;
-	@apply not-last:pb-4;
-	@apply not-last:mb-4;
-	@apply not-last:border-b-2;
-	@apply not-last:border-b-secondary-dark;
+	@apply w-full;
+	@apply sm:w-96;
 }
-h3.UpdatesItemTitle {
-	@apply mb-1;
+.UpdatesItem h3.CardItemTitle {
 	@apply text-2xl;
-}
-a.UpdatesItemTitleLink {
-	
-}
-.UpdatesItemBlurb {
-}
-.UpdatesItemFooter {
-	@apply flex;
-	@apply gap-x-4;
-}
-.UpdatesItemDate {
-	@apply text-primary-light;
-}
-.UpdatesItemPrompt {
-	@apply text-sm;
-	@apply text-primary-light;
+	@apply leading-tight;
+	@apply mb-auto;
 }

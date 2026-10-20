@@ -7,11 +7,13 @@ import { HOME_SECTIONS } from "@/utils/constants";
 import { getLang } from "@/utils/selectors";
 import Hero from "@/components/site/Hero";
 import About from "@/components/home/About";
+import Announcement from "@/components/home/Announcement";
 import Updates from "@/components/home/Updates";
 import Press from "@/components/home/Press";
 import Team from "@/components/home/Team";
 import Contact from "@/components/home/Contact";
 import Support from "@/components/home/Support";
+import { Fragment } from "react/jsx-runtime";
 
 export default async function Home({
 	params
@@ -51,18 +53,17 @@ export default async function Home({
 			/>
 			<div>
 				{HOME_SECTIONS.map((section: string, index: number) =>
-					<section
+					<Fragment
 						key={index}
-						id={section}
-						className="HomeSection"
 					>
+						{section === "announcement" ? <Announcement data={data?.announcement} locale={locale} /> : null}
 						{section === "about" ? <About data={data?.about} locale={locale} /> : null}
 						{section === "updates" ? <Updates data={data?.updates} locale={locale} /> : null}
 						{section === "team" ? <Team data={data?.team} locale={locale} /> : null}
 						{section === "press" ? <Press data={data?.press} locale={locale} /> : null}
 						{section === "contact" ? <Contact data={data?.contact} locale={locale} /> : null}
 						{section === "support" ? <Support data={data?.support} locale={locale} /> : null}
-					</section>
+					</Fragment>
 				)}
 			</div>
 		</div>

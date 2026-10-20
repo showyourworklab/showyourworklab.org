@@ -140,13 +140,16 @@ li {
 	margin-top: 0;
 }
 h1 {
-	@apply text-6xl;
+	@apply text-5xl;
+	@apply md:text-6xl;
 }
 h2 {
-	@apply text-5xl;
+	@apply text-4xl;
+	@apply md:text-5xl;
 }
 h3 {
-	@apply text-4xl;
+	@apply text-3xl;
+	@apply md:text-4xl;
 }
 /* Code */
 code {
@@ -165,6 +168,8 @@ a code {
 /* Imports > Components */
 /* Imports > Components > Common */
 @import "../components/common/Button/Button.css";
+@import "../components/common/Card/Card.css";
+@import "../components/common/Section/Section.css";
 @import "../components/common/Field/Field.css";
 @import "../components/common/Figure/Figure.css";
 @import "../components/common/Carousel/Carousel.css";
@@ -175,6 +180,7 @@ a code {
 @import "../components/site/Hero/Hero.css";
 @import "../components/site/Footer/Footer.css";
 /* Imports > Components > Home */
+@import "../components/home/Announcement/Announcement.css";
 @import "../components/home/About/About.css";
 @import "../components/home/Updates/Updates.css";
 @import "../components/home/Press/Press.css";

@@ -1,6 +1,6 @@
-import { revalidatePath } from "next/cache";
 import type { GlobalConfig } from "payload";
 import { getLang } from "@/utils/selectors";
+import { revalidateSite } from "@/cms/utils/helpers";
 
 export const Press: GlobalConfig = {
 	slug: "press",
@@ -12,18 +12,14 @@ export const Press: GlobalConfig = {
 		drafts: true,
 	},
 	hooks: {
-		afterChange: [
-			async ({ doc, req }) => {
-				revalidatePath(`/`);
-				return doc;
-			},
-		],
+		afterChange: [revalidateSite],
 	},
 	fields: [
 		{
 			name: "title",
 			type: "text",
 			required: true,
+			localized: true,
 			defaultValue: getLang("home", "press", "title"),
 		},
 		{
@@ -43,6 +39,13 @@ export const Press: GlobalConfig = {
 			label: "Items",
 			type: "array",
 			fields: [
+				{
+					name: "image",
+					label: "Image",
+					type: "upload",
+					relationTo: "uploads",
+					displayPreview: true,
+				},
 				{
 					name: "source",
 					label: "Source",

@@ -1,4 +1,12 @@
+section.Section.ContactSection {
+	@apply text-center;
+}
+section.Section.ContactSection .SectionLede {
+	@apply mx-auto;
+	@apply max-w-md;
+}
 a.ContactButton {
 	@apply text-primary;
 	@apply bg-white;
+	@apply border-primary-light;
 }

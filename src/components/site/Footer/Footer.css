@@ -23,6 +23,7 @@ footer.Footer a {
 	@apply md:gap-4;
 }
 .FooterBranding a[href="#home"] {
+	display: inline-block;
 	text-decoration: none;
 }
 .FooterBranding a[href="#home"] img {
@@ -65,4 +66,12 @@ li.FooterSocialsItem a.FooterSocialsItemButton {
 	@apply text-base;
 	@apply font-display;
 	@apply font-display-normal;
+	text-decoration: none;
+}
+/* li.FooterSocialsItem a.FooterSocialsItemButton .ButtonInner > span {
+	@apply flex;
+	@apply items-center;
+} */
+li.FooterSocialsItem svg.FooterSocialsItemButtonIcon {
+	@apply size-5;
 }

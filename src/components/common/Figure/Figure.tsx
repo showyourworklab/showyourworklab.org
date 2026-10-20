@@ -1,20 +1,26 @@
 import { HTMLProps } from "react";
+import Image from "next/image";
+import type { Upload } from "@payload-types";
 import { cn } from "@/utils/helpers";
+import { IMAGE_SIZES, type ImageSize } from "@/utils/constants";
 
-export interface FigureProps extends HTMLProps<HTMLDivElement> {
-	src: string;
-	alt: string;
-	caption?: string;
+export interface FigureProps extends Omit<HTMLProps<HTMLDivElement>, "size"> {
+	image?: Upload | number | null;
+	size?: ImageSize;
+	priority?: boolean;
+	fill?: boolean;
 };
 
 export default function Figure({
-	src,
-	alt,
-	caption,
+	image,
+	size = "full",
+	priority = false,
+	fill = false,
 	children,
 	className,
 	...props
 } : FigureProps) {
+	if (!image || typeof image === "number" || !image.filename) return null;
 
 	return (
 		<figure
@@ -24,17 +30,27 @@ export default function Figure({
 			)}
 			{...props}
 		>
-			<img
-				src={src}
-				alt={alt}
+			<Image
+				src={`/uploads/${image.filename}`}
+				alt={image.alt ?? ""}
+				sizes={IMAGE_SIZES[size]}
+				{...(fill
+					? { fill: true }
+					: { width: image.width ?? 0, height: image.height ?? 0 }
+				)}
+				quality={90}
+				loading={priority ? "eager" : "lazy"}
+				fetchPriority={priority ? "high" : "auto"}
+				unoptimized={image.mimeType === "image/svg+xml"}
 			/>
-			{caption ?
+			{image.caption ?
 				<figcaption
 					className="FigureCaption"
 				>
-					{caption}
+					{image.caption}
 				</figcaption>
 			: null}
+			{children}
 		</figure>
 	);
 }

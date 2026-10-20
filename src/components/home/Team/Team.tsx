@@ -1,6 +1,8 @@
 import { getLang } from "@/utils/selectors";
 import RichText from "@/components/common/RichText";
 import Figure from "@/components/common/Figure";
+import Card from "@/components/common/Card";
+import Section from "@/components/common/Section";
 
 export default function Team({
 	data,
@@ -10,78 +12,59 @@ export default function Team({
 	locale: string;
 }) {
 	return (
-		<>
-			<div
-				className="HomeSectionInner"
-			>
-				<hgroup>
-					<h2
-						className="HomeSectionTitle"
-					>
-						{getLang(locale, "home", "team", "title")}
-					</h2>
-					<RichText
-						data={data?.lede}
-						className="HomeSectionLede"
-					/>
-				</hgroup>
-				<RichText
-					data={data?.body}
-					className="HomeSectionBody"
-				/>
-				{data?.items ?
-					<ul
-						className="TeamItems"
-					>
-						{data?.items.map((item: any, index: number) =>
-							<li
-								key={index}
-								className="TeamItem"
+		<Section
+			id="team"
+			title={data?.title}
+			lede={data?.lede}
+			body={data?.body}
+			className="TeamSection"
+		>
+			{data?.items ?
+				<div
+					className="TeamItems"
+				>
+					{data?.items.map((item: any, index: number) =>
+						<Card
+							key={index}
+							image={item?.image}
+							className="TeamItem"
+						>
+							<div
+								className="TeamItemHeading"
 							>
-								{item?.image?.sizes?.small?.url ?
-									<Figure
-										src={item?.image?.sizes?.small?.url}
-										alt={item?.image?.alt}
-										caption={item?.image?.caption}
-									/>
-								: null}
-								<hgroup
-									className="TeamItemHeading"
+								<h3
+									className="TeamItemName"
 								>
-									<h3
-										className="TeamItemName"
-									>
-										{item?.name}
-									</h3>
-									<div
-										className="TeamItemWebsite"
-									>
-										<a
-											href={item?.url}
-											target="_blank"
-											rel="noreferrer nofollow"
-										>
-											{item?.url?.replace("https://", "")}
-										</a>
-									</div>
-								</hgroup>
+									{item?.name}
+								</h3>
 								<div
-									className="TeamItemRole"
+									className="TeamItemWebsite"
 								>
-									{item?.role}
+									<a
+										href={item?.url}
+										target="_blank"
+										rel="noreferrer nofollow"
+									>
+										{item?.url?.replace("https://", "")}
+									</a>
 								</div>
-								<div
-									className="TeamItemBio"
-								>
-									<RichText
-										data={item?.body}
-									/>
-								</div>
-							</li>
-						)}
-					</ul>
-				: null}
-			</div>
-		</>
+							</div>
+							<div
+								className="TeamItemRole"
+							>
+								{item?.role}
+							</div>
+							<div
+								className="TeamItemBio"
+							>
+								<RichText
+									data={item?.body}
+								/>
+							</div>
+						</Card>
+					)}
+				</div>
+			: null}
+		</Section>
 	);
 }

@@ -89,6 +89,7 @@ export interface Config {
   fallbackLocale: ('false' | 'none' | 'null') | false | null | ('en' | 'no') | ('en' | 'no')[];
   globals: {
     home: Home;
+    announcement: Announcement;
     about: About;
     updates: Update;
     team: Team;
@@ -98,6 +99,7 @@ export interface Config {
   };
   globalsSelect: {
     home: HomeSelect<false> | HomeSelect<true>;
+    announcement: AnnouncementSelect<false> | AnnouncementSelect<true>;
     about: AboutSelect<false> | AboutSelect<true>;
     updates: UpdatesSelect<false> | UpdatesSelect<true>;
     team: TeamSelect<false> | TeamSelect<true>;
@@ -154,38 +156,6 @@ export interface Upload {
   focalY?: number | null;
   sizes?: {
     thumbnail?: {
-      url?: string | null;
-      width?: number | null;
-      height?: number | null;
-      mimeType?: string | null;
-      filesize?: number | null;
-      filename?: string | null;
-    };
-    small?: {
-      url?: string | null;
-      width?: number | null;
-      height?: number | null;
-      mimeType?: string | null;
-      filesize?: number | null;
-      filename?: string | null;
-    };
-    medium?: {
-      url?: string | null;
-      width?: number | null;
-      height?: number | null;
-      mimeType?: string | null;
-      filesize?: number | null;
-      filename?: string | null;
-    };
-    large?: {
-      url?: string | null;
-      width?: number | null;
-      height?: number | null;
-      mimeType?: string | null;
-      filesize?: number | null;
-      filename?: string | null;
-    };
-    xl?: {
       url?: string | null;
       width?: number | null;
       height?: number | null;
@@ -325,46 +295,6 @@ export interface UploadsSelect<T extends boolean = true> {
               filesize?: T;
               filename?: T;
             };
-        small?:
-          | T
-          | {
-              url?: T;
-              width?: T;
-              height?: T;
-              mimeType?: T;
-              filesize?: T;
-              filename?: T;
-            };
-        medium?:
-          | T
-          | {
-              url?: T;
-              width?: T;
-              height?: T;
-              mimeType?: T;
-              filesize?: T;
-              filename?: T;
-            };
-        large?:
-          | T
-          | {
-              url?: T;
-              width?: T;
-              height?: T;
-              mimeType?: T;
-              filesize?: T;
-              filename?: T;
-            };
-        xl?:
-          | T
-          | {
-              url?: T;
-              width?: T;
-              height?: T;
-              mimeType?: T;
-              filesize?: T;
-              filename?: T;
-            };
       };
 }
 /**
@@ -457,6 +387,34 @@ export interface Home {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "announcement".
+ */
+export interface Announcement {
+  id: number;
+  title: string;
+  body?: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  } | null;
+  prompt?: string | null;
+  url?: string | null;
+  _status?: ('draft' | 'published') | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "about".
  */
 export interface About {
@@ -510,6 +468,8 @@ export interface About {
           };
           [k: string]: unknown;
         } | null;
+        prompt?: string | null;
+        url?: string | null;
         image?: (number | null) | Upload;
         id?: string | null;
       }[]
@@ -557,6 +517,8 @@ export interface Update {
   } | null;
   items?:
     | {
+        image?: (number | null) | Upload;
+        overline?: string | null;
         title?: string | null;
         blurb?: {
           root: {
@@ -686,6 +648,7 @@ export interface Press {
   } | null;
   items?:
     | {
+        image?: (number | null) | Upload;
         source?: string | null;
         title?: string | null;
         url?: string | null;
@@ -807,6 +770,20 @@ export interface HomeSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "announcement_select".
+ */
+export interface AnnouncementSelect<T extends boolean = true> {
+  title?: T;
+  body?: T;
+  prompt?: T;
+  url?: T;
+  _status?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "about_select".
  */
 export interface AboutSelect<T extends boolean = true> {
@@ -818,6 +795,8 @@ export interface AboutSelect<T extends boolean = true> {
     | {
         title?: T;
         body?: T;
+        prompt?: T;
+        url?: T;
         image?: T;
         id?: T;
       };
@@ -837,6 +816,8 @@ export interface UpdatesSelect<T extends boolean = true> {
   items?:
     | T
     | {
+        image?: T;
+        overline?: T;
         title?: T;
         blurb?: T;
         url?: T;
@@ -882,6 +863,7 @@ export interface PressSelect<T extends boolean = true> {
   items?:
     | T
     | {
+        image?: T;
         source?: T;
         title?: T;
         url?: T;

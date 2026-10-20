@@ -2,18 +2,19 @@ export const PAGES = [
 	"home",
 ];
 export const HOME_SECTIONS = [
+	"announcement",
 	"about",
 	"updates",
-	"team",
 	"press",
+	"team",
 	"contact",
 	"support"
 ];
 export const HOME_SECTIONS_NAV = [
 	"about",
 	"updates",
-	"team",
 	"press",
+	"team",
 	"contact",
 ];
 export const SOCIALS = [
@@ -52,8 +53,9 @@ export const DICTIONARY_EN = {
 	social_email_title: "info@showyourworklab.org",
 	social_email_url: "mailto:info@showyourworklab.org",
 	// Home
+	home_announcement_title: "Announcement",
 	home_about_title: "About",
-	home_code_title: "Code",
+	home_project_title: "Projects",
 	home_updates_title: "Updates",
 	home_press_title: "Press",
 	home_team_title: "Team",
@@ -119,13 +121,13 @@ export const DICTIONARY_NO = {
 	social_email_title: "info@showyourworklab.org",
 	social_email_url: "mailto:info@showyourworklab.org",
 	// Home
-	home_about_title: "Om",
-	home_code_title: "Kode",
+	home_announcement_title: "Nyhet",
+	home_about_title: "Om oss",
 	home_updates_title: "Oppdateringer",
-	home_press_title: "Pressen",
+	home_press_title: "Presse",
 	home_team_title: "Team",
 	home_contact_title: "Kontakt",
-	home_support_title: "Støtte",
+	home_support_title: "Støttet av",
 	// Updates
 	home_updates_prompt: "Les mer",
 	// Verify
@@ -175,3 +177,19 @@ export const DICTIONARIES = {
 	en: DICTIONARY_EN,
 	no: DICTIONARY_NO
 };
+// How wide each kind of image displays, so the browser downloads the right file size.
+// Pick one with <Figure size="..." />; add a preset here when a new layout needs one.
+export const IMAGE_SIZES = {
+	// Spans the whole viewport
+	full: "100vw",
+	// Hero background: cover-cropped and wider than the viewport on tablets; phones get a lighter file
+	hero: "(max-width: 640px) 520px, (max-width: 840px) 840px, 100vw",
+	// Half of a two-column layout on large screens, full width below (About)
+	half: "(min-width: 1024px) 50vw, 100vw",
+	// Two-column grid from tablet up (Team)
+	grid: "(min-width: 768px) 50vw, 100vw",
+	// Fixed-width card in a carousel (Updates, Press)
+	card: "(min-width: 640px) 384px, 100vw",
+} as const;
+
+export type ImageSize = keyof typeof IMAGE_SIZES;

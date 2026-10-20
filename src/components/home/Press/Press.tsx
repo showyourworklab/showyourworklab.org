@@ -1,6 +1,7 @@
-import { getLang } from "@/utils/selectors";
 import { formatDate } from "@/utils/helpers";
-import RichText from "@/components/common/RichText";
+import Card from "@/components/common/Card";
+import Section from "@/components/common/Section";
+import Carousel, { CarouselItem } from "@/components/common/Carousel";
 
 export default function Press({
 	data,
@@ -9,65 +10,43 @@ export default function Press({
 	data: any;
 	locale: string;
 }) {
+	const sortedItems = data?.items
+		.sort((a: any, b: any) =>
+			new Date(b.date).getTime() - new Date(a.date).getTime()
+		);
+
 	return (
-		<>
-			<div
-				className="HomeSectionInner"
+		<Section
+			id="press"
+			title={data?.title}
+			lede={data?.lede}
+			body={data?.body}
+			className="PressSection"
+		>
+			<Carousel
+				slideCount={data?.items.length}
+				fullWidth={true}
+				className="PressCarousel"
 			>
-				<hgroup
-					className="HomeSectionHeading"
-				>
-					<h2
-						className="HomeSectionTitle"
+				{sortedItems.map((item: any, index: number) =>
+					<CarouselItem
+						key={index}
+						index={index}
+						className="PressItem"
 					>
-						{getLang(locale, "home", "press", "title")}
-					</h2>
-					<RichText
-						data={data?.lede}
-						className="HomeSectionLede"
-					/>
-				</hgroup>
-				<RichText
-					data={data?.body}
-					className="HomeSectionBody"
-				/>
-				<ul
-					className="PressItems"
-				>
-					{data?.items
-						.sort((a: any, b: any) =>
-							new Date(b.date).getTime() - new Date(a.date).getTime()
-						)
-						.map((item: any, index: number) =>
-							<li
-								key={index}
-								className="PressItem"
-							>
-								<div
-									className="PressItemSource"
-								>
-									{item.source}
-								</div>
-								<h3
-									className="PressItemTitle"
-								>
-									<a
-										href={item.url}
-										target="_blank"
-										rel="noreferrer nofollow"
-									>
-										{item.title}
-									</a>
-								</h3>
-								<div
-									className="PressItemDate"
-								>
-									{formatDate(locale, item.date)}
-								</div>
-							</li>
-					)}
-				</ul>
-			</div>
-		</>
+						<Card
+							image={item?.image}
+							title={`"${item?.title}"`}
+							overline={item.source}
+							footer={formatDate(locale, item.date)}
+							href={item.url}
+							target="_blank"
+							rel="noreferrer nofollow"
+							className="PressItemCard"
+						/>
+					</CarouselItem>
+				)}
+			</Carousel>
+		</Section>
 	);
 }

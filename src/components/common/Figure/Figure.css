@@ -1,7 +1,8 @@
 figure.Figure {
 	position: relative;
-	@apply rounded-2xl;
-	@apply overflow-hidden;
+	@apply border-t;
+	@apply border-t-8;
+	@apply border-t-primary;
 }
 figure.Figure img {
 	@apply w-full;

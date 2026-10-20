@@ -1,6 +1,6 @@
-import { revalidatePath } from "next/cache";
 import type { GlobalConfig } from "payload";
 import { getLang } from "@/utils/selectors";
+import { revalidateSite } from "@/cms/utils/helpers";
 
 export const About: GlobalConfig = {
 	slug: "about",
@@ -12,18 +12,14 @@ export const About: GlobalConfig = {
 		drafts: true,
 	},
 	hooks: {
-		afterChange: [
-			async ({ doc, req }) => {
-				revalidatePath(`/`);
-				return doc;
-			},
-		],
+		afterChange: [revalidateSite],
 	},
 	fields: [
 		{
 			name: "title",
 			type: "text",
 			required: true,
+			localized: true,
 			defaultValue: getLang("home", "about", "title"),
 		},
 		{
@@ -55,6 +51,42 @@ export const About: GlobalConfig = {
 					type: "richText",
 					localized: true,
 				},
+				{
+					name: "prompt",
+					label: "Prompt",
+					type: "text",
+				},
+				{
+					name: "url",
+					label: "URL",
+					type: "text",
+				},
+				// {
+				// 	name: "items",
+				// 	label: "Items",
+				// 	type: "array",
+				// 	fields: [
+				// 		{
+				// 			name: "title",
+				// 			label: "Title",
+				// 			type: "text",
+				// 			required: true,
+				// 			localized: true,
+				// 		},
+				// 		{
+				// 			name: "prompt",
+				// 			label: "Prompt",
+				// 			type: "text",
+				// 			localized: true,
+				// 		},
+				// 		{
+				// 			name: "url",
+				// 			label: "URL",
+				// 			type: "text",
+				// 			localized: true,
+				// 		},
+				// 	]
+				// },
 				{
 					name: "image",
 					label: "Image",

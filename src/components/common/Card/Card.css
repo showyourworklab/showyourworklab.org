@@ -1,0 +1,66 @@
+.Card {
+	@apply flex;
+	@apply flex-col;
+	@apply h-full;
+	/* @apply border; */
+	/* @apply border-primary-light; */
+	@apply bg-white;
+	@apply relative;
+	@apply overflow-hidden;
+}
+a.Card {
+	text-decoration: none;
+}
+a.Card:hover {
+	@apply border-primary;
+}
+figure.CardFigure {
+	/* @apply border-b; */
+	/* @apply border-b-primary-light; */
+	@apply bg-primary;
+}
+figure.CardFigure figcaption.FigureCaption {
+	@apply right-1;
+	@apply bottom-1;
+}
+a.Card:hover figure.CardFigure {
+	/* @apply border-b-primary; */
+}
+a.Card:hover figure.CardFigure img {
+	filter: grayscale(100);
+    mix-blend-mode: luminosity;
+}
+.CardInner {
+	@apply p-4;
+	@apply flex;
+	@apply flex-col;
+	@apply flex-1;
+}
+.CardHeading {
+	
+}
+.CardOverline {
+	@apply mb-1;
+	@apply font-body-bold;
+	/* @apply text-primary-dark; */
+
+	@apply absolute;
+	@apply top-0;
+	@apply left-0;
+	@apply px-2;
+	@apply bg-primary;
+	@apply text-white;
+}
+.CardTitle {
+	@apply text-xl;
+	@apply leading-tight;
+	@apply mb-auto;
+}
+.CardBody {
+	
+}
+.CardFooter {
+	@apply pt-2;
+	@apply mt-auto;
+	@apply text-primary-light;
+}

@@ -1,8 +1,9 @@
-import { hasText } from "@payloadcms/richtext-lexical/shared";
-import { getLang } from "@/utils/selectors"
-import RichText from "@/components/common/RichText";
 import { cn } from "@/utils/helpers";
 import Figure from "@/components/common/Figure";
+import Section from "@/components/common/Section";
+import RichText from "@/components/common/RichText";
+import Button from "@/components/common/Button";
+import Icon from "@/components/common/Icon";
 
 export default function About({
 	data,
@@ -13,48 +14,85 @@ export default function About({
 }) {
 	return (
 		<>
+			<span id="about"></span>
 			{data?.sections.map((section: any, index: number) =>
-				<section
+				<Section
 					key={index}
-					className={cn(
-						"HomeSectionInner",
-						"HomeSectionSubsection"
-					)}
+					className="AboutSection"
 				>
 					<div
-						className="HomeSectionSubsectionColumns"
+						className="AboutSectionColumns"
 					>
 						<div
 							className={cn(
-								"HomeSectionSubsectionColumn",
-								"HomeSectionSubsectionContent"
+								"AboutSectionColumn",
+								"AboutSectionText"
 							)}
 						>
-							<h3
-								className="HomeSectionSubsectionContentTitle"
+							<div
+								className="AboutSectionTextInner"
 							>
-								{section?.title}
-							</h3>
-							<RichText
-								data={section?.body}
-								className="HomeSectionSubsectionContentBody"
-							/>
+								<h3
+									className="AboutSectionTextTitle"
+								>
+									{section?.title}
+								</h3>
+								<RichText
+									data={section?.body}
+									className="AboutSectionTextBody"
+								/>
+								{section?.url && section?.prompt ?
+									<Button
+										href={section.url}
+										target="_blank"
+										size="large"
+										outlined={true}
+										before={
+											<Icon
+												type="mail"
+											/>
+										}
+										after={
+											<Icon
+												type="right"
+											/>
+										}
+										className="AboutSectionTexButton"
+									>
+										{section.prompt}
+									</Button>
+								: null}
+								{/* {section?.items?.map((item: any, index: number) =>
+									<div
+										className="AboutSectionCallout"
+									>
+										{item.title}&nbsp;
+										{item.url && item.prompt ?
+											<a
+												href={item.url}
+												target="_blank"
+											>
+												{item.prompt}
+											</a>
+										: null}
+									</div>
+								)} */}
+							</div>
 						</div>
 						<div
 							className={cn(
-								"HomeSectionSubsectionColumn",
-								"HomeSectionSubsectionImage"
+								"AboutSectionColumn",
+								"AboutSectionImage"
 							)}
 						>
 							<Figure
-								src={section?.image?.sizes?.large?.url}
-								alt={section?.image?.alt}
-								caption={section?.image?.caption}
-								className="HomeSectionSubsectionImageFigure"
+								image={section?.image}
+								size="half"
+								className="AboutSectionImageFigure"
 							/>
 						</div>
 					</div>
-				</section>
+				</Section>
 			)}
 		</>
 	);
