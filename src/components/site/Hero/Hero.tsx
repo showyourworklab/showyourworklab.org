@@ -5,16 +5,19 @@ import Figure from "@/components/common/Figure";
 import { cn } from "@/utils/helpers";
 import { SerializedEditorState } from "@payloadcms/richtext-lexical/lexical";
 import { useParams } from "next/navigation";
+import { getLang } from "@/utils/selectors";
 
 export default function Hero({
 	image,
 	title,
 	hideTitle,
+	tagline,
 	lede
 } : {
 	image?: Upload | number | null;
 	title?: string;
 	hideTitle?: boolean;
+	tagline?: string;
 	lede?: SerializedEditorState | null;
 }) {
 	const { lang: locale } = useParams<{ lang: string }>();
@@ -46,7 +49,7 @@ export default function Hero({
 				<div
 					className="HeroTagline"
 				>
-					We prove what's real rather than what's fake
+					{getLang(locale, "site", "tagline")}
 				</div>
 				{lede ?
 					<RichText
