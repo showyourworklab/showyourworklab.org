@@ -43,6 +43,11 @@ export default function Hero({
 						{title}
 					</h1>
 				: null}
+				<div
+					className="HeroTagline"
+				>
+					We prove what's real rather than what's fake
+				</div>
 				{lede ?
 					<RichText
 						data={lede}

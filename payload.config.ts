@@ -15,6 +15,7 @@ import Press from "@/cms/globals/pages/Press";
 import Contact from "@/cms/globals/pages/Contact";
 import Support from "@/cms/globals/pages/Support";
 import Uploads from "@/cms/collections/Uploads";
+import Announcement from "@/cms/globals/pages/Announcement";
 // import { AWS_S3_CONFIG } from "@/db/utils/s3";
 
 const filename = fileURLToPath(import.meta.url);
@@ -91,6 +92,7 @@ export default buildConfig({
 	globals: [
 		// Pages
 		Home,
+		Announcement,
 		About,
 		Updates,
 		Team,

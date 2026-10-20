@@ -2,8 +2,8 @@ export const PAGES = [
 	"home",
 ];
 export const HOME_SECTIONS = [
+	"announcement",
 	"about",
-	// "projects",
 	"updates",
 	"press",
 	"team",
@@ -12,7 +12,6 @@ export const HOME_SECTIONS = [
 ];
 export const HOME_SECTIONS_NAV = [
 	"about",
-	// "projects",
 	"updates",
 	"press",
 	"team",
@@ -54,6 +53,7 @@ export const DICTIONARY_EN = {
 	social_email_title: "info@showyourworklab.org",
 	social_email_url: "mailto:info@showyourworklab.org",
 	// Home
+	home_announcement_title: "Announcement",
 	home_about_title: "About",
 	home_project_title: "Projects",
 	home_updates_title: "Updates",
@@ -121,6 +121,7 @@ export const DICTIONARY_NO = {
 	social_email_title: "info@showyourworklab.org",
 	social_email_url: "mailto:info@showyourworklab.org",
 	// Home
+	home_announcement_title: "Nyhet",
 	home_about_title: "Om oss",
 	home_updates_title: "Oppdateringer",
 	home_press_title: "Presse",

@@ -1,5 +1,6 @@
 .Hero {
-	min-height: 35rem;
+	min-height: 45rem;
+	@apply max-h-[100vh];
 	display: flex;
     flex-direction: column;
     position: relative;
@@ -13,28 +14,42 @@ figure.HeroFigure {
 }
 figure.HeroFigure img {
 	@apply object-cover;
-	@apply object-[center_50%];
+	@apply object-[center_30%];
+	@apply sm:object-[center_right];
+	@apply lg:object-[center_50%];
 }
 .HeroInner {
 	position: relative;
 	@apply w-full;
 	@apply max-w-inner-lg;
-	@apply mt-auto;
+	@apply my-auto;
 	@apply mx-auto;
 	@apply py-20;
 	@apply px-4;
 	@apply sm:px-6;
 	@apply md:px-10;
 }
-.HeroLede {
+.HeroTagline {
 	@apply mt-0;
-	@apply text-3xl;
-	@apply md:text-5xl;
+	@apply text-5xl;
+	@apply lg:text-7xl;
 	@apply font-display;
 	@apply font-display-bold;
 	@apply text-secondary;
-	@apply text-left;
-	@apply max-w-inner;
+	@apply text-center;
+	@apply md:text-left;
+	@apply max-w-[46rem];
+	cursor: default;
+}
+.HeroLede {
+	@apply mt-4;
+	@apply text-xl;
+	@apply md:text-2xl;
+	@apply font-body;
+	@apply text-secondary;
+	@apply text-center;
+	@apply md:text-left;
+	@apply max-w-[42rem];
 	cursor: default;
 }
 h1.HeroTitle {
@@ -43,7 +58,7 @@ h1.HeroTitle {
 h1.HeroTitle.HeroTitle_hide {
 	@apply sr-only;
 }
-.HeroTagline {
+/* .HeroTagline {
 	@apply text-secondary;
 	@apply text-2xl;
 	@apply font-body;
@@ -55,4 +70,4 @@ h1.HeroTitle.HeroTitle_hide {
 }
 html[lang="no"] .HeroTagline {
 	@apply max-w-hero-tagline-no;
-}
+} */

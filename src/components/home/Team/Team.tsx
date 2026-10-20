@@ -13,6 +13,7 @@ export default function Team({
 }) {
 	return (
 		<Section
+			id="team"
 			title={data?.title}
 			lede={data?.lede}
 			body={data?.body}

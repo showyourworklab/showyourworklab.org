@@ -17,6 +17,7 @@ export default function Updates({
 
 	return (
 		<Section
+			id="updates"
 			title={data?.title}
 			lede={data?.lede}
 			body={data?.body}

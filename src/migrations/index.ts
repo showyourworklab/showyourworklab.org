@@ -8,6 +8,12 @@ import * as migration_20261014_193816_add_updates_overline from './20261014_1938
 import * as migration_20261015_180148_remove_generated_image_sizes from './20261015_180148_remove_generated_image_sizes';
 import * as migration_20261019_174801_locale_more_fields from './20261019_174801_locale_more_fields';
 import * as migration_20261019_222452_locale_more_fields_2 from './20261019_222452_locale_more_fields_2';
+import * as migration_20261019_234014_add_about_items from './20261019_234014_add_about_items';
+import * as migration_20261020_010936_add_about_prompt from './20261020_010936_add_about_prompt';
+import * as migration_20261020_011106_add_about_prompt_2 from './20261020_011106_add_about_prompt_2';
+import * as migration_20261020_014930_add_announcement from './20261020_014930_add_announcement';
+import * as migration_20261020_015609_add_announcement_2 from './20261020_015609_add_announcement_2';
+import * as migration_20261020_020130_add_announcement_4 from './20261020_020130_add_announcement_4';
 
 export const migrations = [
   {
@@ -58,6 +64,36 @@ export const migrations = [
   {
     up: migration_20261019_222452_locale_more_fields_2.up,
     down: migration_20261019_222452_locale_more_fields_2.down,
-    name: '20261019_222452_locale_more_fields_2'
+    name: '20261019_222452_locale_more_fields_2',
+  },
+  {
+    up: migration_20261019_234014_add_about_items.up,
+    down: migration_20261019_234014_add_about_items.down,
+    name: '20261019_234014_add_about_items',
+  },
+  {
+    up: migration_20261020_010936_add_about_prompt.up,
+    down: migration_20261020_010936_add_about_prompt.down,
+    name: '20261020_010936_add_about_prompt',
+  },
+  {
+    up: migration_20261020_011106_add_about_prompt_2.up,
+    down: migration_20261020_011106_add_about_prompt_2.down,
+    name: '20261020_011106_add_about_prompt_2',
+  },
+  {
+    up: migration_20261020_014930_add_announcement.up,
+    down: migration_20261020_014930_add_announcement.down,
+    name: '20261020_014930_add_announcement',
+  },
+  {
+    up: migration_20261020_015609_add_announcement_2.up,
+    down: migration_20261020_015609_add_announcement_2.down,
+    name: '20261020_015609_add_announcement_2',
+  },
+  {
+    up: migration_20261020_020130_add_announcement_4.up,
+    down: migration_20261020_020130_add_announcement_4.down,
+    name: '20261020_020130_add_announcement_4'
   },
 ];

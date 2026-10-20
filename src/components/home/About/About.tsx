@@ -2,6 +2,8 @@ import { cn } from "@/utils/helpers";
 import Figure from "@/components/common/Figure";
 import Section from "@/components/common/Section";
 import RichText from "@/components/common/RichText";
+import Button from "@/components/common/Button";
+import Icon from "@/components/common/Icon";
 
 export default function About({
 	data,
@@ -12,10 +14,10 @@ export default function About({
 }) {
 	return (
 		<>
+			<span id="about"></span>
 			{data?.sections.map((section: any, index: number) =>
 				<Section
 					key={index}
-					// title={section?.title}
 					className="AboutSection"
 				>
 					<div
@@ -39,6 +41,42 @@ export default function About({
 									data={section?.body}
 									className="AboutSectionTextBody"
 								/>
+								{section?.url && section?.prompt ?
+									<Button
+										href={section.url}
+										target="_blank"
+										size="large"
+										outlined={true}
+										before={
+											<Icon
+												type="mail"
+											/>
+										}
+										after={
+											<Icon
+												type="right"
+											/>
+										}
+										className="AboutSectionTexButton"
+									>
+										{section.prompt}
+									</Button>
+								: null}
+								{/* {section?.items?.map((item: any, index: number) =>
+									<div
+										className="AboutSectionCallout"
+									>
+										{item.title}&nbsp;
+										{item.url && item.prompt ?
+											<a
+												href={item.url}
+												target="_blank"
+											>
+												{item.prompt}
+											</a>
+										: null}
+									</div>
+								)} */}
 							</div>
 						</div>
 						<div

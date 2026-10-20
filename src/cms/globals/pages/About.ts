@@ -52,6 +52,42 @@ export const About: GlobalConfig = {
 					localized: true,
 				},
 				{
+					name: "prompt",
+					label: "Prompt",
+					type: "text",
+				},
+				{
+					name: "url",
+					label: "URL",
+					type: "text",
+				},
+				// {
+				// 	name: "items",
+				// 	label: "Items",
+				// 	type: "array",
+				// 	fields: [
+				// 		{
+				// 			name: "title",
+				// 			label: "Title",
+				// 			type: "text",
+				// 			required: true,
+				// 			localized: true,
+				// 		},
+				// 		{
+				// 			name: "prompt",
+				// 			label: "Prompt",
+				// 			type: "text",
+				// 			localized: true,
+				// 		},
+				// 		{
+				// 			name: "url",
+				// 			label: "URL",
+				// 			type: "text",
+				// 			localized: true,
+				// 		},
+				// 	]
+				// },
+				{
 					name: "image",
 					label: "Image",
 					type: "upload",

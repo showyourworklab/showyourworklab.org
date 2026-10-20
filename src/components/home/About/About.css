@@ -2,9 +2,6 @@ section.Section.AboutSection .SectionInner {
 	/* @apply px-0; */
 	@apply max-w-none;
 }
-section.Section.AboutSection h2.SectionTitle {
-	@apply hidden;
-}
 section.Section.AboutSection .SectionLede {
 	@apply mb-4;
 	@apply sm:mb-0;
@@ -28,18 +25,15 @@ section.Section.AboutSection .SectionLede {
 	@apply bg-secondary;
 }
 .AboutSectionColumns {
+	@apply flex;
 	@apply mx-auto;
 	@apply max-w-inner-xl;
-	@apply flex;
-	/* @apply flex-col; */
-	/* @apply sm:flex-wrap;
-	@apply sm:flex-row; */
 }
-.AboutSection:nth-child(odd) .AboutSectionColumns {
+.AboutSection:nth-child(even) .AboutSectionColumns {
 	@apply flex-col-reverse;
 	@apply lg:flex-row-reverse;
 }
-.AboutSection:nth-child(even) .AboutSectionColumns {
+.AboutSection:nth-child(odd) .AboutSectionColumns {
 	@apply flex-col-reverse;
 	@apply lg:flex-row;
 }
@@ -49,41 +43,20 @@ section.Section.AboutSection .SectionLede {
 	position: relative;
 }
 .AboutSectionText {
-	/* @apply p-4; */
-	/* @apply pt-0; */
-	/* @apply sm:p-6; */
-	/* @apply sm:pt-0; */
-	/* @apply lg:p-10; */
 	@apply my-auto;
-	/* @apply lg:min-h-125; */
 	@apply flex;
 	@apply flex-col;
 	@apply justify-center;
 	@apply lg:items-center;
 }
-.AboutSection:nth-child(odd) .AboutSectionText {
+.AboutSection:nth-child(even) .AboutSectionText {
 	@apply text-left;
 }
-.AboutSection:nth-child(even) .AboutSectionText {
+.AboutSection:nth-child(odd) .AboutSectionText {
 	@apply lg:text-right;
 }
 .AboutSectionTextInner {
 	@apply max-w-2xl;
-	/* @apply pl-12; */
-	/* @apply border-l; */
-	/* @apply border-l-6; */
-	/* @apply border-l-primary; */
-}
-.AboutSection:nth-child(odd) .AboutSectionTextInner {
-	
-}
-.AboutSection:nth-child(even) .AboutSectionTextInner {
-	/* @apply lg:pr-12; */
-	/* @apply lg:border-r; */
-	/* @apply lg:border-r-6; */
-	/* @apply lg:border-r-primary; */
-	/* @apply lg:pl-0; */
-	/* @apply lg:border-l-0; */
 }
 .AboutSectionTextTitle {
 	@apply text-4xl;
@@ -94,7 +67,33 @@ section.Section.AboutSection .SectionLede {
     @apply font-body;
     @apply text-2xl;
 	@apply font-body-normal;
+	@apply mb-4;
 }
+.AboutSectionTexButton {
+	@apply bg-secondary;
+}
+/* .AboutSectionCallout {
+	@apply py-2;
+	@apply px-4;
+	@apply mt-4;
+	@apply bg-white;
+	@apply font-body;
+	@apply font-body-bold;
+	@apply text-primary;
+}
+.AboutSectionCallout a {
+	@apply text-primary-light;
+}
+.AboutSection:nth-child(even) .AboutSectionCallout {
+	@apply border-l;
+	@apply border-l-primary;
+	@apply border-l-4;
+}
+.AboutSection:nth-child(odd) .AboutSectionCallout {
+	@apply border-r;
+	@apply border-r-primary;
+	@apply border-r-4;
+} */
 .AboutSectionImage {
 	@apply p-4;
 	@apply sm:p-6;

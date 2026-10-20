@@ -17,6 +17,7 @@ export default function Press({
 
 	return (
 		<Section
+			id="press"
 			title={data?.title}
 			lede={data?.lede}
 			body={data?.body}

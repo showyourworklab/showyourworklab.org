@@ -7,7 +7,7 @@ import { HOME_SECTIONS } from "@/utils/constants";
 import { getLang } from "@/utils/selectors";
 import Hero from "@/components/site/Hero";
 import About from "@/components/home/About";
-import Projects from "@/components/home/Projects";
+import Announcement from "@/components/home/Announcement";
 import Updates from "@/components/home/Updates";
 import Press from "@/components/home/Press";
 import Team from "@/components/home/Team";
@@ -26,7 +26,7 @@ export default async function Home({
 	});
 	const { isEnabled } = await draftMode();
 
-	const slugs = ["home", ...HOME_SECTIONS].filter(s => s!=="projects") as GlobalSlug[];
+	const slugs = ["home", ...HOME_SECTIONS] as GlobalSlug[];
 	const results = await Promise.all(
 		slugs.map((slug) =>
 			payload.findGlobal({
@@ -56,8 +56,8 @@ export default async function Home({
 					<Fragment
 						key={index}
 					>
+						{section === "announcement" ? <Announcement data={data?.announcement} locale={locale} /> : null}
 						{section === "about" ? <About data={data?.about} locale={locale} /> : null}
-						{section === "projects" ? <Projects data={{}} locale={locale} /> : null}
 						{section === "updates" ? <Updates data={data?.updates} locale={locale} /> : null}
 						{section === "team" ? <Team data={data?.team} locale={locale} /> : null}
 						{section === "press" ? <Press data={data?.press} locale={locale} /> : null}

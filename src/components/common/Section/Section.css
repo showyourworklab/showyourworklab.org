@@ -4,16 +4,16 @@ section.Section {
 	flex-direction: column;
 	position: relative;
 }
-section.Section:nth-child(odd) {
+section.Section:nth-of-type(odd) {
 	@apply bg-secondary;
 }
-section.Section:nth-child(even) {
+section.Section:nth-of-type(even) {
 	@apply bg-secondary-dark;
 }
-section.Section:nth-child(odd) .button:is(:hover, :focus) {
+section.Section:nth-of-type(odd) .button:is(:hover, :focus) {
 	@apply bg-secondary-dark;
 }
-section.Section:nth-child(even) .button:is(:hover, :focus) {
+section.Section:nth-of-type(even) .button:is(:hover, :focus) {
 	@apply bg-secondary;
 }
 .SectionInner {
@@ -21,7 +21,7 @@ section.Section:nth-child(even) .button:is(:hover, :focus) {
 	@apply max-w-inner;
 	@apply m-auto;
 	@apply px-4;
-	@apply py-12;
+	@apply py-8;
 	@apply md:px-8;
 	@apply md:py-24; 
 }
