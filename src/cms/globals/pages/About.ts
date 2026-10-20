@@ -55,6 +55,7 @@ export const About: GlobalConfig = {
 					name: "prompt",
 					label: "Prompt",
 					type: "text",
+					localized: true,
 				},
 				{
 					name: "url",

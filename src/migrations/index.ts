@@ -17,6 +17,7 @@ import * as migration_20261020_020130_add_announcement_4 from './20261020_020130
 import * as migration_20261020_030006_add_hero_title from './20261020_030006_add_hero_title';
 import * as migration_20261020_032438_add_hero_title_2 from './20261020_032438_add_hero_title_2';
 import * as migration_20261020_032623_add_hero_title_3 from './20261020_032623_add_hero_title_3';
+import * as migration_20261020_170150_add_localized_about_prompts from './20261020_170150_add_localized_about_prompts';
 
 export const migrations = [
   {
@@ -112,6 +113,11 @@ export const migrations = [
   {
     up: migration_20261020_032623_add_hero_title_3.up,
     down: migration_20261020_032623_add_hero_title_3.down,
-    name: '20261020_032623_add_hero_title_3'
+    name: '20261020_032623_add_hero_title_3',
+  },
+  {
+    up: migration_20261020_170150_add_localized_about_prompts.up,
+    down: migration_20261020_170150_add_localized_about_prompts.down,
+    name: '20261020_170150_add_localized_about_prompts'
   },
 ];
