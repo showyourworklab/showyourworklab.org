@@ -29,11 +29,11 @@ section.Section.AboutSection .SectionLede {
 	@apply mx-auto;
 	@apply max-w-inner-xl;
 }
-.AboutSection:nth-child(even) .AboutSectionColumns {
+.AboutSection:nth-child(odd) .AboutSectionColumns {
 	@apply flex-col-reverse;
 	@apply lg:flex-row-reverse;
 }
-.AboutSection:nth-child(odd) .AboutSectionColumns {
+.AboutSection:nth-child(even) .AboutSectionColumns {
 	@apply flex-col-reverse;
 	@apply lg:flex-row;
 }
@@ -49,10 +49,10 @@ section.Section.AboutSection .SectionLede {
 	@apply justify-center;
 	@apply lg:items-center;
 }
-.AboutSection:nth-child(even) .AboutSectionText {
+.AboutSection:nth-child(odd) .AboutSectionText {
 	@apply text-left;
 }
-.AboutSection:nth-child(odd) .AboutSectionText {
+.AboutSection:nth-child(even) .AboutSectionText {
 	@apply lg:text-right;
 }
 .AboutSectionTextInner {
