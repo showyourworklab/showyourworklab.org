@@ -17,6 +17,7 @@
     "@ark-ui/react": "^5.36.2",
     "@formatjs/intl-localematcher": "^0.8.10",
     "@netlify/plugin-nextjs": "^5.15.11",
+    "@next/third-parties": "^16.4.2",
     "@payloadcms/db-postgres": "^3.84.1",
     "@payloadcms/live-preview-react": "^3.84.1",
     "@payloadcms/next": "^3.84.1",
