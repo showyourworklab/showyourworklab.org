@@ -31,6 +31,7 @@ export default function Hero({
 				size="hero"
 				priority
 				fill
+				quality={65}
 				className="HeroFigure"
 			/>
 			<div

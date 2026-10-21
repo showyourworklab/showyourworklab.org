@@ -9,6 +9,7 @@ export interface FigureProps extends Omit<HTMLProps<HTMLDivElement>, "size"> {
 	size?: ImageSize;
 	priority?: boolean;
 	fill?: boolean;
+	quality?: 65 | 90;
 };
 
 export default function Figure({
@@ -16,6 +17,7 @@ export default function Figure({
 	size = "full",
 	priority = false,
 	fill = false,
+	quality = 90,
 	children,
 	className,
 	...props
@@ -38,7 +40,7 @@ export default function Figure({
 					? { fill: true }
 					: { width: image.width ?? 0, height: image.height ?? 0 }
 				)}
-				quality={90}
+				quality={quality}
 				loading={priority ? "eager" : "lazy"}
 				fetchPriority={priority ? "high" : "auto"}
 				unoptimized={image.mimeType === "image/svg+xml"}
