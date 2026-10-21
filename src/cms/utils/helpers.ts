@@ -1,4 +1,5 @@
 import { revalidatePath } from "next/cache";
+import { purgeCache } from "@netlify/functions";
 import type { GlobalAfterChangeHook } from "payload";
 
 export const generateFileUrl = (
@@ -12,9 +13,16 @@ export const generateFileUrl = (
 	return `${baseUrl}/${normalizedPrefix}${params.filename}`;
 };
 
-export const revalidateSite: GlobalAfterChangeHook = ({ doc }) => {
+export const revalidateSite: GlobalAfterChangeHook = async ({ doc, req }) => {
 	if (doc?._status === "draft") return doc;
-	// Must match the route's file path, including route groups (cache tag: _N_T_/(site)/[lang]/layout)
 	revalidatePath("/(site)/[lang]", "layout");
+	if (process.env.NETLIFY) {
+		await purgeCache().catch((error) => {
+			req.payload.logger.error({
+				err: error,
+				msg: "Netlify cache purge failed"
+			});
+		});
+	}
 	return doc;
 };
