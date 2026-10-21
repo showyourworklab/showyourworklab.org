@@ -14,6 +14,7 @@ export const generateFileUrl = (
 
 export const revalidateSite: GlobalAfterChangeHook = ({ doc }) => {
 	if (doc?._status === "draft") return doc;
-	revalidatePath("/[lang]", "layout");
+	// Must match the route's file path, including route groups (cache tag: _N_T_/(site)/[lang]/layout)
+	revalidatePath("/(site)/[lang]", "layout");
 	return doc;
 };
