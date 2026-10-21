@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Instrument_Sans, Rethink_Sans } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { cn } from "@/utils/helpers";
 import { getLang } from "@/utils/selectors";
 import { LOCALES } from "@/utils/constants";
@@ -61,6 +62,11 @@ export default async function RootLayout({
 				</main>
 				<Footer />
 			</body>
+			{process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID ?
+				<GoogleAnalytics
+					gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID}
+				/>
+			: null}
 		</html>
 	);
 };
